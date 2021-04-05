@@ -19,13 +19,15 @@ public class EnemyButton : MonoBehaviour
     private int SpawnNum;
     float time = 0;
 
+    EnemyHealth enemyHealth;
+
     //접근제한자 한정지어서 사용안하면 나중에 의도하지 않게 수정됨 앵간해서 private로 하고 외부에서 접근가능한 함수나
     //get,set이용해서 변경할것.
     //인스펙터에서 입력 받고싶은 경우 serializeField사용
 
     private void Awake()
     {
-
+        enemyHealth = transform.parent.gameObject.GetComponent<EnemyHealth>();
         if (spriteRenderer == null)
             spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
         if (Sprite == null)
@@ -53,10 +55,9 @@ public class EnemyButton : MonoBehaviour
         if (inputCurrentKey())
         {
             SetSprite();
+            enemyHealth.ChangeHealth(-1);
             time = 0f;
         }
-
-
         if (time >= spawnRate)
         {
             SetSprite();
@@ -90,7 +91,6 @@ public class EnemyButton : MonoBehaviour
         //         break;
         // }
     }
-
     void SetSprite()
     {
         SpawnNum = Random.Range(0, 3);
@@ -103,6 +103,4 @@ public class EnemyButton : MonoBehaviour
         // 직접적으로 수정함.
         spriteRenderer.sprite = sprites[SpawnNum];
     }
-
-
 }

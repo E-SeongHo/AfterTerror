@@ -8,7 +8,7 @@ public class ShieldmanController : MonoBehaviour
     GameObject myButton;
     public int maxHealth = 6;
     int attackAbility = 1;
-    [SerializeField] private int currentHealth;
+    [SerializeField] private int currentHealth = 3;
 
     public int health
     {
@@ -31,6 +31,11 @@ public class ShieldmanController : MonoBehaviour
         // Clamp 메소드 -> 최소 0, 최대 maxHealth로 구현
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + " / " + maxHealth);
+        if(currentHealth <= 0) 
+        {
+            Destroy(gameObject);
+            // 이벤트함수 호출 
+        }
     }
     public void ChangeAttackAbility(int amount)
     {
