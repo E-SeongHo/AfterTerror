@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class EnemySprites : MonoBehaviour
+public class EnemyButton : MonoBehaviour
 {
     // EnemyMoving em = new EnemySprites();
     [SerializeField] GameObject Sprite;

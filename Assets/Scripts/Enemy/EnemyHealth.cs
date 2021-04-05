@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     public float health;
