@@ -41,14 +41,13 @@ public class EnemyButton : MonoBehaviour
     {
         Init();
     }
-
     void Init()
     {
+        Debug.Break();
         //나오자 마자 설정해줌.
         SetSprite();
         // Invoke("SetSprite", spawnRate);
     }
-
     // Update is called once per frame
     void Update()
     {
