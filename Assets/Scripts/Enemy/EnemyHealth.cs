@@ -10,11 +10,11 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private int currentHealth;
     public int health
     {
-        get{return currentHealth;}
+        get { return currentHealth; }
     }
     public int attack
     {
-        get{return attackAbility;}
+        get { return attackAbility; }
     }
 
     //public GameObject healthBarUI;
@@ -44,6 +44,7 @@ public class EnemyHealth : MonoBehaviour
         // {
         //     health = maxHealth;
         // }
+
     }
 
     // float CalculateHealth()
@@ -53,7 +54,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
-        if(amount < 0)
+        if (amount < 0)
         {
             // 피격 효과 애니메이션 처리
         }
