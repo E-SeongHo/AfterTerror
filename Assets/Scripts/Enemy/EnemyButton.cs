@@ -50,7 +50,7 @@ public class EnemyButton : MonoBehaviour
     }
     void Init()
     {
-        Debug.Break();
+        // Debug.Break();
         //나오자 마자 설정해줌.
         SetSprite();
         // Invoke("SetSprite", spawnRate);
@@ -62,8 +62,8 @@ public class EnemyButton : MonoBehaviour
         {
             SetSprite();
             AttackCount++;
-
-            enemyHealth.ChangeHealth(-1);
+            Debug.Log(AttackCount);
+            // enemyHealth.ChangeHealth(-1);
             time = 0f;
         }
         if (time >= spawnRate)
