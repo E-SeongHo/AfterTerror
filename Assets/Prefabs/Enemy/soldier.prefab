@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 5453019449765758654}
   - component: {fileID: 5453019449765758653}
   - component: {fileID: 5453019449765758650}
-  - component: {fileID: 2017358751}
   m_Layer: 0
   m_Name: soldier
   m_TagString: Untagged
@@ -266,24 +265,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 0
---- !u!114 &2017358751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453019449765758652}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e7e50d378b83640be3568089aff389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sprite: {fileID: 0}
-  spriteRenderer: {fileID: 5453019449549516334}
-  sprites:
-  - {fileID: 21300000, guid: 48f108f0add646d479b39bbd74fe836a, type: 3}
-  - {fileID: 21300000, guid: 8dd999a121fec72449f96909435e0710, type: 3}
-  - {fileID: 21300000, guid: 2d8e0024c4d4b9a468301249d1141a86, type: 3}
-  spawnRate: 3
-  bullet: {fileID: 5315718720406002223, guid: d66aa6c59c5be654b9c0e4d59ca38816, type: 3}
-  AttackCount: 0
