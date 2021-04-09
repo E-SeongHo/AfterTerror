@@ -30,6 +30,7 @@ public class CharacterButton : MonoBehaviour
                 buttonON = false;
             }
         }
+
     }
     void GiveButton(GameObject target)
     {
@@ -41,4 +42,5 @@ public class CharacterButton : MonoBehaviour
         ShieldmanController shieldmanController = target.GetComponent<ShieldmanController>();
         shieldmanController.DeleteButton();
     }
+    
 }

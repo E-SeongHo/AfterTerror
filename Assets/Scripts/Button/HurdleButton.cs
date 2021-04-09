@@ -38,7 +38,6 @@ public class HurdleButton : MonoBehaviour
                 if(!Hurdle.GetComponent<HurdleController>().buttonActive)
                 {
                     existHurdles.Add(Hurdle);
-                    Debug.Log(Hurdle);
                     addNew = true;    
                 }   
             }

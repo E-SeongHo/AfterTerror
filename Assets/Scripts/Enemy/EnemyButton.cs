@@ -23,12 +23,15 @@ public class EnemyButton : MonoBehaviour
     [SerializeField] int AttackCount = 0;
     // 공격당한 횟수 카운팅
 
+    EnemyHealth enemyHealth;
+
     //접근제한자 한정지어서 사용안하면 나중에 의도하지 않게 수정됨 앵간해서 private로 하고 외부에서 접근가능한 함수나
     //get,set이용해서 변경할것.
     //인스펙터에서 입력 받고싶은 경우 serializeField사용
 
     private void Awake()
     {
+        // enemyHealth = transform.parent.gameObject.GetComponent<EnemyHealth>();
         if (spriteRenderer == null)
             spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
         if (Sprite == null)
@@ -45,14 +48,13 @@ public class EnemyButton : MonoBehaviour
     {
         Init();
     }
-
     void Init()
     {
+        Debug.Break();
         //나오자 마자 설정해줌.
         SetSprite();
         // Invoke("SetSprite", spawnRate);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -61,6 +63,13 @@ public class EnemyButton : MonoBehaviour
             SetSprite();
             AttackCount++;
 
+            enemyHealth.ChangeHealth(-1);
+            time = 0f;
+        }
+        if (time >= spawnRate)
+        {
+            SetSprite();
+            time = 0f;
         }
 
         // if (time >= spawnRate)
@@ -96,7 +105,6 @@ public class EnemyButton : MonoBehaviour
         //         break;
         // }
     }
-
     void SetSprite()
     {
         if (AttackCount == 0 && time >= spawnRate)

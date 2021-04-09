@@ -31,7 +31,6 @@ public class FindFunction : MonoBehaviour
                 nearestTarget = target;
             } 
         }
-        Debug.Log(nearestTarget);
         return nearestTarget;
     }
 }
