@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class EnemyButton : MonoBehaviour
 {
     // EnemyMoving em = new EnemySprites();
+    Rigidbody2D rb;
     [SerializeField] GameObject Sprite;
     KeyCode[] keyCodes = { KeyCode.A, KeyCode.S, KeyCode.D };
     KeyCode currentKey;
@@ -18,6 +19,9 @@ public class EnemyButton : MonoBehaviour
     private int beforeSpawnNum = 99;
     private int SpawnNum;
     float time = 0;
+    [SerializeField] GameObject bullet;
+    [SerializeField] int AttackCount = 0;
+    // 공격당한 횟수 카운팅
 
     //접근제한자 한정지어서 사용안하면 나중에 의도하지 않게 수정됨 앵간해서 private로 하고 외부에서 접근가능한 함수나
     //get,set이용해서 변경할것.
@@ -25,11 +29,13 @@ public class EnemyButton : MonoBehaviour
 
     private void Awake()
     {
-
         if (spriteRenderer == null)
             spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
         if (Sprite == null)
             Sprite = spriteRenderer.transform.gameObject;
+        time = 0f;
+        time += Time.deltaTime;
+
     }
     void Start()
     {
@@ -53,16 +59,16 @@ public class EnemyButton : MonoBehaviour
         if (inputCurrentKey())
         {
             SetSprite();
-            time = 0f;
+            AttackCount++;
+
         }
 
-
-        if (time >= spawnRate)
-        {
-            SetSprite();
-            time = 0f;
-        }
-        time += Time.deltaTime;
+        // if (time >= spawnRate)
+        // {
+        //     SetSprite();
+        //     time = 0f;
+        // }
+        // time += Time.deltaTime;
     }
     bool inputCurrentKey()
     {
@@ -93,6 +99,11 @@ public class EnemyButton : MonoBehaviour
 
     void SetSprite()
     {
+        if (AttackCount == 0 && time >= spawnRate)
+        {
+            Vector2 position = rb.position;
+            Instantiate(bullet, position + Vector2.up * 1.5f, Quaternion.identity);
+        }
         SpawnNum = Random.Range(0, 3);
         while (beforeSpawnNum == SpawnNum)
         {
@@ -104,5 +115,9 @@ public class EnemyButton : MonoBehaviour
         spriteRenderer.sprite = sprites[SpawnNum];
     }
 
+    // void shootBullet()
+    // {
+
+    // }
 
 }
