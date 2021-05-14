@@ -65,7 +65,7 @@ public class EnemyHealth : MonoBehaviour
         // Clamp 메소드 -> 최소 0, 최대 maxHealth로 구현
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + " / " + maxHealth);
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
         }

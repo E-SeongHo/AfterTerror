@@ -7,7 +7,7 @@ public class FindFunction : MonoBehaviour
     static FindFunction instance;
     public static FindFunction Instance
     {
-        get {return instance;}
+        get { return instance; }
     }
     GameObject mainCharacter;
 
@@ -19,17 +19,17 @@ public class FindFunction : MonoBehaviour
     public GameObject FindNearestObject(List<GameObject> tagged)
     {
         GameObject nearestTarget = null;
-        float minDistance = Mathf.Infinity; 
-        Vector2 currentPos= mainCharacter.GetComponent<Transform>().position;
-        foreach(GameObject target in tagged)
+        float minDistance = Mathf.Infinity;
+        Vector2 currentPos = mainCharacter.GetComponent<Transform>().position;
+        foreach (GameObject target in tagged)
         {
             Vector2 targetPos = target.GetComponent<Transform>().position;
             float distance = Vector2.Distance(targetPos, currentPos);
-            if(distance < minDistance)
+            if (distance < minDistance)
             {
                 minDistance = distance; // 거리값 필요시 사용
                 nearestTarget = target;
-            } 
+            }
         }
         return nearestTarget;
     }

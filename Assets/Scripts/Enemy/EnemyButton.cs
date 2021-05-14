@@ -20,7 +20,7 @@ public class EnemyButton : MonoBehaviour
     private int SpawnNum;
     float time = 0;
     [SerializeField] GameObject bullet;
-    [SerializeField] int AttackCount = 0;
+    public int AttackCount = 0;
     // 공격당한 횟수 카운팅
 
     EnemyHealth enemyHealth;
