@@ -30,7 +30,6 @@ public class CharacterButton : MonoBehaviour
                 buttonON = false;
             }
         }
-
     }
     void GiveButton(GameObject target)
     {

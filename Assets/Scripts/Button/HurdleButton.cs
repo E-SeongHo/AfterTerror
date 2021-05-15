@@ -18,8 +18,10 @@ public class HurdleButton : MonoBehaviour
         }
 
         target = FindFunction.Instance.FindNearestObject(existHurdles);
-        hurdleController = target.GetComponent<HurdleController>();
-
+        if(target != null )
+        {
+            hurdleController = target.GetComponent<HurdleController>();
+        }
         if(hurdleController.buttonActive)
         {
             InputProcess();
