@@ -7,16 +7,16 @@ public class CharacterButton : MonoBehaviour
     public GameObject button_space;
     GameObject target;
     bool buttonON = false;
-    private void Awake() 
+    private void Awake()
     {
-        target = GameObject.Find("Shieldman");    
-        Debug.Log(target);    
+        target = GameObject.Find("Shieldman");
+        Debug.Log(target);
     }
     private void Update()
     {
-        if(!buttonON) // 버튼 안떠있으면
+        if (!buttonON) // 버튼 안떠있으면
         {
-            if(Input.GetMouseButtonDown(0)) // buttonmanager에서 OR Gamemanager에서 거리 판단함수
+            if (Input.GetMouseButtonDown(0)) // buttonmanager에서 OR Gamemanager에서 거리 판단함수
             {
                 GiveButton(target);
                 buttonON = true;
@@ -24,7 +24,7 @@ public class CharacterButton : MonoBehaviour
         }
         else // 버튼 떠있으면
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 DeleteButton();
                 buttonON = false;
@@ -42,5 +42,5 @@ public class CharacterButton : MonoBehaviour
         ShieldmanController shieldmanController = target.GetComponent<ShieldmanController>();
         shieldmanController.DeleteButton();
     }
-    
+
 }

@@ -8,12 +8,12 @@ public class HurdleController : MonoBehaviour
     private bool buttonON = false;
     public bool buttonActive
     {
-        get{return buttonON;}
+        get { return buttonON; }
     }
     private int buttonIdx;
     public int buttonKind
     {
-        get{return buttonIdx;}
+        get { return buttonIdx; }
     }
     [SerializeField] private float speed = 2f;
     private GameObject myButton;
@@ -29,19 +29,19 @@ public class HurdleController : MonoBehaviour
         position.x = position.x - speed * Time.deltaTime;
         rigidbody2D.MovePosition(position);
     }
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
         ShieldmanController player = other.gameObject.GetComponent<ShieldmanController>();
         Debug.Log("피격");
-        if(player != null)
+        if (player != null)
         {
             Debug.Log("피격");
             player.ChangeHealth(-1);
-        }        
+        }
     }
     public void GenerateButton(GameObject button, int kind)
     {
-        if(!buttonON)
+        if (!buttonON)
         {
             Vector2 position = rigidbody2D.position; // 현재 pos 
             GameObject newButton = Instantiate(button, position + Vector2.up * 1.5f, Quaternion.identity);
@@ -51,7 +51,7 @@ public class HurdleController : MonoBehaviour
             buttonON = true;
             buttonIdx = kind;
         }
-        else 
+        else
         {
             //Debug.Log(gameObject + "Already generated button");
         }

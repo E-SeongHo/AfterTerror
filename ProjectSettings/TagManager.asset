@@ -7,7 +7,6 @@ TagManager:
   - Hurdle
   - Shieldman
   - Projectile
-  - enemy
   layers:
   - Default
   - TransparentFX

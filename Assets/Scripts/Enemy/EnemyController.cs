@@ -5,50 +5,92 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    GameObject currentButton;
-    public int maxHealth = 6;
-    bool isButtonOn = false;
-    [SerializeField] private int currentHealth;
-    public int health
+    [SerializeField] GameObject Sprite;
+    KeyCode[] keyCodes = { KeyCode.A, KeyCode.S, KeyCode.D };
+    KeyCode currentKey;
+    [SerializeField] Sprite[] buttonImages;
+    [SerializeField] float spawnRate = 0f;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    //버튼 이미지 삽입
+    private int SpawnNum;
+    private int beforeSpawnNum = 99;
+    public float maxHealth = 3;
+    [SerializeField] float health = 0;
+    GameObject bullet;
+    float time = 0;
+    [SerializeField] int AttackCount = 0;
+    // Start is called before the first frame update
+
+    private void Awake()
     {
-        get { return currentHealth; }
+        if (spriteRenderer == null)
+            spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
+        if (Sprite == null)
+            Sprite = spriteRenderer.transform.gameObject;
     }
-    public bool buttonActive
+    void Start()
     {
-        get { return isButtonOn; }
+        Init();
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        currentHealth = maxHealth;
+        Init();
     }
-    private void Update()
-    {
 
-    }
-    public void GenerateEnemy(GameObject button)
+    // Update is called once per frame
+    void Update()
     {
-        Vector2 position = GetComponent<Rigidbody2D>().position;
-        GameObject newButton = Instantiate(button, position + Vector2.up * 1.5f, Quaternion.identity);
-        currentButton = newButton;
-        currentButton.transform.parent = gameObject.transform;
+        if (inputCurrentKey())
+        {
+            SetSprite();
+            AttackCount++;
+            time = 0f;
+        }
+
+
+        if (time >= spawnRate)
+        {
+            SetSprite();
+            time = 0f;
+        }
+        time += Time.deltaTime;
     }
-    public void ChangeHealth(int amount)
+    void Init()
     {
-        if (amount < 0)
+        SetSprite();
+    }
+
+    bool inputCurrentKey()
+    {
+        bool answer = false;
+        switch (SpawnNum)
         {
-            // 피격 효과 애니메이션 처리
+            case 1:
+                if (Input.GetKeyDown(KeyCode.A))
+                    answer = true;
+                break;
+            case 2:
+                if (Input.GetKeyDown(KeyCode.S))
+                    answer = true;
+                break;
+            case 3:
+                if (Input.GetKeyDown(KeyCode.D))
+                    answer = true;
+                break;
         }
-        else
+        return answer;
+    }
+
+    void SetSprite()
+    {
+        SpawnNum = Random.Range(0, 3);
+        while (beforeSpawnNum == SpawnNum)
         {
-            // 회복 효과 애니메이션 처리
+            SpawnNum = Random.Range(0, 3);
         }
-        // Clamp 메소드 -> 최소 0, 최대 maxHealth로 구현
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + " / " + maxHealth);
-        if (currentHealth == 0)
-        {
-            Destroy(gameObject);
-        }
+        currentKey = keyCodes[SpawnNum];
+        Sprite.SetActive(true);
+        spriteRenderer.sprite = buttonImages[SpawnNum];
     }
 }
