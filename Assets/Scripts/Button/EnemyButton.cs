@@ -9,7 +9,9 @@ using UnityEngine;
 public class EnemyButton : MonoBehaviour
 {   
     // red ASD, green ASD, blue ASD
-    [SerializeField] private GameObject[][] buttons; // 3x3 배열
+    // 굳이 GameObject로 안하고 Sprite배열로 해도 될듯
+    // 게임 무거워지면 고려
+    [SerializeField] private GameObject[] buttons = new GameObject[9];
     
     private GameObject[] enemies;
     private GameObject target = null;
@@ -24,15 +26,20 @@ public class EnemyButton : MonoBehaviour
     {
         if(!buttonON)
         {
-            // Find Nearest Enemy
+            // Find Nearest Enemy & Set varialbes with that Enemy
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
             target = FindFunction.Instance.FindNearestObjectArr(enemies);
-            enemyController = target.GetComponent<EnemyController>();
-            GiveButton(target);
+            if (target != null)
+            {
+                enemyController = target.GetComponent<EnemyController>();
+                GiveButton(target);
+                Debug.Log("enemybutton gen : " + buttonidx);
+            }
+            else return;
         }
         else
         {
-            InputProcess();
+            InputProcess(buttonidx);
         }
     }
 
@@ -41,20 +48,42 @@ public class EnemyButton : MonoBehaviour
         // target (nearest Enemy)에게 button전달
         int randColor = Random.Range(0,3);
         int randAlphabet = Random.Range(0,3);
+        // mapping 2D Array to 1D Array
         buttonidx = randAlphabet;
-        nowButton = buttons[randColor][randAlphabet];
+        nowButton = buttons[randAlphabet + randColor*3];
+
         enemyController.GenerateButton(nowButton);
+        buttonON = true;
     }
     private void DeleteButton()
     {
-        
-    }
-    private void InputProcess()
-    {
-        // buttonIdx에 맞는 값 들어오면 DeleteButton 호출
-        if(Input.GetKeyDown(KeyCode.A)
+        // Enemy의 체력 감소
+        enemyController.ChangeHealth(-1);
+        buttonON = false;
+        nowButton = null;
+        enemyController.DeleteButton();
+
+        // 아직 필요 없을 듯 
+        // Update()에서 계속해서 target을 바꿔설정하니까
+        if(enemyController.GetCurrentHealth() <= 0)
         {
             
+        }
+    }
+    private void InputProcess(int buttonIndex)
+    {
+        // buttonIdx에 맞는 값 들어오면 DeleteButton 호출
+        switch (buttonIndex)
+        {
+            case 0: // if Button A
+                if (Input.GetKeyDown(KeyCode.A)) DeleteButton();
+                break;
+            case 1: // if Button S
+                if (Input.GetKeyDown(KeyCode.S)) DeleteButton();
+                break;
+            case 2: // if Button D
+                if (Input.GetKeyDown(KeyCode.D)) DeleteButton();
+                break;
         }
     }
 

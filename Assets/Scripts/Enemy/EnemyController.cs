@@ -61,5 +61,9 @@ public class EnemyController : MonoBehaviour
         myButton = newButton;
         myButton.transform.parent = gameObject.transform;
     }
+    public void DeleteButton()
+    {
+        Destroy(myButton);
+    }
 
 }
