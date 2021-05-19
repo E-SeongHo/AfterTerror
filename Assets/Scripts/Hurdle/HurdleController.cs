@@ -2,43 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Hurdle은 맵에 여러개 존재
+// 각 Hurdle 위에 버튼은 미리 떠있음 (가까워 졌을 때 뜨는 식 X)
+// UP, DOWN, LEFT, RIGHT키 이용 각 Hurdle이 가까워 졌을 때 누르면 판정
 public class HurdleController : MonoBehaviour
 {
-    Rigidbody2D rb;
-    private bool buttonON = false;
-    public bool buttonActive
-    {
-        get{return buttonON;}
-    }
-    private int buttonIdx;
-    public int buttonKind
-    {
-        get{return buttonIdx;}
-    }
     [SerializeField] private float speed = 5f;
-    private GameObject myButton;
 
+    private bool buttonON = false;
+    private int buttonIdx; // 0 : up, 1 : down, 2 : left, 3 : right
+
+    private GameObject myButton; // 현재 이 Hurdle의 button객체
+    // 나중에 각 Button에 대한 스크립트 만들어서, 자신의 Idx소유하도록 코딩이 더 좋을듯
+
+    private Rigidbody2D rb;
+
+    // Getters
+    public bool GetButtonON()
+    {
+        return buttonON;
+    }
+    public int GetButtonIdx()
+    {
+        return buttonIdx;
+    }
+    public float GetSpeed()
+    {
+        return speed;
+    }
+
+    // Init
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    // Hurdle Move
     void Update()
     {
         Vector2 position = rb.position;
         position.x = position.x - speed * Time.deltaTime;
         rb.MovePosition(position);
     }
+    
+    // Hurdle과 MainCharacter 충돌 event
     private void OnTriggerEnter2D(Collider2D other) 
     {
         ShieldmanController player = other.gameObject.GetComponent<ShieldmanController>();
-        Debug.Log("피격");
         if(player != null)
         {
-            Debug.Log("피격");
+            Debug.Log(this + " - " + other + "충돌");
             player.ChangeHealth(-1);
         }        
     }
+
+    // Buttons
+    
+    // HurdleButtonManage객체가 호출
     public void GenerateButton(GameObject button, int kind)
     {
         if(!buttonON)

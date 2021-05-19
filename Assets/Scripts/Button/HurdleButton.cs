@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Hurdle에 생성되는 버튼은 UP, DOWN, LEFT, RIGHT
+// HurdleButtonManage Object는 맵에 존재하는 Hurdle을 List로 보관
+// Hurdle중 한 개 Hurdle에 대해 상호작용 (가장 가까운 Hurdle) - Input 감지
 public class HurdleButton : MonoBehaviour
 {
-    [SerializeField] 
-    private GameObject[] buttons = new GameObject[4]; // 0 : up, 1 : down, 2 : left, 3 : right 
+    // 0 : up, 1 : down, 2 : left, 3 : right 
+    [SerializeField] private GameObject[] buttons = new GameObject[4]; 
     private GameObject target;
-    private int randIdx;
-    List<GameObject> existHurdles = new List<GameObject>();
-    HurdleController hurdleController;
+    private int randIdx; // 랜덤하게 각 Hurdle에 버튼 생성
+
+    private List<GameObject> existHurdles = new List<GameObject>(); // 맵에 존재하는 Hurdle 관리
+    private HurdleController hurdleController;
     void Update() 
     {
         if(FindHurdles()) // 맵에 새로운 Hurdle이 있으면 리스트에 추가
@@ -18,11 +22,13 @@ public class HurdleButton : MonoBehaviour
         }
 
         target = FindFunction.Instance.FindNearestObject(existHurdles);
-        if(target != null )
+        if (target != null)
         {
             hurdleController = target.GetComponent<HurdleController>();
         }
-        if(hurdleController.buttonActive)
+        else return;
+
+        if(hurdleController.GetButtonON())
         {
             InputProcess();
         }
@@ -37,7 +43,7 @@ public class HurdleButton : MonoBehaviour
         {
             foreach(GameObject Hurdle in Hurdles)
             {
-                if(!Hurdle.GetComponent<HurdleController>().buttonActive)
+                if(!Hurdle.GetComponent<HurdleController>().GetButtonON())
                 {
                     existHurdles.Add(Hurdle);
                     addNew = true;    
@@ -53,7 +59,7 @@ public class HurdleButton : MonoBehaviour
         {
             hurdleController = Hurdle.GetComponent<HurdleController>();
             rand = Random.Range(0,4);
-            if(!hurdleController.buttonActive)
+            if(!hurdleController.GetButtonON())
             {
                 hurdleController.GenerateButton(buttons[rand],rand);
             }
@@ -62,7 +68,7 @@ public class HurdleButton : MonoBehaviour
     private void InputProcess()
     {
         bool success = false;
-        int key = hurdleController.buttonKind;
+        int key = hurdleController.GetButtonIdx();
         switch(key)
         {
             case 0: // Up key

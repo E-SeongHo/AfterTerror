@@ -1,96 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] GameObject Sprite;
-    KeyCode[] keyCodes = { KeyCode.A, KeyCode.S, KeyCode.D };
-    KeyCode currentKey;
-    [SerializeField] Sprite[] buttonImages;
-    [SerializeField] float spawnRate = 0f;
-    [SerializeField] SpriteRenderer spriteRenderer;
-    //Î≤ÑÌäº Ïù¥ÎØ∏ÏßÄ ÏÇΩÏûÖ
-    private int SpawnNum;
-    private int beforeSpawnNum = 99;
-    public float maxHealth = 3;
-    [SerializeField] float health = 0;
-    GameObject bullet;
-    float time = 0;
-    [SerializeField] int AttackCount = 0;
-    // Start is called before the first frame update
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private int maxHealth = 5;
+    [SerializeField] private int shotbulletbound = 3; // 3¿ÃªÛ¿Ã∏È √—æÀπﬂªÁ
+    private int currentHealth;
+    private int attackCount; // MainCharacterø°∞‘ ∏¬¿∫ »Ωºˆ
+    
+    private GameObject myButton = null;
+    private Rigidbody2D rb = null;
 
-    private void Awake()
-    {
-        if (spriteRenderer == null)
-            spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
-        if (Sprite == null)
-            Sprite = spriteRenderer.transform.gameObject;
-    }
-    void Start()
-    {
-        Init();
-    }
+    // Getters
+    public float GetSpeed() { return speed; }
+    public int GetCurrentHealth() { return currentHealth; }
+    public int GetAttackCount() { return attackCount; }
 
-    private void OnEnable()
+    // Init
+    private void Start()
     {
-        Init();
+        currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
+    // Enemy Move
+    private void Update()
     {
-        if (inputCurrentKey())
+        transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
+        if (attackCount > shotbulletbound)
         {
-            SetSprite();
-            AttackCount++;
-            time = 0f;
+            ShotBullet();
         }
-
-
-        if (time >= spawnRate)
-        {
-            SetSprite();
-            time = 0f;
-        }
-        time += Time.deltaTime;
     }
-    void Init()
+
+    public void ChangeHealth(int amount)
     {
-        SetSprite();
+        if (amount < 0)
+        {
+            // animator √≥∏Æ ∫Œ∫– (After Time)
+        }
+        // Clamp ∏ﬁº“µÂ ¿ÃøÎ, √÷¥Î∞™¿Ã maxHealth≥—¡ˆ ∏¯«œ∞‘ ±∏«ˆ 
+        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + " / " + maxHealth);
+        if (currentHealth <= 0)
+        {
+            // ¡◊¥¬ æ÷¥œ∏ﬁ¿Ãº«
+            Destroy(gameObject);
+        }
+    }
+    public void ShotBullet()
+    {
+        // Object Pooling bullet ∞¸∏Æ
     }
 
-    bool inputCurrentKey()
+    public void GenerateButton(GameObject button)
     {
-        bool answer = false;
-        switch (SpawnNum)
-        {
-            case 1:
-                if (Input.GetKeyDown(KeyCode.A))
-                    answer = true;
-                break;
-            case 2:
-                if (Input.GetKeyDown(KeyCode.S))
-                    answer = true;
-                break;
-            case 3:
-                if (Input.GetKeyDown(KeyCode.D))
-                    answer = true;
-                break;
-        }
-        return answer;
+        Vector2 position = rb.position + Vector2.up*1.5f;
+        GameObject newButton = Instantiate(button, position, Quaternion.identity);
+        myButton = newButton;
+        myButton.transform.parent = gameObject.transform;
     }
 
-    void SetSprite()
-    {
-        SpawnNum = Random.Range(0, 3);
-        while (beforeSpawnNum == SpawnNum)
-        {
-            SpawnNum = Random.Range(0, 3);
-        }
-        currentKey = keyCodes[SpawnNum];
-        Sprite.SetActive(true);
-        spriteRenderer.sprite = buttonImages[SpawnNum];
-    }
 }

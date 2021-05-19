@@ -5,19 +5,22 @@ using UnityEngine;
 public class ShieldmanController : MonoBehaviour
 {
     // singleton? or ? 
-    GameObject myButton;
+    private GameObject myButton;
     public int maxHealth = 6;
-    int attackAbility = 1;
+    [SerializeField] private int attackAbility = 1;
     [SerializeField] private int currentHealth = 3;
 
-    public int health
+    // Getters
+    public int GetCurrentHealth()
     {
-        get{return currentHealth;}
+        return currentHealth;
     }
-    public int attack
+    public int GetAttackAbility()
     {
-        get{return attackAbility;}
+        return attackAbility;
     }
+
+    // Setters
     public void ChangeHealth(int amount)
     {
         if(amount < 0)
@@ -28,7 +31,8 @@ public class ShieldmanController : MonoBehaviour
         {
             // 회복 효과 애니메이션 처리
         }
-        // Clamp 메소드 -> 최소 0, 최대 maxHealth로 구현
+
+        // Clamp 메소드 : 최소 0, 최대 maxHealth로 구현
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + " / " + maxHealth);
         if(currentHealth <= 0) 
@@ -55,4 +59,5 @@ public class ShieldmanController : MonoBehaviour
         Destroy(myButton);
         Debug.Log("Delete");
     }
+
 }
