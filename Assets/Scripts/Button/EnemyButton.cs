@@ -7,26 +7,26 @@ using UnityEngine;
 // EnemyButton의 생성과 삭제는 EnemyButtonMange객체가 모두 담당
 // 하나랑만 상호작용하니까 가능
 public class EnemyButton : MonoBehaviour
-{   
+{
     // red ASD, green ASD, blue ASD
     // 굳이 GameObject로 안하고 Sprite배열로 해도 될듯
     // 게임 무거워지면 고려
     [SerializeField] private GameObject[] buttons = new GameObject[9];
-    
+
     private GameObject[] enemies;
     private GameObject target = null;
 
     private GameObject nowButton;
     private bool buttonON = false;
     private int buttonidx; // A : 0, S : 1, D : 2
-    
+
     private EnemyController enemyController;
 
     private void Update()
     {
-        if(!buttonON)
+        if (!buttonON)
         {
-            // Find Nearest Enemy & Set varialbes with that Enemy
+            // Find Nearest Enemy & Set variables with that Enemy
             enemies = GameObject.FindGameObjectsWithTag("Enemy");
             target = FindFunction.Instance.FindNearestObjectArr(enemies);
             if (target != null)
@@ -46,11 +46,11 @@ public class EnemyButton : MonoBehaviour
     private void GiveButton(GameObject target)
     {
         // target (nearest Enemy)에게 button전달
-        int randColor = Random.Range(0,3);
-        int randAlphabet = Random.Range(0,3);
+        int randColor = Random.Range(0, 3);
+        int randAlphabet = Random.Range(0, 3);
         // mapping 2D Array to 1D Array
         buttonidx = randAlphabet;
-        nowButton = buttons[randAlphabet + randColor*3];
+        nowButton = buttons[randAlphabet + randColor * 3];
 
         enemyController.GenerateButton(nowButton);
         buttonON = true;
@@ -65,26 +65,40 @@ public class EnemyButton : MonoBehaviour
 
         // 아직 필요 없을 듯 
         // Update()에서 계속해서 target을 바꿔설정하니까
-        if(enemyController.GetCurrentHealth() <= 0)
+        if (enemyController.GetCurrentHealth() <= 0)
         {
-            
+
         }
     }
     private void InputProcess(int buttonIndex)
     {
         // buttonIdx에 맞는 값 들어오면 DeleteButton 호출
+        bool success = false;
         switch (buttonIndex)
         {
             case 0: // if Button A
-                if (Input.GetKeyDown(KeyCode.A)) DeleteButton();
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    DeleteButton();
+                    success = true;
+                }
                 break;
             case 1: // if Button S
-                if (Input.GetKeyDown(KeyCode.S)) DeleteButton();
+                if (Input.GetKeyDown(KeyCode.S)) 
+                {
+                    DeleteButton();
+                    success = true;
+                }
                 break;
             case 2: // if Button D
-                if (Input.GetKeyDown(KeyCode.D)) DeleteButton();
+                if (Input.GetKeyDown(KeyCode.D)) 
+                {
+                    DeleteButton();
+                    success = true;
+                }
                 break;
         }
+        if (success) enemyController.ChangeAttackCount(1);
     }
 
 }

@@ -12,7 +12,6 @@ public class BulletController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        // asasfa
         rb.velocity = transform.right * speed ;
     }
     void Update()
@@ -26,12 +25,10 @@ public class BulletController : MonoBehaviour
         if(other.tag == "Shieldman")
         {
             ShieldmanController shieldmanController = other.GetComponent<ShieldmanController>();
-            if (other != null)
-            {
-                shieldmanController.ChangeHealth(damage * -1);
-            }
-            // 총알 피하는 버튼 구현
-            Destroy(gameObject);
+            // if(shieldmanController)
+            shieldmanController.ChangeHealth(damage * -1);
+
+            BulletPool.Instance.ReturnBullet(gameObject);
         }
     }
         

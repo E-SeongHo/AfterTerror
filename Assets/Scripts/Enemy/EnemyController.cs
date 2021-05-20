@@ -8,8 +8,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private int shotbulletbound = 3; // 3이상이면 총알발사
     private int currentHealth;
-    private int attackCount; // MainCharacter에게 맞은 횟수
-    
+    private int attackCount = 0; // MainCharacter에게 맞은 횟수
+    private GameObject bullet = null; 
+
     private GameObject myButton = null;
     private Rigidbody2D rb = null;
 
@@ -17,6 +18,8 @@ public class EnemyController : MonoBehaviour
     public float GetSpeed() { return speed; }
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackCount() { return attackCount; }
+    // Setters
+    public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
 
     // Init
     private void Start()
@@ -28,9 +31,10 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
-        if (attackCount > shotbulletbound)
+        if (attackCount >= shotbulletbound)
         {
             ShotBullet();
+            attackCount = 0;
         }
     }
 
@@ -49,9 +53,14 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void ShotBullet()
+
+    // Bullet을 쏘는 것 까지는 책임, 쏜 이후는 책임 X
+    private void ShotBullet()
     {
-        // Object Pooling bullet 관리
+        bullet = BulletPool.Instance.AllocateBullet();
+        // bullet의 SetActive(true), SetActive(false)를 어디서 해야 좋을지,,
+        // 일단은 BulletPool에서 수행
+        bullet.transform.position = transform.position;
     }
 
     public void GenerateButton(GameObject button)

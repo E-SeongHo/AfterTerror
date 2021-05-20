@@ -21,7 +21,7 @@ public class CharacterButton : MonoBehaviour
     // buttonON 변수의 값에 따른다.
     private void Update()
     {
-        if(!buttonON) // 버튼 안떠있으면
+        if(!buttonON)
         {
             if(Input.GetMouseButtonDown(0)) // buttonmanager에서 OR Gamemanager에서 거리 판단함수
             {
@@ -29,7 +29,7 @@ public class CharacterButton : MonoBehaviour
                 buttonON = true;
             }
         }
-        else // 버튼 떠있으면
+        else
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {
