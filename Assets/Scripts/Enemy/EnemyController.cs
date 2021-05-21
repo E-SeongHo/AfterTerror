@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         if (amount < 0)
         {
-            // animator 처리 부분 (After Time)
+            // 피격 animator 처리 부분 
         }
         // Clamp 메소드 이용, 최대값이 maxHealth넘지 못하게 구현 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
@@ -60,7 +60,9 @@ public class EnemyController : MonoBehaviour
         bullet = BulletPool.Instance.AllocateBullet();
         // bullet의 SetActive(true), SetActive(false)를 어디서 해야 좋을지,,
         // 일단은 BulletPool에서 수행
+        // OnEnable에서 v값 계산하니까 position이 정해진 후에 SetActive(true)해야 한다.
         bullet.transform.position = transform.position;
+        bullet.SetActive(true);
     }
 
     public void GenerateButton(GameObject button)

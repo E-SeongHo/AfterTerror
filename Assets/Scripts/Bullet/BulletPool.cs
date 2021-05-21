@@ -37,12 +37,13 @@ public class BulletPool : MonoBehaviour
             CreateBulletInPool();
         }
         GameObject allocate = bulletPool.Dequeue();
-        allocate.SetActive(true);
+        //allocate.SetActive(true);
         return allocate;
     }
     
     public void ReturnBullet(GameObject usedBullet)
     {
+        Debug.Log(usedBullet);
         usedBullet.SetActive(false);
         bulletPool.Enqueue(usedBullet);
     }

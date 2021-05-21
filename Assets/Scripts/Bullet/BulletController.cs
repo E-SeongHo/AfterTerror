@@ -2,30 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 메인케릭터 위치 따라서 이동하도록 해야할요
+ 
 public class BulletController : MonoBehaviour
 {
-    //private GameObject enemy;
     [SerializeField] private float speed = 2f;
-    public int damage = 1;
-    public Rigidbody2D rb;
+    [SerializeField] private int damage = 1;
+    private Rigidbody2D rb; 
+    private Transform playerTransform;
 
-    void Start()
+    private void Awake()
     {
+        // player는 계속 제자리에 존재하므로 Start에서 Transform 가져온다.
+        playerTransform = GameObject.FindGameObjectWithTag("Shieldman").transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed ;
     }
-    void Update()
+    private void OnEnable()
     {
-        Vector2 position = rb.position;
-        position.x = position.x - speed * Time.deltaTime;
-        rb.MovePosition(position);
+        Vector3 dir = playerTransform.position - transform.position;
+        // bullet은 등속도 운동
+        rb.velocity = dir.normalized * speed;
+
+        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
     }
-    void OnTriggerEnter2D(Collider2D other)
+    private void FixedUpdate()
+    {
+        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Shieldman")
         {
             ShieldmanController shieldmanController = other.GetComponent<ShieldmanController>();
-            // if(shieldmanController)
             shieldmanController.ChangeHealth(damage * -1);
 
             BulletPool.Instance.ReturnBullet(gameObject);
