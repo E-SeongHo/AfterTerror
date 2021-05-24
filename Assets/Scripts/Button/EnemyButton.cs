@@ -70,35 +70,25 @@ public class EnemyButton : MonoBehaviour
 
         }
     }
+    // 공격이 실패하면 attackCount 증가, 성공하면 DeleteButton
     private void InputProcess(int buttonIndex)
     {
-        // buttonIdx에 맞는 값 들어오면 DeleteButton 호출
-        bool success = false;
-        switch (buttonIndex)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            case 0: // if Button A
-                if (Input.GetKeyDown(KeyCode.A))
-                {
-                    DeleteButton();
-                    success = true;
-                }
-                break;
-            case 1: // if Button S
-                if (Input.GetKeyDown(KeyCode.S)) 
-                {
-                    DeleteButton();
-                    success = true;
-                }
-                break;
-            case 2: // if Button D
-                if (Input.GetKeyDown(KeyCode.D)) 
-                {
-                    DeleteButton();
-                    success = true;
-                }
-                break;
+            if (buttonIndex == 0) DeleteButton();
+            else enemyController.ChangeAttackCount(1);
         }
-        if (success) enemyController.ChangeAttackCount(1);
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (buttonIndex == 1) DeleteButton();
+            else enemyController.ChangeAttackCount(1);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (buttonIndex == 2) DeleteButton();
+            else enemyController.ChangeAttackCount(1);
+        }
     }
+    
 
 }

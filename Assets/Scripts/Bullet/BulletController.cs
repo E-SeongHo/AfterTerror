@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 메인케릭터 위치 따라서 이동하도록 해야할요
  
 public class BulletController : MonoBehaviour
 {
@@ -13,10 +12,11 @@ public class BulletController : MonoBehaviour
 
     private void Awake()
     {
-        // player는 계속 제자리에 존재하므로 Start에서 Transform 가져온다.
+        // player는 계속 같은 자리에 존재하므로 Awake에서 Transform 가져온다.
         playerTransform = GameObject.FindGameObjectWithTag("Shieldman").transform;
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
+
     private void OnEnable()
     {
         Vector3 dir = playerTransform.position - transform.position;
@@ -26,10 +26,7 @@ public class BulletController : MonoBehaviour
         float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
     }
-    private void FixedUpdate()
-    {
-        
-    }
+ 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Shieldman")
@@ -42,3 +39,5 @@ public class BulletController : MonoBehaviour
     }
         
 }
+
+// 

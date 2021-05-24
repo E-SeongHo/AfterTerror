@@ -15,7 +15,6 @@ public class CharacterButton : MonoBehaviour
     private void Awake() 
     {
         target = GameObject.Find("Shieldman");    
-        Debug.Log("CharacterButton : Target Found" + target);    
     }
 
     // buttonON 변수의 값에 따른다.
@@ -23,19 +22,11 @@ public class CharacterButton : MonoBehaviour
     {
         if(!buttonON)
         {
-            if(Input.GetMouseButtonDown(0)) // buttonmanager에서 OR Gamemanager에서 거리 판단함수
-            {
-                GiveButton(target);
-                buttonON = true;
-            }
+            
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                DeleteButton();
-                buttonON = false;
-            }
+           
         }
     }
     // Buttons 

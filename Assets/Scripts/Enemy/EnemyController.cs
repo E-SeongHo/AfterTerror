@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 랜덤발사 타이머
+
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;

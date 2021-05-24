@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class ShieldmanController : MonoBehaviour
 {
-    // singleton? or ? 
+    // singleton? or ?
     private GameObject myButton;
+    private bool buttonON = false;
     public int maxHealth = 6;
     [SerializeField] private int attackAbility = 1;
     [SerializeField] private int currentHealth = 3;
 
+    private void Start()
+    {
+        myButton = transform.GetChild(0).gameObject;
+        myButton.transform.localPosition = new Vector2(0, 1.5f);
+        myButton.SetActive(false);
+        buttonON = false;
+    }
+
     // Getters
-    public int GetCurrentHealth()
-    {
-        return currentHealth;
-    }
-    public int GetAttackAbility()
-    {
-        return attackAbility;
-    }
+    public int GetCurrentHealth() { return currentHealth; }
+    public int GetAttackAbility() { return attackAbility; }
+    public bool IsButtonON() { return buttonON; }
 
     // Setters
     public void ChangeHealth(int amount)
@@ -47,6 +51,16 @@ public class ShieldmanController : MonoBehaviour
         attackAbility = Mathf.Clamp(attackAbility + amount, 0, 2);
         Debug.Log("Attack Stat : " + attackAbility);        
     }
+    public void ActiveButton()
+    {
+        myButton.SetActive(true);
+        buttonON = true;
+    }
+    public void InActiveButton()
+    {
+        myButton.SetActive(false);
+        buttonON = false;
+    }
     public void GenerateButton(GameObject button)
     {
         Vector2 position = GetComponent<Rigidbody2D>().position;
@@ -59,5 +73,4 @@ public class ShieldmanController : MonoBehaviour
         Destroy(myButton);
         Debug.Log("Delete");
     }
-
 }
