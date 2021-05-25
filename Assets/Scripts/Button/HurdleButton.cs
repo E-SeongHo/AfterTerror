@@ -16,6 +16,7 @@ public class HurdleButton : MonoBehaviour
     private HurdleController hurdleController;
     void Update() 
     {
+        // 프레임마다 호출될 필요 X -> FixedUpdate   
         if(FindHurdles()) // 맵에 새로운 Hurdle이 있으면 리스트에 추가
         {
             GiveButtonToNewHurdle(); // 그 Hurdle에 button 생성
@@ -86,6 +87,7 @@ public class HurdleButton : MonoBehaviour
         }
         if(success) 
         {
+
             DeleteButton();
             existHurdles.Remove(target);
         }

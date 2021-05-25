@@ -7,7 +7,7 @@ using UnityEngine;
 // UP, DOWN, LEFT, RIGHT키 이용 각 Hurdle이 가까워 졌을 때 누르면 판정
 public class HurdleController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 1f;
 
     private bool buttonON = false;
     private int buttonIdx; // 0 : up, 1 : down, 2 : left, 3 : right
@@ -40,9 +40,10 @@ public class HurdleController : MonoBehaviour
     // Hurdle Move
     void Update()
     {
-        Vector2 position = rb.position;
+        //transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
+        /*Vector2 position = rb.position;
         position.x = position.x - speed * Time.deltaTime;
-        rb.MovePosition(position);
+        rb.MovePosition(position);*/
     }
     
     // Hurdle과 MainCharacter 충돌 event

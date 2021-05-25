@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private int shotbulletbound = 3; // 3이상이면 총알발사
     private int currentHealth;
@@ -17,7 +16,6 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb = null;
 
     // Getters
-    public float GetSpeed() { return speed; }
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackCount() { return attackCount; }
     // Setters
@@ -32,7 +30,6 @@ public class EnemyController : MonoBehaviour
     // Enemy Move
     private void Update()
     {
-        transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
         if (attackCount >= shotbulletbound)
         {
             ShotBullet();
