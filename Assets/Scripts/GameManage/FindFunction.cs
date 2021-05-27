@@ -9,18 +9,18 @@ public class FindFunction : MonoBehaviour
     {
         get {return instance;}
     }
-    GameObject mainCharacter;
+    GameObject player;
 
     private void Awake()
     {
-        mainCharacter = GameObject.FindWithTag("Shieldman");
+        player = GameObject.FindWithTag("Player");
         instance = this;
     }
     public GameObject FindNearestObject(List<GameObject> tagged)
     {
         GameObject nearestTarget = null;
         float minDistance = Mathf.Infinity; 
-        Vector2 currentPos= mainCharacter.GetComponent<Transform>().position;
+        Vector2 currentPos= player.GetComponent<Transform>().position;
         foreach(GameObject target in tagged)
         {
             Vector2 targetPos = target.GetComponent<Transform>().position;
@@ -37,7 +37,7 @@ public class FindFunction : MonoBehaviour
     {
         GameObject nearestTarget = null;
         float minDistance = Mathf.Infinity;
-        Vector2 currentPos = mainCharacter.GetComponent<Transform>().position;
+        Vector2 currentPos = player.GetComponent<Transform>().position;
         foreach (GameObject target in tagged)
         {
             Vector2 targetPos = target.GetComponent<Transform>().position;

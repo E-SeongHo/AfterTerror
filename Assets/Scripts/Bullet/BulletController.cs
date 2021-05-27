@@ -9,11 +9,14 @@ public class BulletController : MonoBehaviour
     [SerializeField] private int damage = 1;
     private Rigidbody2D rb; 
     private Transform playerTransform;
+    private ShieldController shield;
 
     private void Awake()
     {
         // player는 계속 같은 자리에 존재하므로 Awake에서 Transform 가져온다.
-        playerTransform = GameObject.FindGameObjectWithTag("Shieldman").transform;
+        playerTransform = ShieldmanController.Instance.transform;
+        // ??? 호출 너무 복잡...
+        shield = ShieldmanController.Instance.gameObject.GetComponent<ShieldController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -29,11 +32,11 @@ public class BulletController : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Shieldman")
+        if(other.tag == "Player")
         {
-            ShieldmanController shieldmanController = other.GetComponent<ShieldmanController>();
-            shieldmanController.ChangeHealth(damage * -1);
-
+            int amount = damage;
+            if (shield.GetShieldState()) damage = 0;
+            ShieldmanController.Instance.ChangeHealth(damage * -1);
             BulletPool.Instance.ReturnBullet(gameObject);
         }
     }

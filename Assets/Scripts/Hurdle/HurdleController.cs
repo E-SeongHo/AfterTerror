@@ -36,7 +36,7 @@ public class HurdleController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        playerPosition = GameObject.FindWithTag("Shieldman").transform.position;
+        playerPosition = GameObject.FindWithTag("Player").transform.position;
         buttonIdx = Random.Range(0, 4);
         myButton = Instantiate(buttons[buttonIdx], rb.position + Vector2.up*1.5f, Quaternion.identity);
         myButton.transform.parent = gameObject.transform;
