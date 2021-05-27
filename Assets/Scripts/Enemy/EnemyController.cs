@@ -57,8 +57,6 @@ public class EnemyController : MonoBehaviour
     private void ShotBullet()
     {
         bullet = BulletPool.Instance.AllocateBullet();
-        // bullet의 SetActive(true), SetActive(false)를 어디서 해야 좋을지,,
-        // 일단은 BulletPool에서 수행
         // OnEnable에서 v값 계산하니까 position이 정해진 후에 SetActive(true)해야 한다.
         bullet.transform.position = transform.position;
         bullet.SetActive(true);
