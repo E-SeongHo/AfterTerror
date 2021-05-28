@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int shotbulletbound = 3; // 3이상이면 총알발사
     private int currentHealth;
     private int attackCount = 0; // MainCharacter에게 맞은 횟수
+    private float autoShotTime = 3f;
     private GameObject bullet = null; 
 
     private GameObject myButton = null;
@@ -30,6 +31,15 @@ public class EnemyController : MonoBehaviour
     // Enemy Move
     private void Update()
     {
+        if (autoShotTime > 0)
+        {
+            autoShotTime -= Time.deltaTime;
+            if (autoShotTime < 0)
+            {
+                ShotBullet();
+                autoShotTime = 3f;
+            }
+        }
         if (attackCount >= shotbulletbound)
         {
             ShotBullet();
