@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int shotbulletbound = 3; // 3이상이면 총알발사
     private int currentHealth;
     private int attackCount = 0; // MainCharacter에게 맞은 횟수
-    private float autoShotTime = 3f;
+    private float autoShotTime;
     private GameObject bullet = null; 
 
     private GameObject myButton = null;
@@ -23,9 +23,11 @@ public class EnemyController : MonoBehaviour
     public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
 
     // Init
-    private void Start()
+    private void Awake()
     {
         currentHealth = maxHealth;
+        autoShotTime = Random.Range(0.5f, 3.0f);
+        Debug.Log(this + ": " + autoShotTime);
         rb = GetComponent<Rigidbody2D>();
     }
     // Enemy Move

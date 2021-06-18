@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Hurdle은 맵에 여러개 존재
-// 각 Hurdle 위에 버튼은 미리 떠있음 (가까워 졌을 때 뜨는 식 X)
-// UP, DOWN, LEFT, RIGHT키 이용 각 Hurdle이 가까워 졌을 때 누르면 판정
 public class HurdleController : MonoBehaviour
 {
-    [SerializeField] private float speed = 1f;
     [SerializeField] private GameObject[] buttons = new GameObject[4];
     
     private bool buttonON = false;
@@ -26,10 +22,6 @@ public class HurdleController : MonoBehaviour
     public int GetButtonIdx()
     {
         return buttonIdx;
-    }
-    public float GetSpeed()
-    {
-        return speed;
     }
 
     // Init
@@ -54,9 +46,9 @@ public class HurdleController : MonoBehaviour
         float dx = rb.position.x - playerPosition.x;
         if (!buttonON)
         {
-            if (dx <= 5f) ActiveButton();
+            if (dx <= 2f) ActiveButton();
         }
-        else InputProcess();
+        else InputProcess(); // buttonON일 때만 InputProcessing
     }
 
     // Buttons 

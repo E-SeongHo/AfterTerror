@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FrontViewMove : MonoBehaviour
 {
-    [SerializeField] private float speed = 0.3f;
+    private float speed = 1.5f;
 
     private void Update()
     {
