@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1211229927318372665}
   - component: {fileID: 1211229927318372647}
-  - component: {fileID: 1575834874208873200}
   - component: {fileID: 1211229927318372664}
   - component: {fileID: 1211229927318372645}
   - component: {fileID: 1211229927318372646}
@@ -47,25 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969d37cf907819646bba72243ec88a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
   buttons:
   - {fileID: 1947594782152747820, guid: f3c60884f18033b489d506dd818aff48, type: 3}
   - {fileID: 8059285262549165035, guid: 36fdcd8990447e44eb47dbf1810fce62, type: 3}
   - {fileID: 4220584448639362932, guid: fb94bf3186ef21343957e531fd51ff36, type: 3}
   - {fileID: 7931515766349479781, guid: 5fabf45d94f1059469338dd79cc1a4c6, type: 3}
---- !u!114 &1575834874208873200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211229927318372666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6948d3740686045b594b474771ab78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
 --- !u!212 &1211229927318372664
 SpriteRenderer:
   m_ObjectHideFlags: 0

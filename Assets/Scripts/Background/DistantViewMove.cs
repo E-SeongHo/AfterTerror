@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DistantViewMove : MonoBehaviour
 {
-    [SerializeField] private float speed = 0.1f;
+    private float speed = 50f;
     private float startXpos;
     private float endXpos;
 

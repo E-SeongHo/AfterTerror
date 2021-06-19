@@ -5,7 +5,7 @@ using UnityEngine;
  
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
+    private float speed = 600f;
     [SerializeField] private int damage = 1;
     private Rigidbody2D rb; 
     private Transform playerTransform;

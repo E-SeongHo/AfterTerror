@@ -43,7 +43,6 @@ public class BulletPool : MonoBehaviour
     
     public void ReturnBullet(GameObject usedBullet)
     {
-        Debug.Log(usedBullet);
         usedBullet.SetActive(false);
         bulletPool.Enqueue(usedBullet);
     }

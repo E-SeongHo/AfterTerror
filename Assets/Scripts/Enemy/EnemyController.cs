@@ -27,7 +27,6 @@ public class EnemyController : MonoBehaviour
     {
         currentHealth = maxHealth;
         autoShotTime = Random.Range(0.5f, 3.0f);
-        Debug.Log(this + ": " + autoShotTime);
         rb = GetComponent<Rigidbody2D>();
     }
     // Enemy Move
