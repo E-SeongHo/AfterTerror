@@ -3,38 +3,23 @@ guid: 6a23aff50926a114caa2356bddc8d139
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3246103170390778723
-    second: middle_tree3_0
-  - first:
       213: -4233336081289440629
-    second: middle_tree3_0
-  - first:
-      213: 2136333731363153248
-    second: middle_tree3_2
-  - first:
-      213: -2219899844188807155
     second: middle_tree3_1
   - first:
-      213: 5630220188061935763
-    second: middle_tree3_2
-  - first:
-      213: 8553524368901190374
+      213: -2219899844188807155
     second: middle_tree3_3
   - first:
-      213: -6469080262320176813
+      213: 5630220188061935763
     second: middle_tree3_4
   - first:
-      213: 3901979715547560512
+      213: 8553524368901190374
     second: middle_tree3_5
   - first:
-      213: 2336824448138524104
-    second: middle_tree3_8
+      213: -6469080262320176813
+    second: middle_tree3_6
   - first:
-      213: 6835244351046128241
-    second: middle_tree3_9
-  - first:
-      213: 1902252152598286595
-    second: middle_tree3_10
+      213: 3901979715547560512
+    second: middle_tree3_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -124,15 +109,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: middle_tree3_0
+      name: middle_tree3_1
       rect:
         serializedVersion: 2
-        x: 404
+        x: 406
         y: 140
-        width: 605
-        height: 772
+        width: 579
+        height: 733
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,15 +130,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree3_1
+      name: middle_tree3_3
       rect:
         serializedVersion: 2
-        x: 1776
+        x: 1767
         y: 140
-        width: 605
-        height: 772
+        width: 613
+        height: 733
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,15 +151,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree3_2
+      name: middle_tree3_4
       rect:
         serializedVersion: 2
-        x: 3174
+        x: 3178
         y: 140
-        width: 605
-        height: 772
+        width: 588
+        height: 733
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,15 +172,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree3_3
+      name: middle_tree3_5
       rect:
         serializedVersion: 2
-        x: 4569
+        x: 4579
         y: 140
-        width: 605
-        height: 772
+        width: 584
+        height: 733
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,15 +193,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree3_4
+      name: middle_tree3_6
       rect:
         serializedVersion: 2
-        x: 5969
+        x: 5965
         y: 140
-        width: 605
-        height: 772
+        width: 595
+        height: 733
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,15 +214,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree3_5
+      name: middle_tree3_7
       rect:
         serializedVersion: 2
-        x: 7364
+        x: 7355
         y: 140
-        width: 559
+        width: 617
         height: 733
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3c8c8ae7fd2c68249a871a7b8cdc27ae
+    spriteID: 3949f8e30e46f44429737f385f91b4d9
     internalID: 0
     vertices: []
     indices: 

@@ -20,24 +20,6 @@ TextureImporter:
   - first:
       213: -1264064636181070253
     second: middle_tree1_5
-  - first:
-      213: -41106672913513862
-    second: middle_tree1_6
-  - first:
-      213: -4368709879728531513
-    second: middle_tree1_7
-  - first:
-      213: -8756601495199106660
-    second: middle_tree1_8
-  - first:
-      213: -7898428819673362077
-    second: middle_tree1_9
-  - first:
-      213: -8393670275348516696
-    second: middle_tree1_10
-  - first:
-      213: 1441720124304162107
-    second: middle_tree1_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,10 +112,10 @@ TextureImporter:
       name: middle_tree1_0
       rect:
         serializedVersion: 2
-        x: 250
-        y: 15
-        width: 425
-        height: 703
+        x: 222
+        y: 21
+        width: 500
+        height: 765
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +133,10 @@ TextureImporter:
       name: middle_tree1_1
       rect:
         serializedVersion: 2
-        x: 1166
-        y: 15
-        width: 428
-        height: 703
+        x: 1160
+        y: 20
+        width: 450
+        height: 765
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +154,10 @@ TextureImporter:
       name: middle_tree1_2
       rect:
         serializedVersion: 2
-        x: 2030
-        y: 224
-        width: 13
-        height: 13
+        x: 2080
+        y: 20
+        width: 450
+        height: 765
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,10 +175,10 @@ TextureImporter:
       name: middle_tree1_3
       rect:
         serializedVersion: 2
-        x: 2085
-        y: 15
-        width: 425
-        height: 703
+        x: 2900
+        y: 20
+        width: 595
+        height: 766
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +196,10 @@ TextureImporter:
       name: middle_tree1_4
       rect:
         serializedVersion: 2
-        x: 2997
-        y: 15
-        width: 427
-        height: 703
+        x: 3802
+        y: 17
+        width: 656
+        height: 769
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,10 +217,10 @@ TextureImporter:
       name: middle_tree1_5
       rect:
         serializedVersion: 2
-        x: 3892
-        y: 201
-        width: 29
-        height: 30
+        x: 4707
+        y: 17
+        width: 677
+        height: 769
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,136 +234,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: middle_tree1_6
-      rect:
-        serializedVersion: 2
-        x: 3902
-        y: 15
-        width: 428
-        height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a728713e2b5fd6ff0800000000000000
-      internalID: -41106672913513862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: middle_tree1_7
-      rect:
-        serializedVersion: 2
-        x: 4808
-        y: 15
-        width: 428
-        height: 703
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c79a04c2893f53c0800000000000000
-      internalID: -4368709879728531513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: middle_tree1_8
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 106
-        width: 19
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c99b007a55d4a7680800000000000000
-      internalID: -8756601495199106660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: middle_tree1_9
-      rect:
-        serializedVersion: 2
-        x: 2962
-        y: 111
-        width: 35
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36159af06d4236290800000000000000
-      internalID: -7898428819673362077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: middle_tree1_10
-      rect:
-        serializedVersion: 2
-        x: 3860
-        y: 74
-        width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a0b81c2b51b38b80800000000000000
-      internalID: -8393670275348516696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: middle_tree1_11
-      rect:
-        serializedVersion: 2
-        x: 4766
-        y: 39
-        width: 20
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3d7ea280d4020410800000000000000
-      internalID: 1441720124304162107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 78f5c476936ccf3448f4f95bfabef019
+    spriteID: 2bc4ff6a56d9068488174a533146055f
     internalID: 0
     vertices: []
     indices: 

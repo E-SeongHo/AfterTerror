@@ -22,8 +22,6 @@ public class MapManager : MonoBehaviour
     private Queue<GameObject> usedMiddleBuffer = new Queue<GameObject>();
 
     private int bufferLimit = 3;
-    private bool instantiate = false;
-    private bool swapped = false;
 
     private void Start() // MapBlockSpawner의 pool에 객체가 들어선 후 호출되어야 한다.
     {
@@ -32,12 +30,17 @@ public class MapManager : MonoBehaviour
         SetBlockPosition(nowFront, nextFront);
         nowFront.SetActive(true);
         nextFront.SetActive(true);
+
+        nowMiddle = MapBlockSpawner.Instance.AllocateMiddleBlock();
+        nextMiddle = MapBlockSpawner.Instance.AllocateMiddleBlock();
+        SetBlockPosition(nowMiddle, nextMiddle);
+        nowMiddle.SetActive(true);
+        nextMiddle.SetActive(true);
     }
     private void Update()
     {
-        if(nextFront.transform.position.x <= 1160 && !instantiate) // 960 + 200(여유분)
+        if(nextFront.transform.position.x <= 1160) // 960 + 200(여유분)
         {
-            instantiate = true;
             newFront = MapBlockSpawner.Instance.AllocateFrontBlock();
             SetBlockPosition(nextFront, newFront);
             newFront.SetActive(true);
@@ -45,8 +48,6 @@ public class MapManager : MonoBehaviour
             // 변수 Swap
             nowFront = nextFront;
             nextFront = newFront;
-
-            instantiate = false;
         }
         /*if(nowFront.transform.position.x <= -2120) // 1920 + 200(여유분)
         {
@@ -56,6 +57,24 @@ public class MapManager : MonoBehaviour
         {
             ClearFrontBuffer();
         }
+        if (nextMiddle.transform.position.x <= 1160) // 960 + 200(여유분)
+        {
+            newMiddle = MapBlockSpawner.Instance.AllocateMiddleBlock();
+            SetBlockPosition(nextMiddle, newMiddle);
+            newMiddle.SetActive(true);
+            usedMiddleBuffer.Enqueue(nowMiddle);
+            // 변수 Swap
+            nowMiddle = nextMiddle;
+            nextMiddle = newMiddle;
+        }
+        /*if(nowFront.transform.position.x <= -2120) // 1920 + 200(여유분)
+        {
+            
+        }*/
+        if (usedMiddleBuffer.Count >= bufferLimit)
+        {
+            ClearMiddleBuffer();
+        }
     }
     private void ClearFrontBuffer()
     {
@@ -63,6 +82,14 @@ public class MapManager : MonoBehaviour
         {
             Destroy(usedFrontBuffer.Peek());
             usedFrontBuffer.Dequeue();
+        }
+    }
+    private void ClearMiddleBuffer()
+    {
+        for (int i = 0; i < usedMiddleBuffer.Count - 1; i++) // now는 제외하고 제거
+        {
+            Destroy(usedMiddleBuffer.Peek());
+            usedMiddleBuffer.Dequeue();
         }
     }
     // 다음 위치 잡기

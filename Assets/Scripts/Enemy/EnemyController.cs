@@ -8,14 +8,16 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private int shotbulletbound = 3; // 3이상이면 총알발사
-    private int currentHealth;
+    private int currentHealth; 
     private int attackCount = 0; // MainCharacter에게 맞은 횟수
     private float autoShotTime;
     private GameObject bullet = null; 
 
     private GameObject myButton = null;
     private Rigidbody2D rb = null;
+    private Transform playerTransform;
 
+    private float rundist = 240f;
     // Getters
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackCount() { return attackCount; }
@@ -28,6 +30,7 @@ public class EnemyController : MonoBehaviour
         currentHealth = maxHealth;
         autoShotTime = Random.Range(0.5f, 3.0f);
         rb = GetComponent<Rigidbody2D>();
+        playerTransform = ShieldmanController.Instance.transform;
     }
     // Enemy Move
     private void Update()
@@ -47,7 +50,11 @@ public class EnemyController : MonoBehaviour
             attackCount = 0;
         }
     }
-
+    // 정확한 지점에서 적이 도망
+    private void FixedUpdate()
+    {
+        //if(transform.position.x - playerTransform.position.x <= )
+    }
     public void ChangeHealth(int amount)
     {
         if (amount < 0)
@@ -63,7 +70,6 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     // Bullet을 쏘는 것 까지는 책임, 쏜 이후는 책임 X
     private void ShotBullet()
     {
@@ -75,7 +81,7 @@ public class EnemyController : MonoBehaviour
 
     public void GenerateButton(GameObject button)
     {
-        Vector2 position = rb.position + Vector2.up*1.5f;
+        Vector2 position = rb.position + Vector2.up*150f + Vector2.right*30f;
         GameObject newButton = Instantiate(button, position, Quaternion.identity);
         myButton = newButton;
         myButton.transform.parent = gameObject.transform;
