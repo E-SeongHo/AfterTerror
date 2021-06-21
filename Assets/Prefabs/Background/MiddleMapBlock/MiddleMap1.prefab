@@ -52,10 +52,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076402343246559262}
     m_Modifications:
-    - target: {fileID: 5027566732136181994, guid: a40008c8631957143be5330fb94fc875, type: 3}
-      propertyPath: m_SortingOrder
-      value: -10
-      objectReference: {fileID: 0}
     - target: {fileID: 5027566732136181995, guid: a40008c8631957143be5330fb94fc875, type: 3}
       propertyPath: m_Name
       value: middle_rock

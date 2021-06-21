@@ -11,49 +11,62 @@ public class EnemyController : MonoBehaviour
     private int currentHealth; 
     private int attackCount = 0; // MainCharacter에게 맞은 횟수
     private float autoShotTime;
+    private float rand;
     private GameObject bullet = null; 
 
     private GameObject myButton = null;
     private Rigidbody2D rb = null;
     private Transform playerTransform;
+    private bool interaction = false;
+    private bool run = false;
 
     private float rundist = 240f;
     // Getters
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackCount() { return attackCount; }
+    public bool GetInteractionState() { return interaction; }
+    public bool GetRunState() { return run; }
     // Setters
     public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
-
     // Init
     private void Awake()
     {
         currentHealth = maxHealth;
-        autoShotTime = Random.Range(0.5f, 3.0f);
+        rand = Random.Range(0.5f, 3.0f);
+        autoShotTime = rand;
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
     }
     // Enemy Move
     private void Update()
-    {
-        if (autoShotTime > 0)
+    {   
+        // FixedUpdate에서 하는게 나은지 비교
+        if (interaction)
         {
-            autoShotTime -= Time.deltaTime;
-            if (autoShotTime < 0)
-            {
-                ShotBullet();
-                autoShotTime = 3f;
-            }
+            AutoShotProcess();
+            HitShotProcess();
         }
-        if (attackCount >= shotbulletbound)
+        if (run)
         {
-            ShotBullet();
-            attackCount = 0;
+            Destroy(gameObject);
         }
     }
     // 정확한 지점에서 적이 도망
     private void FixedUpdate()
     {
-        //if(transform.position.x - playerTransform.position.x <= )
+        // 맵에서 보이기 시작할 때 총 쏘기 시작
+        if (!interaction && transform.position.x - playerTransform.position.x <= 1920
+            && transform.position.x - playerTransform.position.x > rundist)
+        {
+            interaction = true;
+        }
+        else if (transform.position.x - playerTransform.position.x <= rundist)
+        {
+            interaction = false;
+            run = true;
+            // 애니메이션 실행 
+            // 애니메이션 실행 후 파괴 되도록 보장
+        }
     }
     public void ChangeHealth(int amount)
     {
@@ -78,7 +91,23 @@ public class EnemyController : MonoBehaviour
         bullet.transform.position = transform.position;
         bullet.SetActive(true);
     }
-
+    private void AutoShotProcess()
+    {
+        autoShotTime -= Time.deltaTime;
+        if (autoShotTime < 0)
+        {
+            ShotBullet();
+            autoShotTime = rand;
+        }
+    }
+    private void HitShotProcess()
+    {
+        if (attackCount >= shotbulletbound)
+        {
+            ShotBullet();
+            attackCount = 0;
+        }
+    }
     public void GenerateButton(GameObject button)
     {
         Vector2 position = rb.position + Vector2.up*150f + Vector2.right*30f;

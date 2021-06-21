@@ -17,8 +17,15 @@ public class ShieldController : MonoBehaviour
     }
     private void LiftShield()
     {
-        // animator 贸府
+        // animator 贸府 
         shieldON = true;
+        //gameObject.transform.Translate(0, 50f, 0);
+    }
+    private void PutDownShield()
+    {
+        // animator 贸府
+        shieldON = false;
+        //gameObject.transform.Translate(0, -50f, 0);
     }
     private void InputProcess()
     {
@@ -34,8 +41,7 @@ public class ShieldController : MonoBehaviour
             durationTime -= Time.deltaTime;
             if (durationTime < 0)
             {
-                // 规菩 郴府绰 animation
-                shieldON = false;
+                PutDownShield();
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))

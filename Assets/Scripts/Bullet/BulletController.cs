@@ -35,7 +35,11 @@ public class BulletController : MonoBehaviour
         if(other.tag == "Player")
         {
             int amount = damage;
-            if (shield.GetShieldState()) damage = 0;
+            if (shield.GetShieldState())
+            {
+                damage = 0;
+                Debug.Log("Shield");
+            }
             ShieldmanController.Instance.ChangeHealth(damage * -1);
             BulletPool.Instance.ReturnBullet(gameObject);
         }

@@ -50,4 +50,21 @@ public class FindFunction : MonoBehaviour
         }
         return nearestTarget;
     }
+    public GameObject FindNearestObjectArrWithX(GameObject[] tagged)
+    {
+        GameObject nearestTarget = null;
+        float minDistance = Mathf.Infinity;
+        Vector2 currentPos = player.GetComponent<Transform>().position;
+        foreach (GameObject target in tagged)
+        {
+            Vector2 targetPos = target.GetComponent<Transform>().position;
+            float distance = targetPos.x - currentPos.x;
+            if (distance < minDistance)
+            {
+                minDistance = distance; // 거리값 필요시 사용
+                nearestTarget = target;
+            }
+        }
+        return nearestTarget;
+    }
 }
