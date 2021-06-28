@@ -6,52 +6,67 @@ using UnityEngine;
 public class ShieldController : MonoBehaviour
 {
     [SerializeField] private float durationTime = 1f;
-    [SerializeField] private float coolTime = 1f;
+    [SerializeField] private float coolTime = 0f;
     private bool shieldON = false;
-    private bool locked = false;
 
     public bool GetShieldState() { return shieldON; }
     
     // Input에 대한 처리는 FixedUpdate가 아닌 Update에서 처리한다.
     private void Update()
     {
+        TimeCheck();
         InputProcess();
     }
     private void LiftShield()
     {
         // animator 처리 
         shieldON = true;
-        // gameObject.transform.Translate(0, 50f, 0);
+        gameObject.transform.Translate(0, 50f, 0);
     }
     private void PutDownShield()
     {
         // animator 처리
         shieldON = false;
-        //gameObject.transform.Translate(0, -50f, 0);
+        gameObject.transform.Translate(0, -50f, 0);
+    }
+    public void ReSetCoolTime()
+    {
+        coolTime = 0f;
+    }
+    private void TimeCheck()
+    {
+        // 쿨타임, 지속시간 처리
+        if (shieldON)
+        {
+            durationTime -= Time.deltaTime;
+        }
+        else // !shieldON
+        {
+            coolTime -= Time.deltaTime;
+        }
     }
     private void InputProcess()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // 키입력 처리
+        if (coolTime <= 0)
         {
-            LiftShield();
-            durationTime = 1f;
-            coolTime = 1f;
-            locked = true;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            durationTime -= Time.deltaTime;
-            if (durationTime < 0)
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                LiftShield();
+                durationTime = 1f;
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (durationTime < 0 && shieldON)
+                {
+                    PutDownShield();
+                    coolTime = 1f;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.Space) && shieldON)
             {
                 PutDownShield();
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            coolTime -= Time.deltaTime;
-            if (coolTime < 0)
-            {
-                locked = false;
+                coolTime = 1f;
             }
         }
     }

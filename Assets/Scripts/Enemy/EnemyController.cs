@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 랜덤발사 타이머
-
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 5;
@@ -29,7 +27,7 @@ public class EnemyController : MonoBehaviour
     // Setters
     public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
     // Init
-    private void Awake()
+    private void Start()
     {
         currentHealth = maxHealth;
         //rand = Random.Range(0.5f, 3.0f);

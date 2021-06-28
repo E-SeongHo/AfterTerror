@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     private float speed = 600f;
-    [SerializeField] private int damage = 1;
+    private int damage = 1;
     private Rigidbody2D rb; 
     private Transform playerTransform;
     private ShieldController shield;
@@ -34,13 +34,19 @@ public class BulletController : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            int amount = damage;
+            int amount;
             if (shield.GetShieldState())
             {
-                damage = 0;
+                amount = 0;
                 Debug.Log("Shield");
+                shield.ReSetCoolTime();
             }
-            ShieldmanController.Instance.ChangeHealth(damage * -1);
+            else
+            {
+                amount = damage * -1;
+                Debug.Log("Non Shield" + "damage : " + amount);
+            }
+            ShieldmanController.Instance.ChangeHealth(amount);
             BulletPool.Instance.ReturnBullet(gameObject);
         }
     }
