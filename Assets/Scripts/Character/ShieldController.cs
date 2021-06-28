@@ -11,6 +11,8 @@ public class ShieldController : MonoBehaviour
     private bool locked = false;
 
     public bool GetShieldState() { return shieldON; }
+    
+    // Input에 대한 처리는 FixedUpdate가 아닌 Update에서 처리한다.
     private void Update()
     {
         InputProcess();
@@ -19,7 +21,7 @@ public class ShieldController : MonoBehaviour
     {
         // animator 처리 
         shieldON = true;
-        //gameObject.transform.Translate(0, 50f, 0);
+        // gameObject.transform.Translate(0, 50f, 0);
     }
     private void PutDownShield()
     {

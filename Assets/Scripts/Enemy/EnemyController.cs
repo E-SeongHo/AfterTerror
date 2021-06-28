@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     private int currentHealth; 
     private int attackCount = 0; // MainCharacter¿¡°Ô ¸ÂÀº È½¼ö
     private float autoShotTime;
-    private float rand;
+    // private float rand;
     private GameObject bullet = null; 
 
     private GameObject myButton = null;
@@ -32,8 +32,9 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
-        rand = Random.Range(0.5f, 3.0f);
-        autoShotTime = rand;
+        //rand = Random.Range(0.5f, 3.0f);
+        //autoShotTime = rand;
+        autoShotTime = Random.Range(0.5f, 3.0f);
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
     }
@@ -96,8 +97,11 @@ public class EnemyController : MonoBehaviour
         autoShotTime -= Time.deltaTime;
         if (autoShotTime < 0)
         {
+            // ÇÑ ¹ø ÃÑÀ» ½î¸é autoShotTimeÀº ´Ù½Ã randomÇÏ°Ô ¹Ù²ï´Ù. 
             ShotBullet();
-            autoShotTime = rand;
+            autoShotTime = Random.Range(0.5f, 3.0f);
+            
+            //autoShotTime = rand;
         }
     }
     private void HitShotProcess()
