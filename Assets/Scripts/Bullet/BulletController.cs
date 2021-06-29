@@ -39,7 +39,7 @@ public class BulletController : MonoBehaviour
             {
                 amount = 0;
                 Debug.Log("Shield");
-                shield.ReSetCoolTime();
+                shield.ReSetShield();
             }
             else
             {

@@ -29,9 +29,11 @@ public class ShieldController : MonoBehaviour
         shieldON = false;
         gameObject.transform.Translate(0, -50f, 0);
     }
-    public void ReSetCoolTime()
+    public void ReSetShield()
     {
+        PutDownShield();
         coolTime = 0f;
+        durationTime = 1f;
     }
     private void TimeCheck()
     {
