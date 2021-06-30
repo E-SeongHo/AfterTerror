@@ -30,6 +30,7 @@ public class BulletController : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
     }
  
+    // Player가 호출하도록 하는 것이 나을 것 같음
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
@@ -45,8 +46,8 @@ public class BulletController : MonoBehaviour
             {
                 amount = damage * -1;
                 Debug.Log("Non Shield" + "damage : " + amount);
+                ShieldmanController.Instance.ChangeHealth(amount);
             }
-            ShieldmanController.Instance.ChangeHealth(amount);
             BulletPool.Instance.ReturnBullet(gameObject);
         }
     }

@@ -8,7 +8,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int shotbulletbound = 3; // 3이상이면 총알발사
     private int currentHealth; 
     private int attackCount = 0; // MainCharacter에게 맞은 횟수
-    private float autoShotTime;
+    private float autoShotTime = 4f;
+    private float count;
     // private float rand;
     private GameObject bullet = null; 
 
@@ -32,7 +33,7 @@ public class EnemyController : MonoBehaviour
         currentHealth = maxHealth;
         //rand = Random.Range(0.5f, 3.0f);
         //autoShotTime = rand;
-        autoShotTime = Random.Range(0.5f, 3.0f);
+        count = Random.Range(0.5f, 1.5f);
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
     }
@@ -53,7 +54,8 @@ public class EnemyController : MonoBehaviour
     // 정확한 지점에서 적이 도망
     private void FixedUpdate()
     {
-        // 맵에서 보이기 시작할 때 총 쏘기 시작
+        // 맵에서 보이기 시작할 때 총 쏘기 시작 d
+        // Overhead :: --> Coroutine
         if (!interaction && transform.position.x - playerTransform.position.x <= 1920
             && transform.position.x - playerTransform.position.x > rundist)
         {
@@ -92,14 +94,12 @@ public class EnemyController : MonoBehaviour
     }
     private void AutoShotProcess()
     {
-        autoShotTime -= Time.deltaTime;
-        if (autoShotTime < 0)
-        {
-            // 한 번 총을 쏘면 autoShotTime은 다시 random하게 바뀐다. 
+        count -= Time.deltaTime;
+        if (count < 0)
+        {            
             ShotBullet();
-            autoShotTime = Random.Range(0.5f, 3.0f);
-            
-            //autoShotTime = rand;
+            // after first shot, shooting after 4f(autoShotTime) time
+            count = autoShotTime;
         }
     }
     private void HitShotProcess()
