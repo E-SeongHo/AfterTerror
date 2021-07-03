@@ -1,5 +1,4 @@
 # AfterTerror-
-SEONGHO :)
-JINHWA :)
-
-develop branch
+Feature Branch
+-----------------------------
+애니메이션 병합전 feature 
