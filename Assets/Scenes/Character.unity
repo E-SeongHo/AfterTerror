@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ca33dfa53e965438df89e6e0c89508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  front_noEnemy: {fileID: 4040100701999146328, guid: 9d2cccdea84984448943bc62b5f6219a, type: 3}
 --- !u!1 &730381515
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1076402343246559261, guid: b03b614848435234eaf32d95b8737b5c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1076402343246559262, guid: b03b614848435234eaf32d95b8737b5c, type: 3}
       propertyPath: m_RootOrder
@@ -908,7 +909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3312540526917056298, guid: 992d48640be601c4fb5b256f29d879cf, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7462882295188103485, guid: 992d48640be601c4fb5b256f29d879cf, type: 3}
       propertyPath: m_IsActive

@@ -29,8 +29,8 @@ public class EnemyButton : MonoBehaviour
         // (최적화)target 선정 자체를 interactive 중에서 하기
         target = FindFunction.Instance.FindNearestObjectArrWithX(enemies);
         // target 바뀔때만 .. 호출하게 바꿔보자 포인터이용 매개변수 2개주기?
-        targetController = target.GetComponent<EnemyController>();
-        
+        if(target!= null)
+            targetController = target.GetComponent<EnemyController>();
         if (!buttonON)
         {
             if (target != null && targetController.GetInteractionState())

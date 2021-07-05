@@ -31,8 +31,7 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
-        //rand = Random.Range(0.5f, 3.0f);
-        //autoShotTime = rand;
+        // initial shot time is ramdom
         count = Random.Range(0.5f, 1.5f);
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
@@ -51,7 +50,7 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // 정확한 지점에서 적이 도망
+    // Enemy Run... 
     private void FixedUpdate()
     {
         // 맵에서 보이기 시작할 때 총 쏘기 시작 d

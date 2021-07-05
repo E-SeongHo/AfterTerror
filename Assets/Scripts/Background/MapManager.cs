@@ -5,8 +5,8 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     // 플레이어가 위치한 다음 블록 x가 900됐을 때 다음 블록 가져오면 될듯
-    
 
+    [SerializeField] private GameObject front_noEnemy;
     // 플레이어가 위치한 블록
     private GameObject nowFront;
     private GameObject nowMiddle;
@@ -25,8 +25,15 @@ public class MapManager : MonoBehaviour
 
     private void Start() // MapBlockSpawner의 pool에 객체가 들어선 후 호출되어야 한다.
     {
-        nowFront = MapBlockSpawner.Instance.AllocateFrontBlock();
+        /*nowFront = MapBlockSpawner.Instance.AllocateFrontBlock();
         nextFront = MapBlockSpawner.Instance.AllocateFrontBlock();
+        SetBlockPosition(nowFront, nextFront);
+        nowFront.SetActive(true);
+        nextFront.SetActive(true);*/
+        nowFront = Instantiate(front_noEnemy);
+        nowFront.SetActive(false);
+        nextFront = Instantiate(front_noEnemy);
+        nextFront.SetActive(false);
         SetBlockPosition(nowFront, nextFront);
         nowFront.SetActive(true);
         nextFront.SetActive(true);
