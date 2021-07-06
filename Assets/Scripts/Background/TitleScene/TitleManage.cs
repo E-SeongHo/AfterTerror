@@ -6,23 +6,33 @@ using UnityEngine.UI;
 public class TitleManage : MonoBehaviour
 {
     private GameObject car;
-    public Image logo;
+    private GameObject logo;
+    private Animator logo_animator;
+    //public Image logo;
     public Text press_any_key;
-    private bool show_logo = true;
+    //private bool show_logo;
 
     private void Start()
     {
-        car = GameObject.Find("Title_Car");    
+        car = GameObject.Find("Title_Car");
+        logo = GameObject.Find("Title_Logo");
+        logo_animator = logo.GetComponent<Animator>();
+        logo_animator.SetBool("play", true);
     }
 
     private void FixedUpdate()
     {
-        
+        if (logo_animator.GetCurrentAnimatorStateInfo(0).IsName("Logo_Shining"))
+        {
+            // press_any_key »ý¼º
+            Debug.Log("time");
+        }
     }
     private void Update()
     {
+
         // if any key pressed
-        if (Input.GetKeyDown(KeyCode.Space) && show_logo)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine("StopCar");
 
