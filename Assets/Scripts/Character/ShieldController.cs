@@ -20,14 +20,14 @@ public class ShieldController : MonoBehaviour
     private void LiftShield()
     {
         // animator 贸府 
-        shieldON = true;
         gameObject.transform.Translate(0, 50f, 0);
+        shieldON = true;
     }
     private void PutDownShield()
     {
         // animator 贸府
-        shieldON = false;
         gameObject.transform.Translate(0, -50f, 0);
+        shieldON = false;
     }
     public void ReSetShield()
     {
