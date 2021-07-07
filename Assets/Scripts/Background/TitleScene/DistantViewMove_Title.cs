@@ -5,7 +5,7 @@ using UnityEngine;
 public class DistantViewMove_Title : MonoBehaviour
 {
     // car speed
-    private float speed = 100f;
+    private float speed = 200f;
     private float startXpos;
     private float endXpos;
 
