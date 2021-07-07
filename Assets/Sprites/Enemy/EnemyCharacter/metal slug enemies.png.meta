@@ -1,0 +1,732 @@
+fileFormatVersion: 2
+guid: 8028227f3ab926c4cbaeed159cd698d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8557751739769661870
+    second: metal slug enemies_0
+  - first:
+      213: -7990545263934068346
+    second: metal slug enemies_1
+  - first:
+      213: -5062100544913174391
+    second: metal slug enemies_2
+  - first:
+      213: -2498851125476554224
+    second: metal slug enemies_3
+  - first:
+      213: -7940066096311412574
+    second: metal slug enemies_4
+  - first:
+      213: 4422182877933512468
+    second: metal slug enemies_5
+  - first:
+      213: 4760142954581017536
+    second: metal slug enemies_6
+  - first:
+      213: 6408947052659155285
+    second: metal slug enemies_7
+  - first:
+      213: -9063772414838936384
+    second: metal slug enemies_8
+  - first:
+      213: 1809972109624264832
+    second: metal slug enemies_9
+  - first:
+      213: 6436239543866427411
+    second: metal slug enemies_10
+  - first:
+      213: 1570308925732499837
+    second: metal slug enemies_11
+  - first:
+      213: -3401507343134646938
+    second: metal slug enemies_12
+  - first:
+      213: -1642117787650026014
+    second: metal slug enemies_13
+  - first:
+      213: -8846645650247323756
+    second: metal slug enemies_14
+  - first:
+      213: 514339985885812322
+    second: metal slug enemies_15
+  - first:
+      213: 8649008053113744937
+    second: metal slug enemies_16
+  - first:
+      213: 7235647582122528885
+    second: metal slug enemies_17
+  - first:
+      213: 8200083717611681640
+    second: metal slug enemies_18
+  - first:
+      213: -1062196462180876681
+    second: metal slug enemies_19
+  - first:
+      213: 4484790244834911921
+    second: metal slug enemies_20
+  - first:
+      213: -1653311678941236644
+    second: metal slug enemies_21
+  - first:
+      213: -1466995383858803058
+    second: metal slug enemies_22
+  - first:
+      213: 800611291758745225
+    second: metal slug enemies_23
+  - first:
+      213: -540779579472661176
+    second: metal slug enemies_24
+  - first:
+      213: 6851424726691684562
+    second: metal slug enemies_25
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: metal slug enemies_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 180
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2565c033222cc3980800000000000000
+      internalID: -8557751739769661870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 180
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 689a78d0b61eb1190800000000000000
+      internalID: -7990545263934068346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 180
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9809323ef5ecfb9b0800000000000000
+      internalID: -5062100544913174391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 180
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a826f042c425dd0800000000000000
+      internalID: -2498851125476554224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 179
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a85c3424f73fc190800000000000000
+      internalID: -7940066096311412574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 179
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417aa03d5efbe5d30800000000000000
+      internalID: 4422182877933512468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_6
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 135
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c341effbcc6f0240800000000000000
+      internalID: 4760142954581017536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_7
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 135
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 551290a636721f850800000000000000
+      internalID: 6408947052659155285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_8
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 135
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc6a88b203073280800000000000000
+      internalID: -9063772414838936384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 135
+        width: 27
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088c4874b005e1910800000000000000
+      internalID: 1809972109624264832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_10
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 135
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3180b75b3cd125950800000000000000
+      internalID: 6436239543866427411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 91
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7139e9e5abdac510800000000000000
+      internalID: 1570308925732499837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_12
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 91
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d9397e71b6bc0d0800000000000000
+      internalID: -3401507343134646938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_13
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 91
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e515cb82960639e0800000000000000
+      internalID: -1642117787650026014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_14
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 91
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fe04317a66a3580800000000000000
+      internalID: -8846645650247323756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_15
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 49
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266d088fd7d432700800000000000000
+      internalID: 514339985885812322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_16
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 49
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e6659fff2770870800000000000000
+      internalID: 8649008053113744937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_17
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 49
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570d35cc32f2a6460800000000000000
+      internalID: 7235647582122528885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_18
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 49
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86775bcf1bc8cc170800000000000000
+      internalID: 8200083717611681640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_19
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 49
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e380602f15241f0800000000000000
+      internalID: -1062196462180876681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_20
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 7
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6a58b57fc2d3e30800000000000000
+      internalID: 4484790244834911921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_21
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 7
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c52f3b1a9c14e09e0800000000000000
+      internalID: -1653311678941236644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_22
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 7
+        width: 27
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8e45f9887f24abe0800000000000000
+      internalID: -1466995383858803058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_23
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 7
+        width: 24
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98652706ab75c1b00800000000000000
+      internalID: 800611291758745225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_24
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 7
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8453fbf66d3ce78f0800000000000000
+      internalID: -540779579472661176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: metal slug enemies_25
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 7
+        width: 41
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d029cf0d76251f50800000000000000
+      internalID: 6851424726691684562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b50d7881491b1664e9817fde3631bfe7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

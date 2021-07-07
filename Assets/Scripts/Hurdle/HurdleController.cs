@@ -4,100 +4,60 @@ using UnityEngine;
 
 public class HurdleController : MonoBehaviour
 {
-    [SerializeField] private GameObject[] buttons = new GameObject[4];
-    
+    Rigidbody2D rigidbody2D;
     private bool buttonON = false;
-    private int buttonIdx; // 0 : up, 1 : down, 2 : left, 3 : right
-    private GameObject myButton; // 현재 이 Hurdle의 button객체
-    private Vector2 playerPosition;
-    private bool avoid = false; // 버튼 성공 여부 
-
-    private Rigidbody2D rb;
-
-    // Getters
-    public bool GetButtonON()
+    public bool buttonActive
     {
-        return buttonON;
+        get { return buttonON; }
     }
-    public int GetButtonIdx()
+    private int buttonIdx;
+    public int buttonKind
     {
-        return buttonIdx;
+        get { return buttonIdx; }
     }
+    [SerializeField] private float speed = 2f;
+    private GameObject myButton;
 
-    // Init
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        playerPosition = GameObject.FindWithTag("Player").transform.position;
-        buttonIdx = Random.Range(0, 4);
-        myButton = Instantiate(buttons[buttonIdx], rb.position + Vector2.up*1.5f, Quaternion.identity);
-        myButton.transform.parent = gameObject.transform;
-        myButton.SetActive(false); 
-        buttonON = false;
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Hurdle Move
     void Update()
     {
-        //transform.Translate(-1 * speed * Time.deltaTime, 0, 0);
-        /*Vector2 position = rb.position;
+        Vector2 position = rigidbody2D.position;
         position.x = position.x - speed * Time.deltaTime;
-        rb.MovePosition(position);*/
-        float dx = rb.position.x - playerPosition.x;
+        rigidbody2D.MovePosition(position);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        ShieldmanController player = other.gameObject.GetComponent<ShieldmanController>();
+        Debug.Log("피격");
+        if (player != null)
+        {
+            Debug.Log("피격");
+            player.ChangeHealth(-1);
+        }
+    }
+    public void GenerateButton(GameObject button, int kind)
+    {
         if (!buttonON)
         {
-            if (dx <= 2f) ActiveButton();
+            Vector2 position = rigidbody2D.position; // 현재 pos 
+            GameObject newButton = Instantiate(button, position + Vector2.up * 1.5f, Quaternion.identity);
+            // 자식으로 할당 : 동시에 움직이도록 구현
+            myButton = newButton;
+            myButton.transform.parent = gameObject.transform;
+            buttonON = true;
+            buttonIdx = kind;
         }
-        else InputProcess(); // buttonON일 때만 InputProcessing
-    }
-
-    // Buttons 
-    private void ActiveButton()
-    {
-        myButton.SetActive(true);
-        buttonON = true;
-    }
-    // 방향키에 대한 입력만 false / true 처리해야한다.
-    // 성공 실패 상관 없이 방향키 입력이 있으면 버튼은 지워진다.
-    private void InputProcess()
-    {
-        if (Input.GetKeyDown(KeyCode.UpArrow)) 
+        else
         {
-            if (buttonIdx == 0) avoid = true;
-            DeleteButton(); 
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow)) 
-        {
-            if (buttonIdx == 1) avoid = true;
-            DeleteButton();
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            if (buttonIdx == 2) avoid = true;
-            DeleteButton();
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (buttonIdx == 3) avoid = true;
-            DeleteButton();
+            //Debug.Log(gameObject + "Already generated button");
         }
     }
     public void DeleteButton()
     {
-        myButton.SetActive(false);
-    }
-
-    // Hurdle과 MainCharacter 충돌 event
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(!avoid)
-        {
-            ShieldmanController player = other.gameObject.GetComponent<ShieldmanController>();
-            if (player != null)
-            {
-                Debug.Log(this + " - " + other + "충돌");
-                player.ChangeHealth(-1);
-            }
-        }
+        Destroy(myButton);
     }
 }

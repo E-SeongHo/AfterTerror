@@ -61,7 +61,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -130,7 +130,7 @@ TextureImporter:
       name: jump_1
       rect:
         serializedVersion: 2
-        x: 168
+        x: 170
         y: 3
         width: 129
         height: 185
@@ -151,7 +151,7 @@ TextureImporter:
       name: jump_2
       rect:
         serializedVersion: 2
-        x: 327
+        x: 328
         y: 3
         width: 129
         height: 216
@@ -172,10 +172,10 @@ TextureImporter:
       name: jump_3
       rect:
         serializedVersion: 2
-        x: 486
-        y: 4
+        x: 487
+        y: 3
         width: 129
-        height: 210
+        height: 209
       alignment: 9
       pivot: {x: 0.5, y: 0.4}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,11 +194,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 644
-        y: 3
+        y: 4
         width: 129
-        height: 186
+        height: 185
       alignment: 9
-      pivot: {x: 0.5, y: 0.4}
+      pivot: {x: 0.5, y: 0.505}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

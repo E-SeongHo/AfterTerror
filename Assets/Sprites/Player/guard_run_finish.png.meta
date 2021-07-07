@@ -64,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -115,7 +115,7 @@ TextureImporter:
         x: 9
         y: 3
         width: 150
-        height: 159
+        height: 169
       alignment: 9
       pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,9 +134,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 183
-        y: 21
+        y: 3
         width: 150
-        height: 150
+        height: 169
       alignment: 9
       pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,9 +155,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 357
-        y: 15
+        y: 3
         width: 150
-        height: 153
+        height: 169
       alignment: 9
       pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,9 +176,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 531
-        y: 3
+        y: 4
         width: 153
-        height: 159
+        height: 169
       alignment: 9
       pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,9 +197,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 705
-        y: 18
-        width: 141
-        height: 153
+        y: 3
+        width: 151
+        height: 169
       alignment: 9
       pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,9 +218,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 879
-        y: 12
-        width: 129
-        height: 156
+        y: 3
+        width: 150
+        height: 169
       alignment: 9
       pivot: {x: 0.42, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

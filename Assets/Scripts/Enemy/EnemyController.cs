@@ -1,124 +1,96 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 5;
-    [SerializeField] private int shotbulletbound = 3; // 3¿ÃªÛ¿Ã∏È √—æÀπﬂªÁ
-    private int currentHealth; 
-    private int attackCount = 0; // MainCharacterø°∞‘ ∏¬¿∫ »Ωºˆ
-    private float autoShotTime = 4f;
-    private float count;
-    // private float rand;
-    private GameObject bullet = null; 
+    [SerializeField] GameObject Sprite;
+    KeyCode[] keyCodes = { KeyCode.A, KeyCode.S, KeyCode.D };
+    KeyCode currentKey;
+    [SerializeField] Sprite[] buttonImages;
+    [SerializeField] float spawnRate = 0f;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    //Î≤ÑÌäº Ïù¥ÎØ∏ÏßÄ ÏÇΩÏûÖ
+    private int SpawnNum;
+    private int beforeSpawnNum = 99;
+    public float maxHealth = 3;
+    [SerializeField] float health = 0;
+    GameObject bullet;
+    float time = 0;
+    [SerializeField] int AttackCount = 0;
+    // Start is called before the first frame update
 
-    private GameObject myButton = null;
-    private Rigidbody2D rb = null;
-    private Transform playerTransform;
-    private bool interaction = false;
-    private bool run = false;
-
-    private float rundist = 240f;
-    // Getters
-    public int GetCurrentHealth() { return currentHealth; }
-    public int GetAttackCount() { return attackCount; }
-    public bool GetInteractionState() { return interaction; }
-    public bool GetRunState() { return run; }
-    // Setters
-    public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
-    // Init
-    private void Start()
+    private void Awake()
     {
-        currentHealth = maxHealth;
-        // initial shot time is ramdom
-        count = Random.Range(0.5f, 1.5f);
-        rb = GetComponent<Rigidbody2D>();
-        playerTransform = ShieldmanController.Instance.transform;
+        if (spriteRenderer == null)
+            spriteRenderer = this.gameObject.GetComponentInChildren<SpriteRenderer>();
+        if (Sprite == null)
+            Sprite = spriteRenderer.transform.gameObject;
     }
-    // Enemy Move
-    private void Update()
-    {   
-        // FixedUpdateø°º≠ «œ¥¬∞‘ ≥™¿∫¡ˆ ∫Ò±≥
-        if (interaction)
-        {
-            AutoShotProcess();
-            HitShotProcess();
-        }
-        if (run)
-        {
-            Destroy(gameObject);
-        }
-    }
-    // Enemy Run... 
-    private void FixedUpdate()
+    void Start()
     {
-        // ∏ ø°º≠ ∫∏¿Ã±‚ Ω√¿€«“ ∂ß √— ΩÓ±‚ Ω√¿€ d
-        // Overhead :: --> Coroutine
-        if (!interaction && transform.position.x - playerTransform.position.x <= 1920
-            && transform.position.x - playerTransform.position.x > rundist)
-        {
-            interaction = true;
-        }
-        else if (transform.position.x - playerTransform.position.x <= rundist)
-        {
-            interaction = false;
-            run = true;
-            // æ÷¥œ∏ﬁ¿Ãº« Ω««‡ 
-            // æ÷¥œ∏ﬁ¿Ãº« Ω««‡ »ƒ ∆ƒ±´ µ«µµ∑œ ∫∏¿Â
-        }
-    }
-    public void ChangeHealth(int amount)
-    {
-        if (amount < 0)
-        {
-            // ««∞› animator √≥∏Æ ∫Œ∫– 
-        }
-        // Clamp ∏ﬁº“µÂ ¿ÃøÎ, √÷¥Î∞™¿Ã maxHealth≥—¡ˆ ∏¯«œ∞‘ ±∏«ˆ 
-        currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + " / " + maxHealth);
-        if (currentHealth <= 0)
-        {
-            // ¡◊¥¬ æ÷¥œ∏ﬁ¿Ãº«
-            Destroy(gameObject);
-        }
-    }
-    // Bullet¿ª ΩÓ¥¬ ∞Õ ±Ó¡ˆ¥¬ √•¿”, Ω ¿Ã»ƒ¥¬ √•¿” X
-    private void ShotBullet()
-    {
-        bullet = BulletPool.Instance.AllocateBullet();
-        // OnEnableø°º≠ v∞™ ∞ËªÍ«œ¥œ±Ó position¿Ã ¡§«ÿ¡¯ »ƒø° SetActive(true)«ÿæﬂ «—¥Ÿ.
-        bullet.transform.position = transform.position;
-        bullet.SetActive(true);
-    }
-    private void AutoShotProcess()
-    {
-        count -= Time.deltaTime;
-        if (count < 0)
-        {            
-            ShotBullet();
-            // after first shot, shooting after 4f(autoShotTime) time
-            count = autoShotTime;
-        }
-    }
-    private void HitShotProcess()
-    {
-        if (attackCount >= shotbulletbound)
-        {
-            ShotBullet();
-            attackCount = 0;
-        }
-    }
-    public void GenerateButton(GameObject button)
-    {
-        Vector2 position = rb.position + Vector2.up*150f + Vector2.right*30f;
-        GameObject newButton = Instantiate(button, position, Quaternion.identity);
-        myButton = newButton;
-        myButton.transform.parent = gameObject.transform;
-    }
-    public void DeleteButton()
-    {
-        Destroy(myButton);
+        Init();
     }
 
+    private void OnEnable()
+    {
+        Init();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (inputCurrentKey())
+        {
+            SetSprite();
+            AttackCount++;
+            time = 0f;
+        }
+
+
+        if (time >= spawnRate)
+        {
+            SetSprite();
+            time = 0f;
+        }
+        time += Time.deltaTime;
+    }
+    void Init()
+    {
+        SetSprite();
+    }
+
+    bool inputCurrentKey()
+    {
+        bool answer = false;
+        switch (SpawnNum)
+        {
+            case 1:
+                if (Input.GetKeyDown(KeyCode.A))
+                    answer = true;
+                break;
+            case 2:
+                if (Input.GetKeyDown(KeyCode.S))
+                    answer = true;
+                break;
+            case 3:
+                if (Input.GetKeyDown(KeyCode.D))
+                    answer = true;
+                break;
+        }
+        return answer;
+    }
+
+    void SetSprite()
+    {
+        SpawnNum = Random.Range(0, 3);
+        while (beforeSpawnNum == SpawnNum)
+        {
+            SpawnNum = Random.Range(0, 3);
+        }
+        currentKey = keyCodes[SpawnNum];
+        Sprite.SetActive(true);
+        spriteRenderer.sprite = buttonImages[SpawnNum];
+    }
 }

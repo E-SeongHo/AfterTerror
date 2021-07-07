@@ -2,54 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
- 
 public class BulletController : MonoBehaviour
 {
-    private float speed = 600f;
-    private int damage = 1;
-    private Rigidbody2D rb; 
-    private Transform playerTransform;
-    private ShieldController shield;
+    //private GameObject enemy;
+    [SerializeField] private float bulletSpeed = 2f;
+    public GameObject bullet;
+    public Transform pos;
+    public int damage = 1;
+    public Rigidbody2D rb;
+    public float distance;
+    public LayerMask isLayer;
 
-    private void Awake()
+    EnemyButton enemyButton = GameObject.Find("soldier").GetComponent<EnemyButton>();
+    void Start()
     {
-        // player¥¬ ∞Ëº” ∞∞¿∫ ¿⁄∏Æø° ¡∏¿Á«œπ«∑Œ Awakeø°º≠ Transform ∞°¡Æø¬¥Ÿ.
-        playerTransform = ShieldmanController.Instance.transform;
-        // ??? »£√‚ ≥ π´ ∫π¿‚...
-        shield = ShieldmanController.Instance.gameObject.GetComponent<ShieldController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        // asasfa
+        rb.velocity = transform.right * bulletSpeed;
     }
-
-    private void OnEnable()
+    void Update()
     {
-        Vector3 dir = playerTransform.position - transform.position;
-        // bullet¿∫ µÓº”µµ øÓµø
-        rb.velocity = dir.normalized * speed;
-
-        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
-    }
- 
-    // Player∞° »£√‚«œµµ∑œ «œ¥¬ ∞Õ¿Ã ≥™¿ª ∞Õ ∞∞¿Ω
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.tag == "Player")
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.right, distance, isLayer);
+        if (ray.collider != null)
         {
-            int amount;
-            if (shield.GetShieldState())
+            if (ray.collider.tag == "shieldman")
             {
-                amount = 0;
-                Debug.Log("Shield");
-                shield.ReSetShield();
+                Debug.Log("shieldman hitted");
             }
-            else
-            {
-                amount = damage * -1;
-                Debug.Log("Non Shield" + "damage : " + amount);
-                ShieldmanController.Instance.ChangeHealth(amount);
-            }
-            BulletPool.Instance.ReturnBullet(gameObject);
+            gameObject.SetActive(false);
         }
+        Vector2 position = rb.position;
+        rb.MovePosition(position);
+        position.x = position.x - bulletSpeed * Time.deltaTime;
+
     }
-        
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        ShieldmanController shieldmanController = other.GetComponent<ShieldmanController>();
+        if (other != null)
+        {
+            shieldmanController.ChangeHealth(damage * -1);
+        }
+        // Ï¥ùÏïå ÌîºÌïòÎäî Î≤ÑÌäº Íµ¨ÌòÑ
+        gameObject.SetActive(false);
+    }
 }

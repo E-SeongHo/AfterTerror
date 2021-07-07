@@ -1,0 +1,396 @@
+fileFormatVersion: 2
+guid: e444816be705dfb48af100bf89b9a6bf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1956724585954157664
+    second: run_away_1_0
+  - first:
+      213: 5266110682204848494
+    second: run_away_1_1
+  - first:
+      213: -5796370152819661662
+    second: run_away_1_3
+  - first:
+      213: -5237096858336777623
+    second: run_away_1_4
+  - first:
+      213: -5019028121365225782
+    second: run_away_1_5
+  - first:
+      213: -7065137130349383069
+    second: run_away_1_6
+  - first:
+      213: 5178593268551790034
+    second: run_away_1_2
+  - first:
+      213: -8235666168997715026
+    second: run_away_1_7
+  - first:
+      213: 5199057086883979307
+    second: run_away_1_8
+  - first:
+      213: -5276157915131121283
+    second: run_away_1_9
+  - first:
+      213: -3498769298006957566
+    second: run_away_1_10
+  - first:
+      213: -7343183771726093730
+    second: run_away_1_11
+  - first:
+      213: 1556658176758850465
+    second: run_away_1_12
+  - first:
+      213: 9202691339279109754
+    second: run_away_1_13
+  - first:
+      213: 7943322054936381818
+    second: run_away_1_14
+  - first:
+      213: 4575496113542687932
+    second: run_away_1_15
+  - first:
+      213: -2663309211611435964
+    second: run_away_1_16
+  - first:
+      213: -4160422960215593812
+    second: run_away_1_17
+  - first:
+      213: 1281913114566355766
+    second: run_away_1_18
+  - first:
+      213: -724746299591982432
+    second: run_away_1_19
+  - first:
+      213: -2543067346783058666
+    second: run_away_1_20
+  - first:
+      213: -798204265698557018
+    second: run_away_1_21
+  - first:
+      213: 717394110506242805
+    second: run_away_1_22
+  - first:
+      213: -1000072152845971214
+    second: run_away_1_23
+  - first:
+      213: -3891701548152286048
+    second: run_away_1_24
+  - first:
+      213: -8287199276772693482
+    second: run_away_1_25
+  - first:
+      213: -2900755709546338118
+    second: run_away_1_26
+  - first:
+      213: 7140355583078749251
+    second: run_away_1_27
+  - first:
+      213: -7450721652279066877
+    second: run_away_1_28
+  - first:
+      213: -8393361993465055754
+    second: run_away_1_29
+  - first:
+      213: 6617684965516304290
+    second: run_away_1_30
+  - first:
+      213: -6677128479898879514
+    second: run_away_1_31
+  - first:
+      213: -8317765501146982426
+    second: run_away_1_32
+  - first:
+      213: 4669686689895261730
+    second: run_away_1_33
+  - first:
+      213: 7257066141877788322
+    second: run_away_1_34
+  - first:
+      213: 7688402107693534377
+    second: run_away_1_35
+  - first:
+      213: 8224061905403899900
+    second: run_away_1_36
+  - first:
+      213: 150434557074858678
+    second: run_away_1_37
+  - first:
+      213: -7877152357799103219
+    second: run_away_1_38
+  - first:
+      213: 2712128067588191425
+    second: run_away_1_39
+  - first:
+      213: -1885034577540619817
+    second: run_away_1_40
+  - first:
+      213: 1064554130273106169
+    second: run_away_1_41
+  - first:
+      213: -5544886962364072833
+    second: run_away_1_42
+  - first:
+      213: 5255482506522950958
+    second: run_away_1_43
+  - first:
+      213: 7488893352547551999
+    second: run_away_1_44
+  - first:
+      213: 8646415875309021401
+    second: run_away_1_45
+  - first:
+      213: -8865763277302655936
+    second: run_away_1_46
+  - first:
+      213: 6002343386816615815
+    second: run_away_1_47
+  - first:
+      213: -5724405972083210143
+    second: run_away_1_48
+  - first:
+      213: 4797026208025564108
+    second: run_away_1_49
+  - first:
+      213: 2441576884317953064
+    second: run_away_1_50
+  - first:
+      213: 7224908819341294310
+    second: run_away_1_51
+  - first:
+      213: -3415342355829423693
+    second: run_away_1_52
+  - first:
+      213: 7380691795777488212
+    second: run_away_1_53
+  - first:
+      213: 6307783124529931937
+    second: run_away_1_54
+  - first:
+      213: -6461346530450620776
+    second: run_away_1_55
+  - first:
+      213: -2518923360345720130
+    second: run_away_1_56
+  - first:
+      213: -7903505257414619933
+    second: run_away_1_57
+  - first:
+      213: -809521667544283398
+    second: run_away_1_58
+  - first:
+      213: 7954727948369288805
+    second: run_away_1_59
+  - first:
+      213: -2538469988171115151
+    second: run_away_1_60
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: run_away_1_0
+      rect:
+        serializedVersion: 2
+        x: 4066
+        y: 10
+        width: 565
+        height: 275
+      alignment: 9
+      pivot: {x: 0.6, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0abdde23b5158d4e0800000000000000
+      internalID: -1956724585954157664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run_away_1_1
+      rect:
+        serializedVersion: 2
+        x: 3183
+        y: 11
+        width: 376
+        height: 274
+      alignment: 9
+      pivot: {x: 0.6, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61c5b0b3cbf41940800000000000000
+      internalID: 5266110682204848494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run_away_1_3
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 10
+        width: 204
+        height: 275
+      alignment: 9
+      pivot: {x: 0.6, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4e1867e082f8fa0800000000000000
+      internalID: -5796370152819661662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run_away_1_4
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 10
+        width: 167
+        height: 275
+      alignment: 9
+      pivot: {x: 0.6, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96aa58897281257b0800000000000000
+      internalID: -5237096858336777623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run_away_1_2
+      rect:
+        serializedVersion: 2
+        x: 2277
+        y: 10
+        width: 252
+        height: 274
+      alignment: 9
+      pivot: {x: 0.6, y: 0.33}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd2240f32f0ed740800000000000000
+      internalID: 5178593268551790034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d068c1631781e9e4181b53c84c2963f7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

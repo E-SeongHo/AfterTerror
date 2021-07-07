@@ -1,3 +1,4 @@
+<<<<<<< HEAD:Assets/Scripts/Bullet/ProjectileInfo.cs.meta
 fileFormatVersion: 2
 guid: fc0b3ac71772e4a478a43aabb426b9a5
 MonoImporter:
@@ -9,3 +10,16 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 8b5edf0bd1c2b054fa4899422fdac18b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> parent of 0c7d8b2... changed by jinhwa 21.05.14:Assets/Scripts/Bullet/ProjectileManager.cs.meta

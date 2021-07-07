@@ -9,18 +9,18 @@ public class FindFunction : MonoBehaviour
     {
         get {return instance;}
     }
-    GameObject player;
+    GameObject mainCharacter;
 
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
+        mainCharacter = GameObject.FindWithTag("Shieldman");
         instance = this;
     }
     public GameObject FindNearestObject(List<GameObject> tagged)
     {
         GameObject nearestTarget = null;
         float minDistance = Mathf.Infinity; 
-        Vector2 currentPos= player.GetComponent<Transform>().position;
+        Vector2 currentPos= mainCharacter.GetComponent<Transform>().position;
         foreach(GameObject target in tagged)
         {
             Vector2 targetPos = target.GetComponent<Transform>().position;
@@ -30,40 +30,6 @@ public class FindFunction : MonoBehaviour
                 minDistance = distance; // 거리값 필요시 사용
                 nearestTarget = target;
             } 
-        }
-        return nearestTarget;
-    }
-    public GameObject FindNearestObjectArr(GameObject[] tagged)
-    {
-        GameObject nearestTarget = null;
-        float minDistance = Mathf.Infinity;
-        Vector2 currentPos = player.GetComponent<Transform>().position;
-        foreach (GameObject target in tagged)
-        {
-            Vector2 targetPos = target.GetComponent<Transform>().position;
-            float distance = Vector2.Distance(targetPos, currentPos);
-            if (distance < minDistance)
-            {
-                minDistance = distance; // 거리값 필요시 사용
-                nearestTarget = target;
-            }
-        }
-        return nearestTarget;
-    }
-    public GameObject FindNearestObjectArrWithX(GameObject[] tagged)
-    {
-        GameObject nearestTarget = null;
-        float minDistance = Mathf.Infinity;
-        Vector2 currentPos = player.GetComponent<Transform>().position;
-        foreach (GameObject target in tagged)
-        {
-            Vector2 targetPos = target.GetComponent<Transform>().position;
-            float distance = targetPos.x - currentPos.x;
-            if (distance < minDistance)
-            {
-                minDistance = distance; // 거리값 필요시 사용
-                nearestTarget = target;
-            }
         }
         return nearestTarget;
     }
