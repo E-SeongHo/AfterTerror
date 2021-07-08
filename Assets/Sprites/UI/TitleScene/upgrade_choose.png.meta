@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 5663a96eece35424bbd6d9ac453e9e24
+guid: 2e77d0aed7bb60445a807a7b2b902ebb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3790404864757723816
-    second: upgrade_banner_0
+      213: -114260726676502258
+    second: upgrade_choose_0
   - first:
-      213: 4553001756773684798
-    second: upgrade_banner_1
+      213: -8269074482311167969
+    second: upgrade_choose_1
   - first:
-      213: -5007712432598197810
-    second: upgrade_banner_2
+      213: 8115043433988802855
+    second: upgrade_choose_2
   - first:
-      213: -2240680223007226000
-    second: upgrade_banner_3
+      213: 1663629517278024855
+    second: upgrade_choose_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -77,7 +77,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -89,7 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 4096
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: upgrade_banner_0
+      name: upgrade_choose_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 1054
-        height: 536
+        x: 4
+        y: 4
+        width: 44
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,20 +117,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85d0431abd6c56bc0800000000000000
-      internalID: -3790404864757723816
+      spriteID: e094ba679701a6ef0800000000000000
+      internalID: -114260726676502258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrade_banner_1
+      name: upgrade_choose_1
       rect:
         serializedVersion: 2
-        x: 1065
-        y: 0
-        width: 1054
-        height: 536
+        x: 60
+        y: 4
+        width: 36
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e36993699f28f2f30800000000000000
-      internalID: 4553001756773684798
+      spriteID: f10889cd1985e3d80800000000000000
+      internalID: -8269074482311167969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrade_banner_2
+      name: upgrade_choose_2
       rect:
         serializedVersion: 2
-        x: 2125
-        y: 0
-        width: 1054
-        height: 536
+        x: 124
+        y: 4
+        width: 12
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec95da51318018ab0800000000000000
-      internalID: -5007712432598197810
+      spriteID: 729c4c3020d6e9070800000000000000
+      internalID: 8115043433988802855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: upgrade_banner_3
+      name: upgrade_choose_3
       rect:
         serializedVersion: 2
-        x: 3185
-        y: 0
-        width: 1054
-        height: 536
+        x: 164
+        y: 4
+        width: 36
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0774964753187e0e0800000000000000
-      internalID: -2240680223007226000
+      spriteID: 794163f4b36661710800000000000000
+      internalID: 1663629517278024855
       vertices: []
       indices: 
       edges: []
@@ -189,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e07614f32797f8249b379bfe51207ef6
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
