@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 8d8468e1c1b1dae4087bec9aec70c42b
+guid: 702f2901b8bc3ab4b80036924e54b5e2
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 1092744010625383063
-    second: enemy1_dead_1_0
-  - first:
-      213: 3017985220448759028
-    second: enemy1_dead_1_2
-  - first:
-      213: 3837105057972759939
-    second: enemy1_dead_1_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -50,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -77,7 +68,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +80,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,74 +89,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: enemy1_dead_1_0
-      rect:
-        serializedVersion: 2
-        x: 1104
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.826, y: 0.33}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79af2c753e43a2f00800000000000000
-      internalID: 1092744010625383063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy1_dead_1_2
-      rect:
-        serializedVersion: 2
-        x: 554
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.826, y: 0.33}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fc2a3a619902e920800000000000000
-      internalID: 3017985220448759028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy1_dead_1_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.82, y: 0.33}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38d225a68b2204530800000000000000
-      internalID: 3837105057972759939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c61cfd5c2f295824ab53c0bbed3e6102
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

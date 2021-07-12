@@ -88,13 +88,6 @@ AnimationClip:
     path: 
     classID: 212
     script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 6542077305332810542, guid: 609f53660d657aa4999f540d31523849, type: 3}
-    attribute: m_Sprite
-    path: run_attack_hand1_0
-    classID: 212
-    script: {fileID: 0}
   m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
@@ -116,20 +109,12 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 2598505777
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 4281637774074219296, guid: 5f898e644589c5e45a930d380240ac54, type: 3}
     - {fileID: -7862396843884538191, guid: 5f898e644589c5e45a930d380240ac54, type: 3}
     - {fileID: 8276514422256456541, guid: 5f898e644589c5e45a930d380240ac54, type: 3}
     - {fileID: -3697937850672776721, guid: 5f898e644589c5e45a930d380240ac54, type: 3}
     - {fileID: 4987614716155920338, guid: 5f898e644589c5e45a930d380240ac54, type: 3}
-    - {fileID: 6542077305332810542, guid: 609f53660d657aa4999f540d31523849, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

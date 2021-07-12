@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerAnimScripts : MonoBehaviour
 {
+    public float LimitTime;
     private Animator anim;
     void Start()
     {
         anim = GetComponent<Animator>();
+        anim.SetFloat("expireTime", 10f);
     }
 
 
     void Update()
     {
+
         if (Input.GetKey(KeyCode.Q))
         {// this means game has started
             anim.SetTrigger("isStart");
@@ -25,12 +29,12 @@ public class PlayerAnimScripts : MonoBehaviour
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         { // this means player is ready to attack
             anim.SetTrigger("attack_on");
+            anim.SetTrigger("isFire");
+            anim.SetFloat("expireTime", 10f);
         }
-
-        // if(){
-        //     anim.SetBool("isFire", false);
-        // }
-        // if문 안에 시간 넣어주세요
+        LimitTime = anim.GetFloat("expireTime");
+        LimitTime -= Time.deltaTime;
+        anim.SetFloat("expireTime", LimitTime);
 
         if (Input.GetKey(KeyCode.Space))
         { // this means player is jumping

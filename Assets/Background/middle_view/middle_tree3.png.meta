@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: fe6100e51f2df374383502f3fe2252bb
+guid: 0789611e684c0f943be0e56cfd8fdae4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3246103170390778723
+    second: middle_tree3_0
+  - first:
+      213: -4233336081289440629
+    second: middle_tree3_1
+  - first:
+      213: 2136333731363153248
+    second: middle_tree3_2
+  - first:
+      213: -2219899844188807155
+    second: middle_tree3_3
+  - first:
+      213: 5630220188061935763
+    second: middle_tree3_4
+  - first:
+      213: 8553524368901190374
+    second: middle_tree3_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -68,7 +86,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -80,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -91,106 +109,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy1_dead_2_0
+      name: middle_tree3_0
       rect:
         serializedVersion: 2
-        x: 1670
-        y: 10
-        width: 514
-        height: 274
+        x: 0
+        y: 0
+        width: 1392
+        height: 912
       alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7f3792b1c63e1b40800000000000000
-      internalID: 5412824007698759547
+      spriteID: 363696782a97c0d20800000000000000
+      internalID: 3246103170390778723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_1
+      name: middle_tree3_1
       rect:
         serializedVersion: 2
-        x: 2222
-        y: 10
-        width: 514
-        height: 274
+        x: 1392
+        y: 0
+        width: 1392
+        height: 912
       alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16bddc1c9df715120800000000000000
-      internalID: 2400840649601309537
+      spriteID: b8216e3634b2045c0800000000000000
+      internalID: -4233336081289440629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_2
+      name: middle_tree3_2
       rect:
         serializedVersion: 2
-        x: 1119
-        y: 10
-        width: 514
-        height: 274
+        x: 2784
+        y: 0
+        width: 1392
+        height: 912
       alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 508f5cfb6f852a440800000000000000
-      internalID: 4945613157608847365
+      spriteID: 065e59bb538c5ad10800000000000000
+      internalID: 2136333731363153248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_3
+      name: middle_tree3_3
       rect:
         serializedVersion: 2
-        x: 575
-        y: 10
-        width: 514
-        height: 274
+        x: 4176
+        y: 0
+        width: 1392
+        height: 912
       alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e16a9d553a4da4bf0800000000000000
-      internalID: -339225023927966178
+      spriteID: d006e2e6ad45131e0800000000000000
+      internalID: -2219899844188807155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_4
+      name: middle_tree3_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 10
-        width: 514
-        height: 274
+        x: 5568
+        y: 0
+        width: 1392
+        height: 912
       alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+      pivot: {x: 0.5, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fa8568bbb0600bb0800000000000000
-      internalID: -4971867629248214287
+      spriteID: 3982aac4e6f822e40800000000000000
+      internalID: 5630220188061935763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: middle_tree3_5
+      rect:
+        serializedVersion: 2
+        x: 6960
+        y: 0
+        width: 1392
+        height: 912
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2b002581934b670800000000000000
+      internalID: 8553524368901190374
       vertices: []
       indices: 
       edges: []
@@ -198,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 732b86a7bc5f5484cba0d69ee6c9355e
+    spriteID: a050f4acda02ca34e80dc25979128e1b
     internalID: 0
     vertices: []
     indices: 

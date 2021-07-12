@@ -1,7 +1,25 @@
 fileFormatVersion: 2
-guid: fe6100e51f2df374383502f3fe2252bb
+guid: db4734ea5b714ce478d979b27b4b72b4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1127610262156077705
+    second: middle_rock_0
+  - first:
+      213: 6510721363662446470
+    second: middle_rock_1
+  - first:
+      213: 7006413995672961481
+    second: middle_rock_2
+  - first:
+      213: 4513913088906535088
+    second: middle_rock_3
+  - first:
+      213: 3065768414964580513
+    second: middle_rock_4
+  - first:
+      213: -970352372063884211
+    second: middle_rock_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -68,7 +86,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -80,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -91,106 +109,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy1_dead_2_0
+      name: middle_rock_0
       rect:
         serializedVersion: 2
-        x: 1670
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+        x: 549
+        y: 140
+        width: 379
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7f3792b1c63e1b40800000000000000
-      internalID: 5412824007698759547
+      spriteID: 7751a1fd07ce950f0800000000000000
+      internalID: -1127610262156077705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_1
+      name: middle_rock_1
       rect:
         serializedVersion: 2
-        x: 2222
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+        x: 1939
+        y: 140
+        width: 388
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16bddc1c9df715120800000000000000
-      internalID: 2400840649601309537
+      spriteID: 68f95a0c59aba5a50800000000000000
+      internalID: 6510721363662446470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_2
+      name: middle_rock_2
       rect:
         serializedVersion: 2
-        x: 1119
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+        x: 3330
+        y: 140
+        width: 383
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 508f5cfb6f852a440800000000000000
-      internalID: 4945613157608847365
+      spriteID: 9c189615868cb3160800000000000000
+      internalID: 7006413995672961481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_3
+      name: middle_rock_3
       rect:
         serializedVersion: 2
-        x: 575
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+        x: 4725
+        y: 140
+        width: 387
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e16a9d553a4da4bf0800000000000000
-      internalID: -339225023927966178
+      spriteID: 0b0a243e904a4ae30800000000000000
+      internalID: 4513913088906535088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2_4
+      name: middle_rock_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 10
-        width: 514
-        height: 274
-      alignment: 9
-      pivot: {x: 0.826, y: 0.33}
+        x: 6115
+        y: 140
+        width: 383
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fa8568bbb0600bb0800000000000000
-      internalID: -4971867629248214287
+      spriteID: 1a08399512ccb8a20800000000000000
+      internalID: 3065768414964580513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: middle_rock_5
+      rect:
+        serializedVersion: 2
+        x: 7506
+        y: 140
+        width: 371
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4cac24a8ad9882f0800000000000000
+      internalID: -970352372063884211
       vertices: []
       indices: 
       edges: []
@@ -198,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 732b86a7bc5f5484cba0d69ee6c9355e
+    spriteID: ae14c0d220b9dc643b0c23f806b44890
     internalID: 0
     vertices: []
     indices: 
