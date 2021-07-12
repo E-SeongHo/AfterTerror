@@ -10,7 +10,7 @@ public class PlayerAnimScripts : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetFloat("expireTime", 10f);
+        anim.SetFloat("expireTime", 7f);
     }
 
 
@@ -19,7 +19,7 @@ public class PlayerAnimScripts : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q))
         {// this means game has started
-            anim.SetTrigger("isStart");
+            anim.SetBool("isStart", true);
         }
         if (Input.GetKey(KeyCode.G))
         { // this means player is ready to guard
@@ -30,21 +30,30 @@ public class PlayerAnimScripts : MonoBehaviour
         { // this means player is ready to attack
             anim.SetTrigger("attack_on");
             anim.SetTrigger("isFire");
-            anim.SetFloat("expireTime", 10f);
+            anim.SetFloat("expireTime", 7f);
         }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            anim.SetTrigger("specialAbility");
+            anim.SetFloat("expireTime", 5f);
+        }
+
         LimitTime = anim.GetFloat("expireTime");
         LimitTime -= Time.deltaTime;
         anim.SetFloat("expireTime", LimitTime);
+
 
         if (Input.GetKey(KeyCode.Space))
         { // this means player is jumping
             anim.SetTrigger("jump");
         }
 
+
         if (Input.GetKey(KeyCode.Z))
         { // this means player dead
             anim.SetTrigger("Health_zero");
+            anim.SetBool("isStart", false);
         }
-
     }
 }
