@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: 72991e8001452aa43af22b66f60ee508
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5566023513373933170
+    second: car_opening_0
+  - first:
+      213: -4028710499989260795
+    second: car_opening_1
+  - first:
+      213: 5241094793747071524
+    second: car_opening_2
+  - first:
+      213: 6383458874320356013
+    second: car_opening_3
+  - first:
+      213: 6920854907142709955
+    second: car_opening_4
+  - first:
+      213: 3522733819236823107
+    second: car_opening_5
+  - first:
+      213: -1355005885392492957
+    second: car_opening_6
+  - first:
+      213: -5198090109240632496
+    second: car_opening_7
+  - first:
+      213: 7249883331963827908
+    second: car_opening_8
+  - first:
+      213: -8379326126614870157
+    second: car_opening_9
+  - first:
+      213: 4144638677415114805
+    second: car_opening_10
+  - first:
+      213: 5906672806603839442
+    second: car_opening_11
+  - first:
+      213: -2206915374627268558
+    second: car_opening_12
+  - first:
+      213: -7776046009440751171
+    second: car_opening_13
+  - first:
+      213: -3678628291701784063
+    second: car_opening_14
+  - first:
+      213: -8404525818653767758
+    second: car_opening_15
+  - first:
+      213: 7867520096494399240
+    second: car_opening_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: car_opening_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340bddd8eb343e030800000000000000
+      internalID: 3522733819236823107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_6
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366ed9c835d023de0800000000000000
+      internalID: -1355005885392492957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_7
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b9d38169cacd7b0800000000000000
+      internalID: -5198090109240632496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_8
+      rect:
+        serializedVersion: 2
+        x: 3780
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6bab89a72cc9460800000000000000
+      internalID: 7249883331963827908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_9
+      rect:
+        serializedVersion: 2
+        x: 5025
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37788fd8847a6bb80800000000000000
+      internalID: -8379326126614870157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_10
+      rect:
+        serializedVersion: 2
+        x: 6270
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5383ca9fae6b48930800000000000000
+      internalID: 4144638677415114805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_13
+      rect:
+        serializedVersion: 2
+        x: 7519
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db1b03a8a5fe51490800000000000000
+      internalID: -7776046009440751171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_14
+      rect:
+        serializedVersion: 2
+        x: 8760
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102c9641f03e2fcc0800000000000000
+      internalID: -3678628291701784063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_15
+      rect:
+        serializedVersion: 2
+        x: 10005
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b70b890c402d5b80800000000000000
+      internalID: -8404525818653767758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_opening_16
+      rect:
+        serializedVersion: 2
+        x: 11249
+        y: 0
+        width: 1115
+        height: 564
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80fabc608db0f2d60800000000000000
+      internalID: 7867520096494399240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
