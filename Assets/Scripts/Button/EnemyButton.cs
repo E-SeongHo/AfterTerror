@@ -22,7 +22,7 @@ public class EnemyButton : MonoBehaviour
 
     private EnemyController targetController;
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Find Nearest Enemy & Set variables with that Enemy
         enemies = GameObject.FindGameObjectsWithTag("Enemy");

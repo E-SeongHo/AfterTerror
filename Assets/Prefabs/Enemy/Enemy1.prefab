@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5362091603630467891}
   - component: {fileID: 5362091603630467890}
+  - component: {fileID: 3374363869381781051}
   - component: {fileID: 5362091603630467889}
   - component: {fileID: 5362091603630467888}
   - component: {fileID: 5362091603630467895}
@@ -85,6 +86,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3374363869381781051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362091603630467894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5baba89a450e97546bb494cfbc8e957c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5362091603630467889
 MonoBehaviour:
   m_ObjectHideFlags: 0
