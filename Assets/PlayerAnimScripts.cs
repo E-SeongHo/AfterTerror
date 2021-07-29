@@ -28,6 +28,7 @@ public class PlayerAnimScripts : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         { // this means player is ready to attack
+            anim.SetBool("isAttack", true);
             anim.SetTrigger("attack_on");
             anim.SetTrigger("isFire");
             anim.SetFloat("expireTime", 7f);
@@ -42,6 +43,11 @@ public class PlayerAnimScripts : MonoBehaviour
         LimitTime = anim.GetFloat("expireTime");
         LimitTime -= Time.deltaTime;
         anim.SetFloat("expireTime", LimitTime);
+
+        if (LimitTime <= 2)
+        {
+            anim.SetBool("isAttack", false);
+        }
 
 
         if (Input.GetKey(KeyCode.Space))
