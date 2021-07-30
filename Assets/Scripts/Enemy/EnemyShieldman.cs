@@ -8,7 +8,7 @@ public class EnemyShieldman : MonoBehaviour
     // Only shield
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private int startHealth = 3;
-    [SerializeField] private float speed = 30f;
+    [SerializeField] private float speed = 100f;
 
     private bool perform = false;
     private EnemyController controller;
@@ -21,7 +21,8 @@ public class EnemyShieldman : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (controller.GetInteractionState() & !perform)
+        // 지금 interactionState를 자신기준이라 SmashDownShield 계속호출됨
+        if (controller.GetInteractionState() && !perform)
         {
             StartCoroutine("RunForward");
         }
@@ -39,13 +40,11 @@ public class EnemyShieldman : MonoBehaviour
         // run animation 
         // Debug.Log(gameObject.transform.position.x + " / " + EnemyButtonManage.Instance.GetTargetPos().x);
         
-        while(gameObject.transform.position.x - EnemyButtonManage.Instance.GetTargetWorldPos().x > -100f)
+        while(gameObject.transform.position.x - EnemyButtonManage.Instance.GetTargetWorldPos().x > -250f)
         {
             // Vector2 target_pos = EnemyButtonManage.Instance.GetTargetLocalPos();
 
-            Debug.Log("go");
             gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime, Space.World);
-            Debug.Log(transform.position.x);
             yield return new WaitForFixedUpdate();
         }
 

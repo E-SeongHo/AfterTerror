@@ -16,17 +16,18 @@ public class EnemyButtonManage : MonoBehaviour
     [SerializeField] private GameObject[] buttons = new GameObject[9];
 
     private GameObject[] enemies;
+    private GameObject target_pre = null;
     private GameObject target = null;
-    private Vector2 target_localpos;
-
+    
     private GameObject nowButton;
     private bool buttonON = false;
     private int buttonidx; // A : 0, S : 1, D : 2
 
-    private EnemyController targetController;
+    private EnemyController pre_targetController = null;
+    private EnemyController targetController = null;
 
     // Getters
-    public Vector2 GetTargetLocalPos() { return target_localpos; }
+    // public Vector2 GetTargetLocalPos() { return target_localpos; }
     public Vector2 GetTargetWorldPos() { return transform.position; }
 
     private void Awake()
@@ -37,25 +38,38 @@ public class EnemyButtonManage : MonoBehaviour
     {
         // Find Nearest Enemy & Set variables with that Enemy
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        
-        // (최적화)target 선정 자체를 interactive 중에서 하기
-        target = FindFunction.Instance.FindNearestObjectArrWithX(enemies);
-        target_localpos = target.transform.position; 
 
-        // target 바뀔때만 .. 호출하게 바꿔보자 포인터이용 매개변수 2개주기?
-        if(target!= null)
+        // (최적화)target 선정 자체를 interactive 중에서 하기
+        target_pre = target;
+        pre_targetController = targetController;
+
+        target = FindFunction.Instance.FindNearestObjectArrWithX(enemies);
+
+        // target이 바뀔때만 호출
+        if (target != null && target_pre != target) 
             targetController = target.GetComponent<EnemyController>();
+        
         if (!buttonON)
         {
             if (target != null && targetController.GetInteractionState())
             {
-                // enemyController = target.GetComponent<EnemyController>();
                 GiveButton(target);
                 Debug.Log("enemybutton gen : " + buttonidx);
             }
         }
         else
         {
+            if (target_pre != target) // if target changed ( shieldman run )
+            {
+                buttonON = false;
+                Debug.Log("target change");
+                // delete previous target's button
+                nowButton = null;
+                pre_targetController.DeleteButton();
+                // generate new target's button
+                GiveButton(target);
+                buttonON = true;
+            }
             if (targetController.GetRunState())
             {
                 buttonON = false;
