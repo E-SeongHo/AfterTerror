@@ -8,10 +8,11 @@ public class EnemyShieldman : MonoBehaviour
     // Only shield
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private int startHealth = 3;
+    [SerializeField] private float speed = 30f;
 
+    private bool perform = false;
     private EnemyController controller;
     
-
     private void Start()
     {
         controller = GetComponent<EnemyController>();
@@ -20,16 +21,37 @@ public class EnemyShieldman : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(controller.GetInteractionState())
+        if (controller.GetInteractionState() & !perform)
         {
-
+            StartCoroutine("RunForward");
         }
-
-        // 앞에 적이 없을 때 까지
     }
     private void SmashDownShield()
     {
-        // animation
+        // shield animation
 
+        // apply shield's health (+7)  
+        controller.ChangeHealth(7);
+    }
+
+    IEnumerator RunForward()
+    {
+        // run animation 
+        // Debug.Log(gameObject.transform.position.x + " / " + EnemyButtonManage.Instance.GetTargetPos().x);
+        
+        while(gameObject.transform.position.x - EnemyButtonManage.Instance.GetTargetWorldPos().x > -100f)
+        {
+            // Vector2 target_pos = EnemyButtonManage.Instance.GetTargetLocalPos();
+
+            Debug.Log("go");
+            gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime, Space.World);
+            Debug.Log(transform.position.x);
+            yield return new WaitForFixedUpdate();
+        }
+
+        SmashDownShield();
+        perform = true;
+
+        yield return null;
     }
 }

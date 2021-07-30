@@ -6,15 +6,18 @@ using UnityEngine;
 // EnemyButton은 총 9개
 // EnemyButton의 생성과 삭제는 EnemyButtonMange객체가 모두 담당
 // 하나랑만 상호작용하니까 가능
-public class EnemyButton : MonoBehaviour
+public class EnemyButtonManage : MonoBehaviour
 {
     // red ASD, green ASD, blue ASD
-    // 굳이 GameObject로 안하고 Sprite배열로 해도 될듯
-    // 게임 무거워지면 고려
+
+    // singleton
+    public static EnemyButtonManage Instance;
+
     [SerializeField] private GameObject[] buttons = new GameObject[9];
 
     private GameObject[] enemies;
     private GameObject target = null;
+    private Vector2 target_localpos;
 
     private GameObject nowButton;
     private bool buttonON = false;
@@ -22,12 +25,23 @@ public class EnemyButton : MonoBehaviour
 
     private EnemyController targetController;
 
+    // Getters
+    public Vector2 GetTargetLocalPos() { return target_localpos; }
+    public Vector2 GetTargetWorldPos() { return transform.position; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void FixedUpdate()
     {
         // Find Nearest Enemy & Set variables with that Enemy
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        
         // (최적화)target 선정 자체를 interactive 중에서 하기
         target = FindFunction.Instance.FindNearestObjectArrWithX(enemies);
+        target_localpos = target.transform.position; 
+
         // target 바뀔때만 .. 호출하게 바꿔보자 포인터이용 매개변수 2개주기?
         if(target!= null)
             targetController = target.GetComponent<EnemyController>();
@@ -47,6 +61,7 @@ public class EnemyButton : MonoBehaviour
                 buttonON = false;
                 Debug.Log(target + "run");
             }
+            
             InputProcess(buttonidx);
         }
     }

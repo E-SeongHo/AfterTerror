@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyRifler : MonoBehaviour
+public class EnemyRifleman : MonoBehaviour
 { 
     [SerializeField] private int maxHealth = 5;
     [SerializeField] private int shotbulletbound = 3;

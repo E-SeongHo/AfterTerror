@@ -42,6 +42,7 @@ public class EnemyController : MonoBehaviour
             && transform.position.x - playerTransform.position.x > rundist)
         {
             interaction = true;
+            Debug.Log(this + "inter");
         }
         else if (transform.position.x - playerTransform.position.x <= rundist)
         {
