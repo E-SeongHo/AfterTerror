@@ -121,7 +121,7 @@ public class TitleManage : MonoBehaviour
 
     IEnumerator MovePlayer1()
     {
-        float speed = 10f;
+        float speed = 15f;
         while(player1.transform.position.x < 1050) // 700(camera) + 350(적정위치)
         {
             player1.transform.Translate(speed * Time.deltaTime, 0, 0);

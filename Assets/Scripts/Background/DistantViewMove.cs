@@ -11,7 +11,7 @@ public class DistantViewMove : MonoBehaviour
     private void Start()
     {
         startXpos = transform.position.x;
-        endXpos = startXpos - 1920f; // 이미지 크기 ??
+        endXpos = startXpos - 3200f; // 이미지 크기 ??
     }
     private void Update()
     {

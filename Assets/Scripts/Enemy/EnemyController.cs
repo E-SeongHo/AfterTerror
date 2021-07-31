@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 5;
-    [SerializeField] private int shotbulletbound = 3; // 3이상이면 총알발사
-    private int currentHealth; 
+    private int maxHealth; // Setter를 통해 다른 스크립트에서 설정
+    private int currentHealth;
+
     private int attackCount = 0; // MainCharacter에게 맞은 횟수
-    private float autoShotTime = 4f;
-    private float count;
-    // private float rand;
-    private GameObject bullet = null; 
+    
 
     private GameObject myButton = null;
     private Rigidbody2D rb = null;
@@ -26,39 +23,26 @@ public class EnemyController : MonoBehaviour
     public bool GetInteractionState() { return interaction; }
     public bool GetRunState() { return run; }
     // Setters
+    public void SetMaxHealth(int value) { maxHealth = value; }
+    public void SetCurrentHealth(int health) { currentHealth = health; }
+    public void ResetAttackCount() { attackCount = 0; }
     public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
     // Init
     private void Start()
     {
-        currentHealth = maxHealth;
-        // initial shot time is ramdom
-        count = Random.Range(0.5f, 1.5f);
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
-    }
-    // Enemy Move
-    private void Update()
-    {   
-        // FixedUpdate에서 하는게 나은지 비교
-        if (interaction)
-        {
-            AutoShotProcess();
-            HitShotProcess();
-        }
-        if (run)
-        {
-            Destroy(gameObject);
-        }
     }
     // Enemy Run... 
     private void FixedUpdate()
     {
-        // 맵에서 보이기 시작할 때 총 쏘기 시작 d
+        // 맵에서 보이기 시작할 때 상호작용 시작 
         // Overhead :: --> Coroutine
         if (!interaction && transform.position.x - playerTransform.position.x <= 1920
             && transform.position.x - playerTransform.position.x > rundist)
         {
             interaction = true;
+            Debug.Log(this + "inter");
         }
         else if (transform.position.x - playerTransform.position.x <= rundist)
         {
@@ -81,32 +65,6 @@ public class EnemyController : MonoBehaviour
         {
             // 죽는 애니메이션
             Destroy(gameObject);
-        }
-    }
-    // Bullet을 쏘는 것 까지는 책임, 쏜 이후는 책임 X
-    private void ShotBullet()
-    {
-        bullet = BulletPool.Instance.AllocateBullet();
-        // OnEnable에서 v값 계산하니까 position이 정해진 후에 SetActive(true)해야 한다.
-        bullet.transform.position = transform.position;
-        bullet.SetActive(true);
-    }
-    private void AutoShotProcess()
-    {
-        count -= Time.deltaTime;
-        if (count < 0)
-        {            
-            ShotBullet();
-            // after first shot, shooting after 4f(autoShotTime) time
-            count = autoShotTime;
-        }
-    }
-    private void HitShotProcess()
-    {
-        if (attackCount >= shotbulletbound)
-        {
-            ShotBullet();
-            attackCount = 0;
         }
     }
     public void GenerateButton(GameObject button)
