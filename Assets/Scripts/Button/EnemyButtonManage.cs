@@ -27,6 +27,7 @@ public class EnemyButtonManage : MonoBehaviour
     private EnemyController targetController = null;
 
     // Getters
+    public GameObject GetTarget() { return target; }
     // public Vector2 GetTargetLocalPos() { return target_localpos; }
     public Vector2 GetTargetWorldPos() { return transform.position; }
 
