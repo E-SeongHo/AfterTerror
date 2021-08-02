@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyRifleman : MonoBehaviour
 { 
-    [SerializeField] private int maxHealth = 5;
+    [SerializeField] private int maxHealth = 2;
     [SerializeField] private int shotbulletbound = 3;
 
     // shot ฐüทร
