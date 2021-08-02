@@ -19,8 +19,15 @@ public class EnemyAnimScript : MonoBehaviour
             anim.SetBool("isDie", true);
         }
 
-        if( Input.GetKey(KeyCode.O)){
+        if (Input.GetKey(KeyCode.O))
+        {
             anim.SetBool("runAway", true);
+        }
+
+        if (Input.GetKey(KeyCode.M))
+        {
+            anim.SetTrigger("on");
+
         }
     }
 }
