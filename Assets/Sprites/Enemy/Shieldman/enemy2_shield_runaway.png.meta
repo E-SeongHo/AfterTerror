@@ -27,10 +27,10 @@ TextureImporter:
       213: 7919131645123779060
     second: enemy2_shield_runaway_7
   - first:
-      213: 1607151675128081835
+      213: -2102952221225389199
     second: enemy2_shield_runaway_8
   - first:
-      213: 792404158343333917
+      213: -9012919788912479160
     second: enemy2_shield_runaway_9
   externalObjects: {}
   serializedVersion: 11
@@ -126,10 +126,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 89
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 88
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,12 +145,12 @@ TextureImporter:
       name: enemy2_shield_runaway_1
       rect:
         serializedVersion: 2
-        x: 299
+        x: 297
         y: 0
-        width: 135
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 136
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,12 +166,12 @@ TextureImporter:
       name: enemy2_shield_runaway_2
       rect:
         serializedVersion: 2
-        x: 607
+        x: 605
         y: 0
-        width: 147
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 153
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,12 +187,12 @@ TextureImporter:
       name: enemy2_shield_runaway_3
       rect:
         serializedVersion: 2
-        x: 929
+        x: 928
         y: 0
-        width: 159
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 160
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,12 +208,12 @@ TextureImporter:
       name: enemy2_shield_runaway_4
       rect:
         serializedVersion: 2
-        x: 1223
-        y: 1
+        x: 1224
+        y: 0
         width: 159
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -229,12 +229,12 @@ TextureImporter:
       name: enemy2_shield_runaway_5
       rect:
         serializedVersion: 2
-        x: 1498
+        x: 1519
         y: 0
-        width: 193
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 173
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,12 +250,12 @@ TextureImporter:
       name: enemy2_shield_runaway_6
       rect:
         serializedVersion: 2
-        x: 1767
+        x: 1805
         y: 0
-        width: 287
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 191
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -271,12 +271,12 @@ TextureImporter:
       name: enemy2_shield_runaway_7
       rect:
         serializedVersion: 2
-        x: 2092
+        x: 2093
         y: 0
         width: 228
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -292,19 +292,19 @@ TextureImporter:
       name: enemy2_shield_runaway_8
       rect:
         serializedVersion: 2
-        x: 2375
+        x: 2380
         y: 0
-        width: 215
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 217
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: badee28feefbd4610800000000000000
-      internalID: 1607151675128081835
+      spriteID: 173fd32c810d0d2e0800000000000000
+      internalID: -2102952221225389199
       vertices: []
       indices: 
       edges: []
@@ -313,19 +313,19 @@ TextureImporter:
       name: enemy2_shield_runaway_9
       rect:
         serializedVersion: 2
-        x: 2668
+        x: 2669
         y: 0
-        width: 212
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 158
+        height: 300
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d18c898326f2ffa00800000000000000
-      internalID: 792404158343333917
+      spriteID: 84478c8543dabe280800000000000000
+      internalID: -9012919788912479160
       vertices: []
       indices: 
       edges: []
@@ -333,7 +333,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 3cc955fff9eb83f49895e423d155f59a
     internalID: 0
     vertices: []
     indices: 

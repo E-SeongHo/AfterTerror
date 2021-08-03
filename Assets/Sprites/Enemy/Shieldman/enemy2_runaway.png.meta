@@ -115,9 +115,9 @@ TextureImporter:
         x: 9
         y: 0
         width: 102
-        height: 156
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,11 +134,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 117
-        y: 0
+        y: 15
         width: 117
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 285
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,11 +155,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 237
-        y: 0
+        y: 9
         width: 114
-        height: 165
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 291
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,9 +178,9 @@ TextureImporter:
         x: 360
         y: 0
         width: 102
-        height: 156
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,12 +196,12 @@ TextureImporter:
       name: enemy2_runaway_4
       rect:
         serializedVersion: 2
-        x: 472
-        y: 0
+        x: 471
+        y: 9
         width: 111
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 291
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,11 +218,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 588
-        y: 0
+        y: 3
         width: 111
-        height: 165
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 297
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 9cb79715c5e9ca9458d34b1cd86ee885
     internalID: 0
     vertices: []
     indices: 

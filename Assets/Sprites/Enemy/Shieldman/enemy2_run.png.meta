@@ -10,13 +10,13 @@ TextureImporter:
     second: enemy2_run_1
   - first:
       213: -4563933260980097364
-    second: enemy2_run_3
+    second: enemy2_run_2
   - first:
       213: -8768837229781781432
-    second: enemy2_run_
+    second: enemy2_run_3
   - first:
       213: 3118944477371360666
-    second: enemy2_run_
+    second: enemy2_run_4
   - first:
       213: 3292491675147619245
     second: enemy2_run_5
@@ -112,12 +112,12 @@ TextureImporter:
       name: enemy2_run_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
         width: 144
-        height: 156
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,12 +133,12 @@ TextureImporter:
       name: enemy2_run_1
       rect:
         serializedVersion: 2
-        x: 159
+        x: 165
         y: 0
-        width: 151
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 156
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,15 +151,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy2_run_3
+      name: enemy2_run_2
       rect:
         serializedVersion: 2
-        x: 469
+        x: 321
         y: 0
-        width: 144
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 153
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,15 +172,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy2_run_4
+      name: enemy2_run_3
       rect:
         serializedVersion: 2
-        x: 626
+        x: 480
         y: 0
-        width: 151
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 144
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,15 +193,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy2_run_
+      name: enemy2_run_4
       rect:
         serializedVersion: 2
-        x: 312
+        x: 639
         y: 0
-        width: 153
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 156
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: enemy2_run_5
       rect:
         serializedVersion: 2
-        x: 778
+        x: 798
         y: 0
-        width: 157
-        height: 168
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 153
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,7 +237,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 6557f6bb4fef5c94996c8ce92b747ee1
     internalID: 0
     vertices: []
     indices: 

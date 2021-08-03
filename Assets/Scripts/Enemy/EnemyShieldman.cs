@@ -58,11 +58,10 @@ public class EnemyShieldman : MonoBehaviour
         }
 
         // if runaway 
-        if (controller.GetRunState())
+        if (controller.GetRunState() && !controller.GetDieState())
         {
-            animator.SetBool("close", true);
-            
-            //Destroy(gameObject);
+            controller.StartCoroutine("RunAwayProcess");
+            perform = true; // interaction 과 달리기 시작할 때 기준 달라서 runaway 판정 이후에 위의 조건문 안들어가게 하기 위함
         }
     }
     private void SmashDownShield()

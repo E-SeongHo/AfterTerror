@@ -118,9 +118,9 @@ TextureImporter:
         x: 18
         y: 0
         width: 141
-        height: 219
-      alignment: 9
-      pivot: {x: 0.50000006, y: 0.5096699}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,9 +139,9 @@ TextureImporter:
         x: 168
         y: 0
         width: 162
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,11 +158,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 342
-        y: 2
+        y: 0
         width: 153
-        height: 217
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,9 +181,9 @@ TextureImporter:
         x: 501
         y: 0
         width: 150
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: enemy2_shield_4
       rect:
         serializedVersion: 2
-        x: 682
+        x: 678
         y: 0
         width: 135
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: enemy2_shield_5
       rect:
         serializedVersion: 2
-        x: 842
+        x: 843
         y: 0
         width: 141
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,9 +244,9 @@ TextureImporter:
         x: 1008
         y: 0
         width: 141
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,7 +261,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d32611f479bc190458539ff38d6db2dc
     internalID: 0
     vertices: []
     indices: 

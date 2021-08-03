@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
     {
         // 맵에서 보이기 시작할 때 상호작용 시작 
         // Overhead :: --> Coroutine
-        if (!die && !interaction && transform.position.x - playerTransform.position.x <= 1920
+        if (!run && !die && !interaction && transform.position.x - playerTransform.position.x <= 1920
             && transform.position.x - playerTransform.position.x > rundist)
         {
             interaction = true; 
