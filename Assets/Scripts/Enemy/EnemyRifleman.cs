@@ -13,12 +13,14 @@ public class EnemyRifleman : MonoBehaviour
     private float count;
     
     private EnemyController controller;
+    private Animator animator;
 
     private void Start()
     {
         controller = GetComponent<EnemyController>();
         controller.SetCurrentHealth(maxHealth);
         controller.SetMaxHealth(maxHealth);
+        animator = GetComponent<Animator>();
 
         // initial fire time is random
         count = Random.Range(0.5f, 1.5f);
@@ -30,17 +32,23 @@ public class EnemyRifleman : MonoBehaviour
             AutoShotProcess();
             HitShotProcess();
         }
-        if (controller.GetRunState())
+        if (controller.GetRunState() && !controller.GetDieState())
         {
-            Destroy(gameObject);
+            controller.StartCoroutine("RunAwayProcess");
         }
     }
     // Bullet을 쏘는 것 까지는 책임, 쏜 이후는 책임 X
     private void ShotBullet()
     {
+        if (!controller.GetInteractionState()) return;
+
+        animator.SetTrigger("fire");
         bullet = BulletPool.Instance.AllocateBullet();
         // OnEnable에서 v값 계산하니까 position이 정해진 후에 SetActive(true)해야 한다.
-        bullet.transform.position = transform.position;
+        Vector2 pos = transform.position;
+        pos = pos + Vector2.left * 150f + Vector2.down * 60f;
+        bullet.transform.position = pos;
+
         bullet.SetActive(true);
     }
     private void AutoShotProcess()
@@ -61,4 +69,5 @@ public class EnemyRifleman : MonoBehaviour
             controller.ResetAttackCount();
         }
     }
+
 }

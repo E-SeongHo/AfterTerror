@@ -8,48 +8,52 @@ public class EnemyController : MonoBehaviour
     private int currentHealth;
 
     private int attackCount = 0; // MainCharacter에게 맞은 횟수
-    
+
+    private Animator animator;
 
     private GameObject myButton = null;
     private Rigidbody2D rb = null;
     private Transform playerTransform;
     private bool interaction = false;
     private bool run = false;
+    private bool die = false; 
+    private float runSpeed = 30f;
 
-    private float rundist = 240f;
+    private float rundist = 450f;
     // Getters
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackCount() { return attackCount; }
     public bool GetInteractionState() { return interaction; }
+    public bool GetDieState() { return die; }
     public bool GetRunState() { return run; }
     // Setters
     public void SetMaxHealth(int value) { maxHealth = value; }
     public void SetCurrentHealth(int health) { currentHealth = health; }
     public void ResetAttackCount() { attackCount = 0; }
     public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
+    public void SetRunState(bool value) { interaction = value; }
     // Init
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
+        animator = GetComponent<Animator>();
     }
     // Enemy Run... 
     private void FixedUpdate()
     {
         // 맵에서 보이기 시작할 때 상호작용 시작 
         // Overhead :: --> Coroutine
-        if (!interaction && transform.position.x - playerTransform.position.x <= 1920
+        if (!die && !interaction && transform.position.x - playerTransform.position.x <= 1920
             && transform.position.x - playerTransform.position.x > rundist)
         {
-            interaction = true;
+            interaction = true; 
             Debug.Log(this + "inter");
         }
         else if (transform.position.x - playerTransform.position.x <= rundist)
         {
             interaction = false;
             run = true;
-            // 애니메이션 실행 
-            // 애니메이션 실행 후 파괴 되도록 보장
         }
     }
     public void ChangeHealth(int amount)
@@ -63,13 +67,12 @@ public class EnemyController : MonoBehaviour
         Debug.Log(currentHealth + " / " + maxHealth);
         if (currentHealth <= 0)
         {
-            // 죽는 애니메이션
-            Destroy(gameObject);
+            DieProcess();
         }
     }
     public void GenerateButton(GameObject button)
     {
-        Vector2 position = rb.position + Vector2.up*150f + Vector2.right*30f;
+        Vector2 position = rb.position + Vector2.up * 70f + Vector2.left * 65f; // pivot : Right Center 기준
         GameObject newButton = Instantiate(button, position, Quaternion.identity);
         myButton = newButton;
         myButton.transform.parent = gameObject.transform;
@@ -77,6 +80,32 @@ public class EnemyController : MonoBehaviour
     public void DeleteButton()
     {
         Destroy(myButton);
+    }
+    private void DieProcess()
+    {
+        die = true;
+        animator.SetBool("die", true);
+        interaction = false;
+        // Destroy after 3 seconds
+        Destroy(gameObject, 3f);
+    }
+    IEnumerator RunAwayProcess()
+    {
+        animator.SetBool("turn", true);
+        interaction = false;
+        Vector2 start = gameObject.transform.position;
+
+        while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.9f)
+            yield return new WaitForSeconds(0.3f);
+
+        animator.SetBool("runaway", true);
+        while (gameObject.transform.position.x - start.x < 150f)
+        {
+            gameObject.transform.Translate(Vector2.right * runSpeed * Time.deltaTime);
+            yield return new WaitForFixedUpdate();
+        }
+        Destroy(gameObject);
+        yield return null;
     }
 
 }

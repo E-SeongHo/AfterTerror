@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2163191
 MonoBehaviour:
@@ -343,23 +343,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &952520328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2064197603160872413, guid: 53721925d2a3c1a42be41a1721a28e7b, type: 3}
-  m_PrefabInstance: {fileID: 1048807838}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &952520329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952520328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e4c014bbf903c34dba8cf56f9966355, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1048807838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,7 +352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2064197603160872412, guid: 53721925d2a3c1a42be41a1721a28e7b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2064197603160872412, guid: 53721925d2a3c1a42be41a1721a28e7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,23 +400,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53721925d2a3c1a42be41a1721a28e7b, type: 3}
---- !u!1 &1116766637 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2769064814471075337, guid: 58e89ad9b45494846b5c40ab7b767b7f, type: 3}
-  m_PrefabInstance: {fileID: 2769064814243815604}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1116766645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116766637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc72367537e47a441bcb4d033af0c0b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1267950704
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +493,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1687585759
 GameObject:
@@ -819,10 +785,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shieldman
       objectReference: {fileID: 0}
-    - target: {fileID: 2769064814471075337, guid: 58e89ad9b45494846b5c40ab7b767b7f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2769064814471075445, guid: 58e89ad9b45494846b5c40ab7b767b7f, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -876,10 +838,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1918673257891650920, guid: 8740da03be6f1b047b6a876a8077c3a3, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 4394622032474374966, guid: 8740da03be6f1b047b6a876a8077c3a3, type: 3}
       propertyPath: m_Name
       value: FrontMap2
@@ -1077,7 +1035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7858386171879617689, guid: 4d4a90375ccff654eadf07356ddf79b4, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7858386171879617689, guid: 4d4a90375ccff654eadf07356ddf79b4, type: 3}
       propertyPath: m_LocalPosition.x

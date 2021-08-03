@@ -30,7 +30,6 @@ public class EnemyButtonManage : MonoBehaviour
     public GameObject GetTarget() { return target; }
     // public Vector2 GetTargetLocalPos() { return target_localpos; }
     public Vector2 GetTargetWorldPos() { return transform.position; }
-
     private void Awake()
     {
         Instance = this;
@@ -40,11 +39,10 @@ public class EnemyButtonManage : MonoBehaviour
         // Find Nearest Enemy & Set variables with that Enemy
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        // (최적화)target 선정 자체를 interactive 중에서 하기
         target_pre = target;
         pre_targetController = targetController;
 
-        target = FindFunction.Instance.FindNearestObjectArrWithX(enemies);
+        target = FindFunction.Instance.FindNearestInteractionObjectArrWithX(enemies);
 
         // target이 바뀔때만 호출
         if (target != null && target_pre != target) 

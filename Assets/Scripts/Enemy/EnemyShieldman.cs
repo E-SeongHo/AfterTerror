@@ -48,7 +48,12 @@ public class EnemyShieldman : MonoBehaviour
             && !perform)
         {
             if (!set)
-                SetStandard();
+            {
+                if (!SetStandard()) // 앞에 적이 없으면 바로 방패꽂음
+                {
+                    SmashDownShield();
+                }
+            }
             Run();
         }
 
@@ -66,6 +71,7 @@ public class EnemyShieldman : MonoBehaviour
         animator.SetBool("arrive", true);
         // apply shield's health (+7)  
         controller.ChangeHealth(7);
+        perform = true;
     }
  /*   IEnumerator RunForward()
     {
@@ -101,6 +107,7 @@ public class EnemyShieldman : MonoBehaviour
     }*/
     private void Run()
     {
+        Debug.Log("run");
         stdpos.x -= viewSpeed * Time.deltaTime;
         if (gameObject.transform.position.x - stdpos.x > -250f)
         {
@@ -110,16 +117,22 @@ public class EnemyShieldman : MonoBehaviour
         else
         {
             SmashDownShield();
-            perform = true;
         }
     }
 
-    private void SetStandard()
+    private bool SetStandard()
     {
+        bool success = false;
         // 호출시점 기준 목표 위치 설정 : stdpos
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        // interaction 아닌 적도 포함 ! 
         stdpos = FindFunction.Instance.FindNearestObjectArrWithX(enemies).transform.position;
+        
+        if (stdpos == null) success = false;
+        else success = true;
+        
         set = true;
+        return success;
     }
 }
 
