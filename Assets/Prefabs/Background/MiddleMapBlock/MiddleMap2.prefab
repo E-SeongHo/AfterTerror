@@ -101,6 +101,14 @@ PrefabInstance:
       value: middle_house2
       objectReference: {fileID: 0}
     - target: {fileID: 1168199654813498479, guid: f52d4a93ab0251b42bff0d1b80be4500, type: 3}
+      propertyPath: m_Size.x
+      value: 1085
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168199654813498479, guid: f52d4a93ab0251b42bff0d1b80be4500, type: 3}
+      propertyPath: m_Size.y
+      value: 645
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168199654813498479, guid: f52d4a93ab0251b42bff0d1b80be4500, type: 3}
       propertyPath: m_SortingOrder
       value: -10
       objectReference: {fileID: 0}
@@ -161,6 +169,14 @@ PrefabInstance:
     - target: {fileID: 6025226328729734984, guid: 1f6514d89bce4684cb2dc7a7cfe8b043, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025226328729734985, guid: 1f6514d89bce4684cb2dc7a7cfe8b043, type: 3}
+      propertyPath: m_Size.x
+      value: 500.2984
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025226328729734985, guid: 1f6514d89bce4684cb2dc7a7cfe8b043, type: 3}
+      propertyPath: m_Size.y
+      value: 765
       objectReference: {fileID: 0}
     - target: {fileID: 6025226328729734985, guid: 1f6514d89bce4684cb2dc7a7cfe8b043, type: 3}
       propertyPath: m_SortingOrder

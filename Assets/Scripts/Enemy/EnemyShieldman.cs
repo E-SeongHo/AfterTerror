@@ -30,6 +30,8 @@ public class EnemyShieldman : MonoBehaviour
     private Vector2 stdpos;
     private GameObject[] enemies;
 
+    private Animator animator;
+
     private void Start()
     {
         controller = GetComponent<EnemyController>();
@@ -37,6 +39,7 @@ public class EnemyShieldman : MonoBehaviour
         controller.SetMaxHealth(maxHealth);
         viewSpeed = gameObject.transform.parent.GetComponent<FrontViewMove>().GetFrontViewSpeed();
         speed = viewSpeed * 3;
+        animator = gameObject.GetComponent<Animator>();
     }
     private void FixedUpdate()
     {
@@ -52,13 +55,15 @@ public class EnemyShieldman : MonoBehaviour
         // if runaway 
         if (controller.GetRunState())
         {
-            Destroy(gameObject);
+            animator.SetBool("close", true);
+            
+            //Destroy(gameObject);
         }
     }
     private void SmashDownShield()
     {
         // shield animation
-        gameObject.transform.Translate(0, 50f, 0, Space.World);
+        animator.SetBool("arrive", true);
         // apply shield's health (+7)  
         controller.ChangeHealth(7);
     }
