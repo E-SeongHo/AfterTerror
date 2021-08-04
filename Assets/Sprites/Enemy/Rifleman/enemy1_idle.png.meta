@@ -109,9 +109,9 @@ TextureImporter:
       name: enemy1_idle_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 170
+        width: 180
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -130,9 +130,9 @@ TextureImporter:
       name: enemy1_idle_1
       rect:
         serializedVersion: 2
-        x: 189
+        x: 180
         y: 0
-        width: 169
+        width: 180
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -151,9 +151,9 @@ TextureImporter:
       name: enemy1_idle_2
       rect:
         serializedVersion: 2
-        x: 369
+        x: 360
         y: 0
-        width: 168
+        width: 180
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -172,9 +172,9 @@ TextureImporter:
       name: enemy1_idle_3
       rect:
         serializedVersion: 2
-        x: 549
+        x: 540
         y: 0
-        width: 169
+        width: 180
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -193,9 +193,9 @@ TextureImporter:
       name: enemy1_idle_4
       rect:
         serializedVersion: 2
-        x: 729
+        x: 720
         y: 0
-        width: 169
+        width: 180
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}

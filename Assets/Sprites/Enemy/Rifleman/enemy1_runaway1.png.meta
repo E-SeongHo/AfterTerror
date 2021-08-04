@@ -7,16 +7,16 @@ TextureImporter:
     second: enemy1_runaway1_0
   - first:
       213: 5605500766005211003
-    second: enemy1_runaway1_1
+    second: enemy1_runaway1_7
   - first:
       213: -7493454452250971532
-    second: enemy1_runaway1_2
+    second: enemy1_runaway1_7
   - first:
       213: 5504767656700975243
-    second: enemy1_runaway1_3
+    second: enemy1_runaway1_6
   - first:
       213: -4391131993966198050
-    second: enemy1_runaway1_4
+    second: enemy1_runaway1_7
   - first:
       213: 656069156662844375
     second: enemy1_runaway1_5
@@ -26,6 +26,15 @@ TextureImporter:
   - first:
       213: 8364787702111323486
     second: enemy1_runaway1_7
+  - first:
+      213: 5398855026457713069
+    second: enemy1_runaway1_7
+  - first:
+      213: -857040614698257036
+    second: enemy1_runaway1_6
+  - first:
+      213: -140976867712815140
+    second: enemy1_runaway1_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,9 +127,9 @@ TextureImporter:
       name: enemy1_runaway1_0
       rect:
         serializedVersion: 2
-        x: 325
+        x: 0
         y: 0
-        width: 163
+        width: 564
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -136,12 +145,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_runaway1_1
+      name: enemy1_runaway1_2
       rect:
         serializedVersion: 2
-        x: 851
+        x: 1128
         y: 0
-        width: 205
+        width: 564
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -157,12 +166,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_runaway1_2
+      name: enemy1_runaway1_4
       rect:
         serializedVersion: 2
-        x: 1351
+        x: 2256
         y: 0
-        width: 265
+        width: 564
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -178,12 +187,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_runaway1_3
+      name: enemy1_runaway1_6
       rect:
         serializedVersion: 2
-        x: 1808
+        x: 3384
         y: 0
-        width: 381
+        width: 564
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -199,12 +208,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_runaway1_4
+      name: enemy1_runaway1_7
       rect:
         serializedVersion: 2
-        x: 2327
+        x: 3948
         y: 0
-        width: 435
+        width: 564
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -220,12 +229,54 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: enemy1_runaway1_1
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 0
+        width: 564
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da918ddca069cea40800000000000000
+      internalID: 5398855026457713069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1_runaway1_3
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 0
+        width: 564
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475f3da0a1e2b14f0800000000000000
+      internalID: -857040614698257036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: enemy1_runaway1_5
       rect:
         serializedVersion: 2
-        x: 2847
+        x: 2820
         y: 0
-        width: 501
+        width: 564
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -234,50 +285,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7db9af60c63da1900800000000000000
-      internalID: 656069156662844375
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy1_runaway1_6
-      rect:
-        serializedVersion: 2
-        x: 3415
-        y: 0
-        width: 510
-        height: 297
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f93da6899d765ba10800000000000000
-      internalID: 1924558600033457055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy1_runaway1_7
-      rect:
-        serializedVersion: 2
-        x: 3969
-        y: 0
-        width: 531
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e55c6e5b812b51470800000000000000
-      internalID: 8364787702111323486
+      spriteID: cdf2e6629462b0ef0800000000000000
+      internalID: -140976867712815140
       vertices: []
       indices: 
       edges: []

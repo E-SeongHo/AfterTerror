@@ -7,25 +7,28 @@ TextureImporter:
     second: enemy1_dead_0
   - first:
       213: 3691404127250994732
-    second: enemy1_dead_1
+    second: enemy1_dead_7
   - first:
       213: -6752876597097316899
-    second: enemy1_dead_2
+    second: enemy1_dead_7
   - first:
       213: 1755423779380076640
-    second: enemy1_dead_3
+    second: enemy1_dead_6
   - first:
       213: -2038009489755096008
-    second: enemy1_dead_4
+    second: enemy1_dead_7
   - first:
       213: 320266157190027804
     second: enemy1_dead_5
   - first:
       213: 7896863303032102635
-    second: enemy1_dead_6
+    second: enemy1_dead_7
   - first:
       213: -5477712238873585861
-    second: enemy1_dead_7
+    second: enemy1_dead_6
+  - first:
+      213: 1670169055870607553
+    second: enemy1_dead_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,9 +121,9 @@ TextureImporter:
       name: enemy1_dead_0
       rect:
         serializedVersion: 2
-        x: 295
+        x: 0
         y: 0
-        width: 164
+        width: 468
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -136,12 +139,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_1
+      name: enemy1_dead_2
       rect:
         serializedVersion: 2
-        x: 723
+        x: 936
         y: 0
-        width: 205
+        width: 468
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -157,12 +160,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_2
+      name: enemy1_dead_4
       rect:
         serializedVersion: 2
-        x: 1138
+        x: 1872
         y: 0
-        width: 263
+        width: 468
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -178,12 +181,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_3
+      name: enemy1_dead_6
       rect:
         serializedVersion: 2
-        x: 1505
+        x: 2808
         y: 0
-        width: 369
+        width: 468
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -199,12 +202,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_4
+      name: enemy1_dead_7
       rect:
         serializedVersion: 2
-        x: 1910
+        x: 3276
         y: 0
-        width: 431
+        width: 468
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -220,33 +223,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_5
+      name: enemy1_dead_1
       rect:
         serializedVersion: 2
-        x: 2352
+        x: 468
         y: 0
-        width: 454
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1a14e48f50d17400800000000000000
-      internalID: 320266157190027804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy1_dead_6
-      rect:
-        serializedVersion: 2
-        x: 2801
-        y: 0
-        width: 469
+        width: 468
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -262,12 +244,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy1_dead_7
+      name: enemy1_dead_3
       rect:
         serializedVersion: 2
-        x: 3275
+        x: 1404
         y: 0
-        width: 463
+        width: 468
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -278,6 +260,27 @@ TextureImporter:
       bones: []
       spriteID: b37512cadb14bf3b0800000000000000
       internalID: -5477712238873585861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy1_dead_5
+      rect:
+        serializedVersion: 2
+        x: 2340
+        y: 0
+        width: 468
+        height: 300
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c0640a48e1ad2710800000000000000
+      internalID: 1670169055870607553
       vertices: []
       indices: 
       edges: []

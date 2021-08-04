@@ -109,9 +109,9 @@ TextureImporter:
       name: enemy1_shoot_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 188
+        width: 189
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -130,9 +130,9 @@ TextureImporter:
       name: enemy1_shoot_1
       rect:
         serializedVersion: 2
-        x: 204
+        x: 189
         y: 0
-        width: 174
+        width: 189
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -151,9 +151,9 @@ TextureImporter:
       name: enemy1_shoot_2
       rect:
         serializedVersion: 2
-        x: 399
+        x: 378
         y: 0
-        width: 169
+        width: 189
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -172,9 +172,9 @@ TextureImporter:
       name: enemy1_shoot_3
       rect:
         serializedVersion: 2
-        x: 588
+        x: 567
         y: 0
-        width: 168
+        width: 189
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -193,9 +193,9 @@ TextureImporter:
       name: enemy1_shoot_4
       rect:
         serializedVersion: 2
-        x: 777
+        x: 756
         y: 0
-        width: 168
+        width: 189
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
