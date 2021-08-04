@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: 507d1ef936671a44893e5a24c3a751dd
+guid: e7ca05a2cf8350c4ebbc0a2bdfe010b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5690359612343717493
-    second: enemy3_attack_0
+      213: -6797699746269687341
+    second: enemy3-Dynamite_0
   - first:
-      213: 3407092495541637897
-    second: enemy3_attack_1
+      213: -2998668836599004059
+    second: enemy3-Dynamite_1
   - first:
-      213: -124373275658786062
-    second: enemy3_attack_2
+      213: -5221288701228455657
+    second: enemy3-Dynamite_2
   - first:
-      213: -7047825168906726840
-    second: enemy3_attack_3
+      213: 1818780199825880821
+    second: enemy3-Dynamite_3
   - first:
-      213: -4320871579128969614
-    second: enemy3_attack_4
-  - first:
-      213: 4619337603285040438
-    second: enemy3_attack_5
-  - first:
-      213: -1044868324651369652
-    second: enemy3_attack_6
-  - first:
-      213: 6488996065367389726
-    second: enemy3_attack_7
+      213: 7194530184309434003
+    second: enemy3-Dynamite_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,169 +106,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy3_attack_0
+      name: enemy3-Dynamite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b81f506d418c701b0800000000000000
-      internalID: -5690359612343717493
+      spriteID: 3d115d5b818b9a1a0800000000000000
+      internalID: -6797699746269687341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_1
+      name: enemy3-Dynamite_1
       rect:
         serializedVersion: 2
-        x: 147
+        x: 30
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90398a9b29c684f20800000000000000
-      internalID: 3407092495541637897
+      spriteID: 5648b7ba4969266d0800000000000000
+      internalID: -2998668836599004059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_2
+      name: enemy3-Dynamite_2
       rect:
         serializedVersion: 2
-        x: 294
+        x: 60
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fa6ecc2a23264ef0800000000000000
-      internalID: -124373275658786062
+      spriteID: 719648df6914a87b0800000000000000
+      internalID: -5221288701228455657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_3
+      name: enemy3-Dynamite_3
       rect:
         serializedVersion: 2
-        x: 441
+        x: 90
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 842d1409958113e90800000000000000
-      internalID: -7047825168906726840
+      spriteID: 5f6b22794fa9d3910800000000000000
+      internalID: 1818780199825880821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_4
+      name: enemy3-Dynamite_4
       rect:
         serializedVersion: 2
-        x: 588
+        x: 120
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 30
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 276cfe5113e2904c0800000000000000
-      internalID: -4320871579128969614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy3_attack_5
-      rect:
-        serializedVersion: 2
-        x: 735
-        y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63db86d631f2b1040800000000000000
-      internalID: 4619337603285040438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy3_attack_6
-      rect:
-        serializedVersion: 2
-        x: 882
-        y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4bf8107bc1ef71f0800000000000000
-      internalID: -1044868324651369652
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy3_attack_7
-      rect:
-        serializedVersion: 2
-        x: 1029
-        y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1671219a8b8d0a50800000000000000
-      internalID: 6488996065367389726
+      spriteID: 396e699951b18d360800000000000000
+      internalID: 7194530184309434003
       vertices: []
       indices: 
       edges: []
@@ -285,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c33c5722caafcda49b9892aee478ea95
+    spriteID: e0356cde037b91741b3bb324d6401137
     internalID: 0
     vertices: []
     indices: 

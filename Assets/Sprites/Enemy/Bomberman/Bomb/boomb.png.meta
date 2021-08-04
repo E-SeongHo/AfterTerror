@@ -1,31 +1,34 @@
 fileFormatVersion: 2
-guid: 507d1ef936671a44893e5a24c3a751dd
+guid: bdb2b3c67f35939499e1d1f6b15c2f55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5690359612343717493
-    second: enemy3_attack_0
+      213: -1932309994660568592
+    second: boomb_0
   - first:
-      213: 3407092495541637897
-    second: enemy3_attack_1
+      213: 4637135375421826745
+    second: boomb_1
   - first:
-      213: -124373275658786062
-    second: enemy3_attack_2
+      213: 2926149879292305020
+    second: boomb_2
   - first:
-      213: -7047825168906726840
-    second: enemy3_attack_3
+      213: 4240764088187390426
+    second: boomb_3
   - first:
-      213: -4320871579128969614
-    second: enemy3_attack_4
+      213: -4869163128377954074
+    second: boomb_4
   - first:
-      213: 4619337603285040438
-    second: enemy3_attack_5
+      213: -8989849485675590490
+    second: boomb_5
   - first:
-      213: -1044868324651369652
-    second: enemy3_attack_6
+      213: 6867876884854819852
+    second: boomb_6
   - first:
-      213: 6488996065367389726
-    second: enemy3_attack_7
+      213: -5797490962786305147
+    second: boomb_7
+  - first:
+      213: -2919253159393988646
+    second: boomb_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,169 +118,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy3_attack_0
+      name: boomb_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b81f506d418c701b0800000000000000
-      internalID: -5690359612343717493
+      spriteID: 0f1e1543c4e0f25e0800000000000000
+      internalID: -1932309994660568592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_1
+      name: boomb_1
       rect:
         serializedVersion: 2
-        x: 147
+        x: 90
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90398a9b29c684f20800000000000000
-      internalID: 3407092495541637897
+      spriteID: 9b66a6b2e0a6a5040800000000000000
+      internalID: 4637135375421826745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_2
+      name: boomb_2
       rect:
         serializedVersion: 2
-        x: 294
+        x: 180
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fa6ecc2a23264ef0800000000000000
-      internalID: -124373275658786062
+      spriteID: c7e15c2dfc5cb9820800000000000000
+      internalID: 2926149879292305020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_3
+      name: boomb_3
       rect:
         serializedVersion: 2
-        x: 441
+        x: 270
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 842d1409958113e90800000000000000
-      internalID: -7047825168906726840
+      spriteID: ad984ac38783ada30800000000000000
+      internalID: 4240764088187390426
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_4
+      name: boomb_4
       rect:
         serializedVersion: 2
-        x: 588
+        x: 360
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 276cfe5113e2904c0800000000000000
-      internalID: -4320871579128969614
+      spriteID: 6e03a93cee14d6cb0800000000000000
+      internalID: -4869163128377954074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_5
+      name: boomb_5
       rect:
         serializedVersion: 2
-        x: 735
+        x: 450
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63db86d631f2b1040800000000000000
-      internalID: 4619337603285040438
+      spriteID: 6ac0416e583ad3380800000000000000
+      internalID: -8989849485675590490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_6
+      name: boomb_6
       rect:
         serializedVersion: 2
-        x: 882
+        x: 540
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4bf8107bc1ef71f0800000000000000
-      internalID: -1044868324651369652
+      spriteID: c0c43e2a3a99f4f50800000000000000
+      internalID: 6867876884854819852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy3_attack_7
+      name: boomb_7
       rect:
         serializedVersion: 2
-        x: 1029
+        x: 630
         y: 0
-        width: 147
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1671219a8b8d0a50800000000000000
-      internalID: 6488996065367389726
+      spriteID: 58bb59e8fac2b8fa0800000000000000
+      internalID: -5797490962786305147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boomb_8
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 90
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf62e8e7babc77d0800000000000000
+      internalID: -2919253159393988646
       vertices: []
       indices: 
       edges: []
@@ -285,7 +309,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c33c5722caafcda49b9892aee478ea95
+    spriteID: 6a060408a76adf64ab020adef8d7ced0
     internalID: 0
     vertices: []
     indices: 

@@ -34,7 +34,7 @@ public class EnemyButtonManage : MonoBehaviour
     {
         Instance = this;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         // Find Nearest Enemy & Set variables with that Enemy
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
