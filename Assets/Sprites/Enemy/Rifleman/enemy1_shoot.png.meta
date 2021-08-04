@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1a36ada791c52d0409739e11c8c049db
+guid: 9850deb6e5e8ee34791c0b76e3d4db62
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -17,12 +17,6 @@ TextureImporter:
   - first:
       213: -2953348389119206598
     second: enemy1_shoot_4
-  - first:
-      213: 630376429471613590
-    second: enemy1_shoot_5
-  - first:
-      213: 775697276594221689
-    second: enemy1_shoot_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,9 +109,9 @@ TextureImporter:
       name: enemy1_shoot_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 1
         y: 0
-        width: 159
+        width: 188
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -136,9 +130,9 @@ TextureImporter:
       name: enemy1_shoot_1
       rect:
         serializedVersion: 2
-        x: 216
+        x: 204
         y: 0
-        width: 159
+        width: 174
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -157,9 +151,9 @@ TextureImporter:
       name: enemy1_shoot_2
       rect:
         serializedVersion: 2
-        x: 390
+        x: 399
         y: 0
-        width: 183
+        width: 169
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -178,7 +172,7 @@ TextureImporter:
       name: enemy1_shoot_3
       rect:
         serializedVersion: 2
-        x: 594
+        x: 588
         y: 0
         width: 168
         height: 300
@@ -199,9 +193,9 @@ TextureImporter:
       name: enemy1_shoot_4
       rect:
         serializedVersion: 2
-        x: 792
+        x: 777
         y: 0
-        width: 159
+        width: 168
         height: 300
       alignment: 5
       pivot: {x: 1, y: 0.5}
@@ -216,52 +210,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: enemy1_shoot_5
-      rect:
-        serializedVersion: 2
-        x: 984
-        y: 0
-        width: 159
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6924f61d50c8fb800800000000000000
-      internalID: 630376429471613590
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemy1_shoot_6
-      rect:
-        serializedVersion: 2
-        x: 1176
-        y: 0
-        width: 159
-        height: 300
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 972f2a03094d3ca00800000000000000
-      internalID: 775697276594221689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2ff9ed8d850b1b347a55fa77757e2d48
+    spriteID: daf62a40dbd32ce45bb13605ed83be23
     internalID: 0
     vertices: []
     indices: 

@@ -83,16 +83,17 @@ public class EnemyController : MonoBehaviour
     }
     private void DieProcess()
     {
+        Destroy(myButton);
         die = true;
-        animator.SetBool("die", true);
         interaction = false;
+        animator.SetBool("die", true);
         // Destroy after 3 seconds
         Destroy(gameObject, 3f);
     }
     IEnumerator RunAwayProcess()
     {
-        animator.SetBool("turn", true);
         interaction = false;
+        animator.SetBool("turn", true); 
         Vector2 start = gameObject.transform.position;
 
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.9f)

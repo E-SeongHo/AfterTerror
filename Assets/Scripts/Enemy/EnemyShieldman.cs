@@ -54,7 +54,8 @@ public class EnemyShieldman : MonoBehaviour
                     SmashDownShield();
                 }
             }
-            Run();
+            if(!controller.GetDieState())  // 달려오다 죽었으면 그만 달려
+                Run();
         }
 
         // if runaway 

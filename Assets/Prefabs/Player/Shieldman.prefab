@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 2769064814471075338}
   - component: {fileID: 2769064814471075447}
   - component: {fileID: 2769064814471075446}
-  - component: {fileID: 2749986044488602548}
-  - component: {fileID: 7343638473345482818}
   m_Layer: 0
   m_Name: Shieldman
   m_TagString: Player
@@ -164,32 +162,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 106.93536, y: 155.3148}
   m_EdgeRadius: 0
---- !u!114 &2749986044488602548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769064814471075337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16c2fcbc792906d41bd866bf9d10e88b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  durationTime: 1
-  coolTime: 0
---- !u!114 &7343638473345482818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769064814471075337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7816f1da11aa5046b19e6b6e432232d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 6
-  attackAbility: 1
-  currentHealth: 3
