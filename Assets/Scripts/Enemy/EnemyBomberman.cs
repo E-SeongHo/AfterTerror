@@ -36,6 +36,10 @@ public class EnemyBomberman : MonoBehaviour
         {
             controller.StartCoroutine("RunAwayProcess");
         }
+        if (controller.GetDieState())
+        {
+            DieAction();
+        }
     }
     private void ThrowDynamite()
     {
@@ -61,6 +65,12 @@ public class EnemyBomberman : MonoBehaviour
             ThrowDynamite();
             controller.ResetAttackCount();
         }
+    }
+    private void DieAction()
+    {
+        animator.SetBool("die", true);
+        // Destroy after 3 seconds
+        Destroy(gameObject, 3f);
     }
     
 }

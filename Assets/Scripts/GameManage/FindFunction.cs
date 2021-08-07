@@ -87,4 +87,14 @@ public class FindFunction : MonoBehaviour
         }
         return nearestTarget;
     }
+    public List<GameObject> GetEnemiesInSameBlock(Transform block)
+    {
+        List<GameObject> enemies = new List<GameObject>();
+        foreach(Transform child in block)
+        {
+            if (child.tag == "Enemy")
+                enemies.Add(child.gameObject);
+        }
+        return enemies;
+    }
 }

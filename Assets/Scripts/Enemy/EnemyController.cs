@@ -86,9 +86,12 @@ public class EnemyController : MonoBehaviour
         Destroy(myButton);
         die = true;
         interaction = false;
-        animator.SetBool("die", true);
+        
+        // 칼찌맨 공중에서 죽는거 처리해야해서 일반화 안됨
+
+        /*animator.SetBool("die", true);
         // Destroy after 3 seconds
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 3f);*/
     }
     IEnumerator RunAwayProcess()
     {

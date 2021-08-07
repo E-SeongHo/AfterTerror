@@ -10,7 +10,7 @@ public class DynamiteController : MonoBehaviour
     private GameObject player; // 목표
 
     [Range(0, 1)] private float bezier_param = 0; // Bezier Curve 매개변수
-    private float height = 700f; // Bezier Point 최대 상대높이
+    private float height = 300f; // Bezier Point 최대 상대높이
     private float startTime;
 
     private Rigidbody2D rb;

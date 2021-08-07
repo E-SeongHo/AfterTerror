@@ -28,7 +28,7 @@ public class EnemyShieldman : MonoBehaviour
     private float viewSpeed;
     private EnemyController controller;
     private Vector2 stdpos;
-    private GameObject[] enemies;
+    private List<GameObject> enemies;
 
     private Animator animator;
 
@@ -38,8 +38,10 @@ public class EnemyShieldman : MonoBehaviour
         controller.SetCurrentHealth(startHealth);
         controller.SetMaxHealth(maxHealth);
         viewSpeed = gameObject.transform.parent.GetComponent<FrontViewMove>().GetFrontViewSpeed();
-        speed = viewSpeed * 3;
+        speed = viewSpeed * 2;
         animator = gameObject.GetComponent<Animator>();
+
+        enemies = FindFunction.Instance.GetEnemiesInSameBlock(gameObject.transform.parent);
     }
     private void FixedUpdate()
     {
@@ -49,10 +51,7 @@ public class EnemyShieldman : MonoBehaviour
         {
             if (!set)
             {
-                if (!SetStandard()) // 앞에 적이 없으면 바로 방패꽂음
-                {
-                    SmashDownShield();
-                }
+                SetStandard();
             }
             if(!controller.GetDieState())  // 달려오다 죽었으면 그만 달려
                 Run();
@@ -64,6 +63,11 @@ public class EnemyShieldman : MonoBehaviour
             controller.StartCoroutine("RunAwayProcess");
             perform = true; // interaction 과 달리기 시작할 때 기준 달라서 runaway 판정 이후에 위의 조건문 안들어가게 하기 위함
         }
+
+        if (controller.GetDieState())
+        {
+            DieAction();
+        }
     }
     private void SmashDownShield()
     {
@@ -73,41 +77,9 @@ public class EnemyShieldman : MonoBehaviour
         controller.ChangeHealth(7);
         perform = true;
     }
- /*   IEnumerator RunForward()
-    {
-        *//*// run animation 
-        Debug.Log(gameObject.transform.parent);
-        Debug.Log(gameObject.transform.position.x - EnemyButtonManage.Instance.GetTargetWorldPos().x);
-        while (EnemyButtonManage.Instance.GetTarget() == null)
-            ;
-        while (gameObject.transform.position.x - EnemyButtonManage.Instance.GetTargetWorldPos().x > -250f)
-        {
-            // Vector2 target_pos = EnemyButtonManage.Instance.GetTargetLocalPos();
 
-            gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime, Space.World);
-            yield return new WaitForFixedUpdate();
-        }
-
-        SmashDownShield();
-        perform = true;
-
-        yield return null;*//*
-
-        if (!set)
-            SetStandard();
-        while (gameObject.transform.position.x - stdpos.x > -250f)
-        {
-            Debug.Log(gameObject.transform.position.x - stdpos.x);
-            gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime, Space.World);
-            yield return new WaitForFixedUpdate();
-        }
-        SmashDownShield();
-
-        yield return null;
-    }*/
     private void Run()
     {
-        Debug.Log("run");
         stdpos.x -= viewSpeed * Time.deltaTime;
         if (gameObject.transform.position.x - stdpos.x > -250f)
         {
@@ -119,20 +91,20 @@ public class EnemyShieldman : MonoBehaviour
             SmashDownShield();
         }
     }
-
-    private bool SetStandard()
+    private void SetStandard()
     {
-        bool success = false;
         // 호출시점 기준 목표 위치 설정 : stdpos
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        // interaction 아닌 적도 포함 ! 
-        stdpos = FindFunction.Instance.FindNearestObjectArrWithX(enemies).transform.position;
-        
-        if (stdpos == null) success = false;
-        else success = true;
+        GameObject nearest = FindFunction.Instance.FindNearestObject(enemies);
+
+        stdpos = nearest.transform.position;
         
         set = true;
-        return success;
+    }
+    private void DieAction()
+    {
+        animator.SetBool("die", true);
+        // Destroy after 3 seconds
+        Destroy(gameObject, 3f);
     }
 }
 

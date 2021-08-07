@@ -36,6 +36,10 @@ public class EnemyRifleman : MonoBehaviour
         {
             controller.StartCoroutine("RunAwayProcess");
         }
+        if (controller.GetDieState()) 
+        {
+            DieAction();
+        }
     }
     // Bullet을 쏘는 것 까지는 책임, 쏜 이후는 책임 X
     private void ShotBullet()
@@ -68,6 +72,12 @@ public class EnemyRifleman : MonoBehaviour
             ShotBullet();
             controller.ResetAttackCount();
         }
+    }
+    private void DieAction()
+    {
+        animator.SetBool("die", true);
+        // Destroy after 3 seconds
+        Destroy(gameObject, 3f);
     }
 
 }
