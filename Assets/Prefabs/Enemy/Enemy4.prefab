@@ -213,7 +213,7 @@ Animator:
   m_GameObject: {fileID: 3461983340055134112}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: afe88809fe7840a47a1621307de1f847, type: 2}
+  m_Controller: {fileID: 9100000, guid: 95ff983dc4814b74f946ac26f9330b98, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -246,11 +246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6022df563c76d44ca06de7f70beb031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
-  throw_bound: 3
-  downhill_spd: 20
-  run_spd: 30
-  slash_damage: 2
   throwing_knife: {fileID: 5972121164590341786, guid: 1b4d5e47b691d4f439c24815b0390fad, type: 3}
 --- !u!61 &3461983340055134119
 BoxCollider2D:
