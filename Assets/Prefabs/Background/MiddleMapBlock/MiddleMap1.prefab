@@ -52,6 +52,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076402343246559262}
     m_Modifications:
+    - target: {fileID: 5027566732136181994, guid: a40008c8631957143be5330fb94fc875, type: 3}
+      propertyPath: m_Size.x
+      value: 379
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027566732136181994, guid: a40008c8631957143be5330fb94fc875, type: 3}
+      propertyPath: m_Size.y
+      value: 249.40955
+      objectReference: {fileID: 0}
     - target: {fileID: 5027566732136181995, guid: a40008c8631957143be5330fb94fc875, type: 3}
       propertyPath: m_Name
       value: middle_rock
@@ -117,6 +125,14 @@ PrefabInstance:
     - target: {fileID: 7118642692502174363, guid: 2f515a81b2c7b5049ba8f531a7e753fa, type: 3}
       propertyPath: m_Name
       value: middle_house1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118642692502174364, guid: 2f515a81b2c7b5049ba8f531a7e753fa, type: 3}
+      propertyPath: m_Size.x
+      value: 935
+      objectReference: {fileID: 0}
+    - target: {fileID: 7118642692502174364, guid: 2f515a81b2c7b5049ba8f531a7e753fa, type: 3}
+      propertyPath: m_Size.y
+      value: 865
       objectReference: {fileID: 0}
     - target: {fileID: 7118642692502174365, guid: 2f515a81b2c7b5049ba8f531a7e753fa, type: 3}
       propertyPath: m_RootOrder

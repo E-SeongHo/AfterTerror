@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2769064814471075338}
   - component: {fileID: 2769064814471075447}
   - component: {fileID: 2769064814471075446}
-  - component: {fileID: 263879431}
   m_Layer: 0
   m_Name: Shieldman
   m_TagString: Player
@@ -163,22 +162,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 106.93536, y: 155.3148}
   m_EdgeRadius: 0
---- !u!95 &263879431
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769064814471075337}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4d48e747f46696540a246da778afeedf, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
