@@ -44,7 +44,7 @@ public class EnemyBomberman : MonoBehaviour
     private void ThrowDynamite()
     {
         animator.SetTrigger("throw");
-        Vector3 init_pos = gameObject.transform.position + new Vector3(30f, 0, 0);
+        Vector3 init_pos = gameObject.transform.position + new Vector3(-19f, -17f, 0);
         GameObject newDynamite = Instantiate(dynamite_prefab, init_pos, Quaternion.identity);
     }
     private void AutoThrowProcess()
@@ -54,7 +54,7 @@ public class EnemyBomberman : MonoBehaviour
         {
             ThrowDynamite();
             // after first shot, next fire is after 4f(autoShotTime) time
-            count = autoThrowTime;
+            count = autoThrowTime; 
         }
     }
     // 플레이어가 공격을 실패하면 카운트 후 공격

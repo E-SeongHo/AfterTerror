@@ -8,6 +8,7 @@ TagManager:
   - Shieldman
   - Projectile
   - Enemy
+  - PlayerHand
   layers:
   - Default
   - TransparentFX

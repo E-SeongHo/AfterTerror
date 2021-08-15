@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: -319731775445471177
     second: middle_house2_0
+  - first:
+      213: -8692840457138976222
+    second: middle_house2_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,9 +118,9 @@ TextureImporter:
       name: middle_house2_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1070
         y: 0
-        width: 1040
+        width: 1070
         height: 645
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -136,9 +139,9 @@ TextureImporter:
       name: middle_house2_2
       rect:
         serializedVersion: 2
-        x: 1040
+        x: 2140
         y: 0
-        width: 1080
+        width: 1070
         height: 645
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -157,9 +160,9 @@ TextureImporter:
       name: middle_house2_3
       rect:
         serializedVersion: 2
-        x: 2126
+        x: 3210
         y: 0
-        width: 1050
+        width: 1070
         height: 645
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -178,9 +181,9 @@ TextureImporter:
       name: middle_house2_5
       rect:
         serializedVersion: 2
-        x: 3173
+        x: 5350
         y: 0
-        width: 1086
+        width: 1070
         height: 645
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -199,9 +202,9 @@ TextureImporter:
       name: middle_house2_6
       rect:
         serializedVersion: 2
-        x: 4259
+        x: 6420
         y: 0
-        width: 1083
+        width: 1070
         height: 645
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -217,33 +220,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_house2_7
-      rect:
-        serializedVersion: 2
-        x: 5348
-        y: 0
-        width: 1057
-        height: 645
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66365c26e88521de0800000000000000
-      internalID: -1363930368574135450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: middle_house2_0
       rect:
         serializedVersion: 2
-        x: 6405
+        x: 0
         y: 0
-        width: 1085
+        width: 1070
         height: 645
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -254,6 +236,27 @@ TextureImporter:
       bones: []
       spriteID: 730fa2de4a5109bf0800000000000000
       internalID: -319731775445471177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: middle_house2_4
+      rect:
+        serializedVersion: 2
+        x: 4280
+        y: 0
+        width: 1070
+        height: 645
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a461f29a3dc5780800000000000000
+      internalID: -8692840457138976222
       vertices: []
       indices: 
       edges: []

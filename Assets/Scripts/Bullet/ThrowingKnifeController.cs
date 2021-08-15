@@ -45,6 +45,5 @@ public class ThrowingKnifeController : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        
     }
 }

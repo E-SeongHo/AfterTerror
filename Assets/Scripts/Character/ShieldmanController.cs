@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.Android;
 using UnityEngine;
 
 public class ShieldmanController : MonoBehaviour
@@ -8,10 +10,18 @@ public class ShieldmanController : MonoBehaviour
     /*    private GameObject myButton;
         private bool buttonON = false;*/
     public static ShieldmanController Instance;
-    private SpriteRenderer sprRenderer;
-    public int maxHealth = 6;
     [SerializeField] private int attackAbility = 1;
     [SerializeField] private int currentHealth = 3;
+
+    private Animator animator;
+    private Animator hand_animator;
+    private Animator fire_animator;
+
+    private GameObject hand;
+    private GameObject fire_hand;
+
+    private SpriteRenderer sprRenderer;
+    public int maxHealth = 6;
     private bool invincibility = false;
 
     private void Awake()
@@ -20,11 +30,34 @@ public class ShieldmanController : MonoBehaviour
     }
     private void Start()
     {
-        sprRenderer = GetComponent<SpriteRenderer>();
+        sprRenderer = gameObject.GetComponent<SpriteRenderer>();
+        animator = gameObject.GetComponent<Animator>();
+        hand_animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        fire_animator = gameObject.transform.GetChild(1).GetComponent<Animator>();
+
+        hand = gameObject.transform.GetChild(0).gameObject;
+        fire_hand = gameObject.transform.GetChild(1).gameObject;
+
+        Run();
+        
         /*myButton = transform.GetChild(0).gameObject;
         myButton.transform.localPosition = new Vector2(0, 1.5f);
         myButton.SetActive(false);
         buttonON = false;*/
+    }
+    private void Update()
+    {
+        
+        /*if(Input.GetKeyDown(KeyCode.A))
+        {
+            StartCoroutine("AttackAnimation");
+        }*/
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            JumpWithHand();
+        }
+        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        Debug.Log(hand_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
     }
 
     // Getters
@@ -34,14 +67,15 @@ public class ShieldmanController : MonoBehaviour
     // Setters
     public void ChangeHealth(int amount)
     {
-        if(!invincibility && amount < 0)
+        if(!invincibility && amount < 0) 
         {
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             Debug.Log(currentHealth + " / " + maxHealth);
             if (currentHealth <= 0)
             {
-                Destroy(gameObject);
-                // 이벤트함수 호출 
+                animator.SetTrigger("die");
+                Destroy(gameObject, 2f);
+                Destroy(hand);
             }
             else
             {
@@ -78,6 +112,37 @@ public class ShieldmanController : MonoBehaviour
 
         yield return null;
     }
+    public void Run()
+    {
+        animator.SetTrigger("run");
+        hand_animator.SetTrigger("run");
+    }
+    public void RunWithHand()
+    {
+        animator.Play("PlayerShieldman_Run");
+        hand_animator.Play("HandMove", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+    }
+    public void JumpWithHand()
+    {
+        animator.SetTrigger("jump");
+        hand_animator.SetTrigger("jump");
+    }
+
+    IEnumerator AttackAnimation()
+    {
+        hand.SetActive(false);
+        fire_hand.SetActive(true);
+        float norm = animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+        fire_animator.Play("HandFire", 0, norm);
+
+        yield return new WaitForSeconds(0.1f);
+
+        fire_hand.SetActive(false);
+        hand.SetActive(true);
+        RunWithHand();
+    }
+    
+
 
 /*    public void ActiveButton()
     {

@@ -29,9 +29,9 @@ public class DynamiteController : MonoBehaviour
 
         // setting bezier points
         points[0] = gameObject.transform.position;
-        points[1] = gameObject.transform.position + new Vector3(0, height, 0);
-        points[2] = player.transform.position + new Vector3(0, height, 0);
-        points[3] = player.transform.position;
+        points[1] = gameObject.transform.position + new Vector3(-100f, height, 0);
+        points[2] = player.transform.position + new Vector3(50f, height, 0);
+        points[3] = player.transform.position; 
     }
 
     private void FixedUpdate()

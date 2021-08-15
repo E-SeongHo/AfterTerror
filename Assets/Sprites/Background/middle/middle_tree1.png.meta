@@ -112,10 +112,10 @@ TextureImporter:
       name: middle_tree1_0
       rect:
         serializedVersion: 2
-        x: 222
-        y: 21
-        width: 500
-        height: 765
+        x: 0
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,10 +133,10 @@ TextureImporter:
       name: middle_tree1_1
       rect:
         serializedVersion: 2
-        x: 1160
-        y: 20
-        width: 450
-        height: 765
+        x: 912
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: middle_tree1_2
       rect:
         serializedVersion: 2
-        x: 2080
-        y: 20
-        width: 450
-        height: 765
+        x: 1824
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: middle_tree1_3
       rect:
         serializedVersion: 2
-        x: 2900
-        y: 20
-        width: 595
-        height: 766
+        x: 2736
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: middle_tree1_4
       rect:
         serializedVersion: 2
-        x: 3802
-        y: 17
-        width: 656
-        height: 769
+        x: 3648
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: middle_tree1_5
       rect:
         serializedVersion: 2
-        x: 4707
-        y: 17
-        width: 677
-        height: 769
+        x: 4560
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

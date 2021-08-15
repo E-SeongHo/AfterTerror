@@ -20,6 +20,24 @@ TextureImporter:
   - first:
       213: 9102529074975919966
     second: middle_tree2_13
+  - first:
+      213: 5095406790311693437
+    second: middle_tree2_0
+  - first:
+      213: -7760982109527093103
+    second: middle_tree2_1
+  - first:
+      213: 2557556796128301331
+    second: middle_tree2_2
+  - first:
+      213: -7155866423038304601
+    second: middle_tree2_3
+  - first:
+      213: -7436090476316630321
+    second: middle_tree2_4
+  - first:
+      213: -6543686269309364705
+    second: middle_tree2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: middle_tree2_7
+      name: middle_tree2_0
       rect:
         serializedVersion: 2
-        x: 2004
-        y: 15
-        width: 558
-        height: 771
+        x: 0
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f60cc9955e64f8940800000000000000
-      internalID: 5300533237303263343
+      spriteID: d7c44aaaa7586b640800000000000000
+      internalID: 5095406790311693437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree2_8
+      name: middle_tree2_1
       rect:
         serializedVersion: 2
-        x: 2953
-        y: 15
-        width: 509
-        height: 771
+        x: 912
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b41c938c4ae0ed50800000000000000
-      internalID: 6764664254656943283
+      spriteID: 190d97d04e37b4490800000000000000
+      internalID: -7760982109527093103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree2_9
+      name: middle_tree2_2
       rect:
         serializedVersion: 2
-        x: 3870
-        y: 15
-        width: 487
-        height: 771
+        x: 1824
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82c00a02c6a4f85b0800000000000000
-      internalID: -5363986802910688216
+      spriteID: 3111d160b544e7320800000000000000
+      internalID: 2557556796128301331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree2_10
+      name: middle_tree2_3
       rect:
         serializedVersion: 2
-        x: 4756
-        y: 15
-        width: 550
-        height: 771
+        x: 2736
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aa8aadacc0854cb0800000000000000
-      internalID: -4880353004610745695
+      spriteID: 7ae18a2d66141bc90800000000000000
+      internalID: -7155866423038304601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree2_12
+      name: middle_tree2_4
       rect:
         serializedVersion: 2
-        x: 211
-        y: 15
-        width: 510
-        height: 771
+        x: 3648
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +225,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe020bc1fa06c2180800000000000000
-      internalID: -9138823238624730897
+      spriteID: fc26b712c13bdc890800000000000000
+      internalID: -7436090476316630321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree2_13
+      name: middle_tree2_5
       rect:
         serializedVersion: 2
-        x: 1109
-        y: 15
-        width: 542
-        height: 771
+        x: 4560
+        y: 0
+        width: 912
+        height: 786
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +246,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5fca9767fda25e70800000000000000
-      internalID: 9102529074975919966
+      spriteID: f16d63c02082035a0800000000000000
+      internalID: -6543686269309364705
       vertices: []
       indices: 
       edges: []

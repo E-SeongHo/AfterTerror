@@ -34,6 +34,7 @@ public class EnemyButtonManage : MonoBehaviour
     {
         Instance = this;
     }
+
     private void Update()
     {
         // Find Nearest Enemy & Set variables with that Enemy
@@ -111,16 +112,19 @@ public class EnemyButtonManage : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
+            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
             if (buttonIndex == 0) DeleteButton();
             else targetController.ChangeAttackCount(1);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
+            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
             if (buttonIndex == 1) DeleteButton();
             else targetController.ChangeAttackCount(1);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
+            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
             if (buttonIndex == 2) DeleteButton();
             else targetController.ChangeAttackCount(1);
         }

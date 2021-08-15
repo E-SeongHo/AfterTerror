@@ -112,10 +112,10 @@ TextureImporter:
       name: middle_rock_0
       rect:
         serializedVersion: 2
-        x: 549
-        y: 140
-        width: 379
-        height: 249
+        x: 0
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,10 +133,10 @@ TextureImporter:
       name: middle_rock_1
       rect:
         serializedVersion: 2
-        x: 1939
-        y: 140
-        width: 388
-        height: 249
+        x: 1392
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +154,10 @@ TextureImporter:
       name: middle_rock_2
       rect:
         serializedVersion: 2
-        x: 3330
-        y: 140
-        width: 383
-        height: 249
+        x: 2784
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: middle_rock_3
       rect:
         serializedVersion: 2
-        x: 4725
-        y: 140
-        width: 387
-        height: 249
+        x: 4176
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,10 +196,10 @@ TextureImporter:
       name: middle_rock_4
       rect:
         serializedVersion: 2
-        x: 6115
-        y: 140
-        width: 383
-        height: 249
+        x: 5568
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: middle_rock_5
       rect:
         serializedVersion: 2
-        x: 7506
-        y: 140
-        width: 371
-        height: 249
+        x: 6960
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

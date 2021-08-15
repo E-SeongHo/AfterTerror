@@ -20,6 +20,12 @@ TextureImporter:
   - first:
       213: 3901979715547560512
     second: middle_tree3_7
+  - first:
+      213: 3246103170390778723
+    second: middle_tree3_0
+  - first:
+      213: 2136333731363153248
+    second: middle_tree3_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,10 +118,10 @@ TextureImporter:
       name: middle_tree3_1
       rect:
         serializedVersion: 2
-        x: 406
-        y: 140
-        width: 579
-        height: 733
+        x: 1392
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,10 +139,10 @@ TextureImporter:
       name: middle_tree3_3
       rect:
         serializedVersion: 2
-        x: 1767
-        y: 140
-        width: 613
-        height: 733
+        x: 4176
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,10 +160,10 @@ TextureImporter:
       name: middle_tree3_4
       rect:
         serializedVersion: 2
-        x: 3178
-        y: 140
-        width: 588
-        height: 733
+        x: 5568
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +181,10 @@ TextureImporter:
       name: middle_tree3_5
       rect:
         serializedVersion: 2
-        x: 4579
-        y: 140
-        width: 584
-        height: 733
+        x: 6960
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,13 +199,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree3_6
+      name: middle_tree3_0
       rect:
         serializedVersion: 2
-        x: 5965
-        y: 140
-        width: 595
-        height: 733
+        x: 0
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3514aeca6c53936a0800000000000000
-      internalID: -6469080262320176813
+      spriteID: 363696782a97c0d20800000000000000
+      internalID: 3246103170390778723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: middle_tree3_7
+      name: middle_tree3_2
       rect:
         serializedVersion: 2
-        x: 7355
-        y: 140
-        width: 617
-        height: 733
+        x: 2784
+        y: 0
+        width: 1392
+        height: 912
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04afdf1b0ed962630800000000000000
-      internalID: 3901979715547560512
+      spriteID: 065e59bb538c5ad10800000000000000
+      internalID: 2136333731363153248
       vertices: []
       indices: 
       edges: []

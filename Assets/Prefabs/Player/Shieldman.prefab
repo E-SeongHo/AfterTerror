@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2769064814471075338}
   - component: {fileID: 2769064814471075447}
   - component: {fileID: 2769064814471075446}
+  - component: {fileID: 8624819368227596221}
   m_Layer: 0
   m_Name: Shieldman
   m_TagString: Player
@@ -75,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -3348143092488372962, guid: 6cefa0deddb2c644794229dedc68600f, type: 3}
+  m_Sprite: {fileID: -3348143092488372962, guid: 188f8365ea897b442a312a5eb91bfb5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.1, y: 2.2}
+  m_Size: {x: 183, y: 300}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -119,9 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7816f1da11aa5046b19e6b6e432232d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10000
   attackAbility: 1
   currentHealth: 100
+  maxHealth: 10000
 --- !u!114 &2769064814471075447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c2fcbc792906d41bd866bf9d10e88b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationTime: 1
-  coolTime: 1
 --- !u!61 &2769064814471075446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,16 +148,35 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 12.414764, y: -0.6897049}
+  m_Offset: {x: -6.592224, y: -72.50531}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 132, y: 162}
-    newSize: {x: 2.1, y: 2.2}
+    oldSize: {x: 150, y: 300}
+    newSize: {x: 183, y: 300}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 106.93536, y: 155.3148}
+  m_Size: {x: 125.53784, y: 167.37872}
   m_EdgeRadius: 0
+--- !u!95 &8624819368227596221
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769064814471075337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18e98cc9ee7236f4b80e52ca60f9b6ae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
