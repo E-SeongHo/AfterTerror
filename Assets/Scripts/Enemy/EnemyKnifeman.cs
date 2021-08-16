@@ -15,7 +15,7 @@ public class EnemyKnifeman : MonoBehaviour
 
     private GameObject player;
     private float attack_point = 200f;
-    private float landing_point = -228f;
+    private float landing_point = -230f;
 
     // flag
     private bool attack = false; // 공격 했는지 여부 flag
@@ -169,6 +169,7 @@ public class EnemyKnifeman : MonoBehaviour
         else
         {
             animator.SetBool("die", true);
+            Debug.Log("die");
             Destroy(gameObject, 3f);
             die_play = true;
         }

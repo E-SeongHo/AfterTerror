@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 2bb274ba9fb42604693dcdb47169d2db
+guid: 637237180e086d04cb35c8ca11377953
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1273468461718417408
-    second: enemy4_down_die1_0
+      213: -4057356006237522675
+    second: enemy4_down_die_0
   - first:
-      213: 8531885325855929734
-    second: enemy4_down_die1_1
+      213: -3970579492472612414
+    second: enemy4_down_die_1
+  - first:
+      213: 8262213110860673817
+    second: enemy4_down_die_2
+  - first:
+      213: 6773760846853669427
+    second: enemy4_down_die_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,12 +103,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy4_down_die1_0
+      name: enemy4_down_die_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 174
+        width: 183
         height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,19 +117,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000b36d91d44ca110800000000000000
-      internalID: 1273468461718417408
+      spriteID: d053ae8853061b7c0800000000000000
+      internalID: -4057356006237522675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy4_down_die1_1
+      name: enemy4_down_die_1
       rect:
         serializedVersion: 2
-        x: 174
+        x: 183
         y: 0
-        width: 174
+        width: 183
         height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,8 +138,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 685b2000088576670800000000000000
-      internalID: 8531885325855929734
+      spriteID: 2c918b61dfaa5e8c0800000000000000
+      internalID: -3970579492472612414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_down_die_2
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 183
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913fc6b9c0749a270800000000000000
+      internalID: 8262213110860673817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy4_down_die_3
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 0
+        width: 183
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332892ee99b310e50800000000000000
+      internalID: 6773760846853669427
       vertices: []
       indices: 
       edges: []
@@ -141,7 +189,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1a59636ed52be3543b83516a871bd876
+    spriteID: 5a78a34c4aa98844fab63b7af33cfffd
     internalID: 0
     vertices: []
     indices: 

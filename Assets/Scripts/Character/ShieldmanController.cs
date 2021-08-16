@@ -56,8 +56,9 @@ public class ShieldmanController : MonoBehaviour
         {
             JumpWithHand();
         }
-        Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        Debug.Log(hand_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+
+        /*Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        Debug.Log(hand_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);*/
     }
 
     // Getters
