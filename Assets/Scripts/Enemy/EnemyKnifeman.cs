@@ -126,6 +126,7 @@ public class EnemyKnifeman : MonoBehaviour
             // landing action
             animator.SetBool("land", true);
             parachute_anim.SetBool("land", true);
+            controller.SetCurrentHealth(1);
 
             // parachute move stop
             Destroy(gameObject.transform.GetChild(0).gameObject, 1f);

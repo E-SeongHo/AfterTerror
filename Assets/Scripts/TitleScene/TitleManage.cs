@@ -20,7 +20,7 @@ public class TitleManage : MonoBehaviour
 
     // player 생성 위치 (Car 로부터 거리)
     private float player_xdiff = 1202.6f;
-    private float player_ydiff = -173f;
+    private float player_ydiff = -163f;
     
 
     private void Start()
@@ -53,7 +53,7 @@ public class TitleManage : MonoBehaviour
             press_any_key.gameObject.SetActive(true);
 
             // if any key pressed
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.anyKeyDown)
             {
                 // erase logo
                 logo.SetActive(false);
