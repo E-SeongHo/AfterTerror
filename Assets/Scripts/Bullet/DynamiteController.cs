@@ -10,7 +10,7 @@ public class DynamiteController : MonoBehaviour
     private GameObject player; // 목표
 
     [Range(0, 1)] private float bezier_param = 0; // Bezier Curve 매개변수
-    private float height = 300f; // Bezier Point 최대 상대높이
+    private float height = 500f; // Bezier Point 최대 상대높이
     private float startTime;
 
     private Rigidbody2D rb;
@@ -28,9 +28,9 @@ public class DynamiteController : MonoBehaviour
         shield = player.GetComponent<ShieldController>();
 
         // setting bezier points
-        points[0] = gameObject.transform.position;
-        points[1] = gameObject.transform.position + new Vector3(-100f, height, 0);
-        points[2] = player.transform.position + new Vector3(50f, height, 0);
+        points[0] = gameObject.transform.position + new Vector3(-50f, 0, 0);
+        points[1] = gameObject.transform.position + new Vector3(-500f, height, 0);
+        points[2] = player.transform.position + new Vector3(200f, height, 0);
         points[3] = player.transform.position; 
     }
 

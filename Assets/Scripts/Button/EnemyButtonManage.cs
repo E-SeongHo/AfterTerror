@@ -104,7 +104,7 @@ public class EnemyButtonManage : MonoBehaviour
         // Update()에서 계속해서 target을 바꿔설정하니까
         if (targetController.GetCurrentHealth() <= 0)
         {
-
+            nowButton = null;
         }
     }
     // 공격이 실패하면 attackCount 증가, 성공하면 DeleteButton

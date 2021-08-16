@@ -5,7 +5,7 @@ using UnityEngine;
 // 최대 1초 방어가능 쿨타임 1초
 public class ShieldController : MonoBehaviour
 {
-    private float durationTime = 1f;
+    private float durationTime = 3f;
     private float coolTime = 0f;
     private Animator animator;
     private bool shieldON = false;
@@ -37,7 +37,6 @@ public class ShieldController : MonoBehaviour
         Debug.Log("shield reset");
         PutDownShield();
         coolTime = 0f;
-        durationTime = 1f;
     }
     private void TimeCheck()
     {
@@ -45,10 +44,10 @@ public class ShieldController : MonoBehaviour
         if (shieldON)
         {
             durationTime -= Time.deltaTime;
-            if (durationTime <= 0)
+            Debug.Log(durationTime);
+            if (durationTime < 0)
             {
                 PutDownShield();
-                coolTime = 1f;
             }
         }
         else // !shieldON

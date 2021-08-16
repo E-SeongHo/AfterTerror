@@ -56,7 +56,6 @@ public class EnemyKnifeman : MonoBehaviour
     private void FixedUpdate()
     {
         // 플레이어 앞에서 공격 할 때 버튼 안뜨게 하려면 여기 interaciton 손보면됨
-
         if (controller.GetInteractionState() && flying) 
         {
             FlyingAction();
@@ -71,7 +70,6 @@ public class EnemyKnifeman : MonoBehaviour
         {
             DieAction();
         }
-        
     }
     private void AutoThrowProcess()
     {
@@ -161,6 +159,7 @@ public class EnemyKnifeman : MonoBehaviour
             gameObject.transform.Translate(Vector2.down * downhill_spd * 10 * Time.deltaTime);
             if (gameObject.transform.position.y < landing_point)
             {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, landing_point, 0);
                 animator.SetBool("die", true);
                 Destroy(gameObject, 3f);
                 die_play = true;
