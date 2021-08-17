@@ -1,8 +1,11 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Android;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShieldmanController : MonoBehaviour
 {
@@ -10,8 +13,15 @@ public class ShieldmanController : MonoBehaviour
     /*    private GameObject myButton;
         private bool buttonON = false;*/
     public static ShieldmanController Instance;
+    private bool die = false;
+
     [SerializeField] private int attackAbility = 1;
     [SerializeField] private int currentHealth = 3;
+    [SerializeField] private GameObject canvas;
+    [SerializeField] private Image healthImg;
+    
+    private Stack<Image> healthes = new Stack<Image>();
+    private Vector2[] healthPos = new Vector2[3];
 
     private Animator animator;
     private Animator hand_animator;
@@ -24,9 +34,22 @@ public class ShieldmanController : MonoBehaviour
     public int maxHealth = 6;
     private bool invincibility = false;
 
+    public bool GetDieState() { return die; }
     private void Awake()
     {
         Instance = this;
+
+        // health init
+        healthPos[0] = new Vector2(-713f, 382f);
+        healthPos[1] = new Vector2(-626f, 382f);
+        healthPos[2] = new Vector2(-536f, 382f);
+
+        for(int i = 0; i < currentHealth; i++)
+        {
+            Debug.Log("hpst");
+            Debug.Log(healthes.Count % 3);
+            CreateHealthStack();
+        }
     }
     private void Start()
     {
@@ -70,12 +93,23 @@ public class ShieldmanController : MonoBehaviour
     {
         if(!invincibility && amount < 0) 
         {
+            int iter = currentHealth;
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             Debug.Log(currentHealth + " / " + maxHealth);
+            iter -= currentHealth;
+            
+            for(int i = 0; i < iter; i++)
+            {
+                Image todel = healthes.Pop();
+                Debug.Log("delete" + todel);
+                Destroy(todel);
+            }
             if (currentHealth <= 0)
             {
                 animator.SetTrigger("die");
+                invincibility = true;
                 Destroy(gameObject, 2f);
+                die = true;
                 Destroy(hand);
             }
             else
@@ -142,7 +176,13 @@ public class ShieldmanController : MonoBehaviour
         hand.SetActive(true);
         RunWithHand();
     }
-    
+    private void CreateHealthStack()
+    {
+        Image newHealth = Instantiate(healthImg);
+        newHealth.transform.SetParent(canvas.transform);
+        newHealth.transform.localPosition = healthPos[healthes.Count % 3];
+        healthes.Push(newHealth);
+    }
 
 
 /*    public void ActiveButton()

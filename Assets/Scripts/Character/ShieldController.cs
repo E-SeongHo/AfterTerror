@@ -44,7 +44,6 @@ public class ShieldController : MonoBehaviour
         if (shieldON)
         {
             durationTime -= Time.deltaTime;
-            Debug.Log(durationTime);
             if (durationTime < 0)
             {
                 PutDownShield();

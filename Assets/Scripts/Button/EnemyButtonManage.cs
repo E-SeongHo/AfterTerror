@@ -6,6 +6,12 @@ using UnityEngine;
 // EnemyButton은 총 9개
 // EnemyButton의 생성과 삭제는 EnemyButtonMange객체가 모두 담당
 // 하나랑만 상호작용하니까 가능
+
+
+/// <summary>
+/// 버튼마다 Animator GetComponent 해야해서 무겁다
+/// Button Pool 만들어서 배정하는식 
+/// </summary>
 public class EnemyButtonManage : MonoBehaviour
 {
     // red ASD, green ASD, blue ASD
@@ -20,6 +26,8 @@ public class EnemyButtonManage : MonoBehaviour
     private GameObject target = null;
     
     private GameObject nowButton;
+    private Animator animator;
+
     private bool buttonON = false;
     private int buttonidx; // A : 0, S : 1, D : 2
 
@@ -73,9 +81,11 @@ public class EnemyButtonManage : MonoBehaviour
             if (targetController.GetRunState())
             {
                 buttonON = false;
+                // knifeman 고려해야함
+                targetController.SetInteractionState(false);
+
                 Debug.Log(target + "run");
             }
-            
             InputProcess(buttonidx);
         }
     }
@@ -90,14 +100,19 @@ public class EnemyButtonManage : MonoBehaviour
         nowButton = buttons[randAlphabet + randColor * 3];
 
         targetController.GenerateButton(nowButton);
+        animator = targetController.myButton.GetComponent<Animator>();
+
         buttonON = true;
     }
+    // 공격이 성공했을 때만 호출된다.
     private void DeleteButton()
     {
         // Enemy의 체력 감소
         targetController.ChangeHealth(-1);
+       
         buttonON = false;
         nowButton = null;
+
         targetController.DeleteButton();
 
         // 아직 필요 없을 듯 
@@ -113,22 +128,38 @@ public class EnemyButtonManage : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             ShieldmanController.Instance.StartCoroutine("AttackAnimation");
-            if (buttonIndex == 0) DeleteButton();
+            if (buttonIndex == 0) StartCoroutine("ButtonClickAndDelete");
             else targetController.ChangeAttackCount(1);
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             ShieldmanController.Instance.StartCoroutine("AttackAnimation");
-            if (buttonIndex == 1) DeleteButton();
+            if (buttonIndex == 1) StartCoroutine("ButtonClickAndDelete");
             else targetController.ChangeAttackCount(1);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             ShieldmanController.Instance.StartCoroutine("AttackAnimation");
-            if (buttonIndex == 2) DeleteButton();
+            if (buttonIndex == 2) StartCoroutine("ButtonClickAndDelete");
             else targetController.ChangeAttackCount(1);
         }
     }
-    
+    IEnumerator ButtonClickAndDelete()
+    {
+        animator.SetTrigger("click");
+        Debug.Log(animator);
+        while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.95f)
+        {
+            yield return new WaitForSeconds(0.2f);
+        }
+        // after click animation
+        targetController.ChangeHealth(-1);
 
+        buttonON = false;
+        nowButton = null;
+
+        targetController.DeleteButton();
+
+        yield return null;
+    }
 }

@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
 
     private Animator animator;
 
-    private GameObject myButton = null;
+    public GameObject myButton = null;
     private Rigidbody2D rb = null;
     private Transform playerTransform;
     private bool interaction = false;
@@ -31,7 +31,8 @@ public class EnemyController : MonoBehaviour
     public void SetCurrentHealth(int health) { currentHealth = health; }
     public void ResetAttackCount() { attackCount = 0; }
     public void ChangeAttackCount(int amount) { attackCount = attackCount + amount; }
-    public void SetRunState(bool value) { interaction = value; }
+    public void SetRunState(bool value) { run = value; }
+    public void SetInteractionState(bool value) { interaction = value; }
     // Init
     private void Start()
     {
@@ -42,6 +43,10 @@ public class EnemyController : MonoBehaviour
     // Enemy Run... 
     private void FixedUpdate()
     {
+        if (ShieldmanController.Instance.GetDieState())
+        {
+            Destroy(gameObject);
+        }
         // 맵에서 보이기 시작할 때 상호작용 시작 
         // Overhead :: --> Coroutine
         if (!run && !die && !interaction && transform.position.x - playerTransform.position.x <= 1920

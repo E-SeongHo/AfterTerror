@@ -109,5 +109,11 @@ public class MapManager : MonoBehaviour
         next.transform.Translate(pos);
     }
 
+    public void StopMapMove()
+    {
+        nowFront.SetActive(false);
+        nextFront.SetActive(false);
+        newFront.SetActive(false);
+    }
 } 
 
