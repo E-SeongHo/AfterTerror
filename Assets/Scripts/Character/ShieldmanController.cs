@@ -13,7 +13,7 @@ public class ShieldmanController : MonoBehaviour
     /*    private GameObject myButton;
         private bool buttonON = false;*/
     public static ShieldmanController Instance;
-    private bool die = false;
+    private bool die = false; // Gameover
 
     [SerializeField] private int attackAbility = 1;
     [SerializeField] private int currentHealth = 3;
@@ -34,7 +34,6 @@ public class ShieldmanController : MonoBehaviour
     public int maxHealth = 6;
     private bool invincibility = false;
 
-    public bool GetDieState() { return die; }
     private void Awake()
     {
         Instance = this;
@@ -83,8 +82,8 @@ public class ShieldmanController : MonoBehaviour
         /*Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         Debug.Log(hand_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);*/
     }
-
     // Getters
+    public bool GetDieState() { return die; }
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackAbility() { return attackAbility; }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DynamiteController : MonoBehaviour
 {
-    [SerializeField] private float duration = 4f;
-    [SerializeField] private int damage = 2;
+    private float duration = 2f;
+    private int damage = 2;
 
     private GameObject player; // ∏Ò«•
 

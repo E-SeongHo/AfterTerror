@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     private float runSpeed = 30f;
 
     private float rundist = 450f;
+    private GameObject xSheet;
+    private Animator xSheet_anim;
     // Getters
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackCount() { return attackCount; }
@@ -39,6 +41,8 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
         animator = GetComponent<Animator>();
+        xSheet = gameObject.transform.GetChild(0).gameObject;
+        xSheet_anim = xSheet.GetComponent<Animator>();
     }
     // Enemy Run... 
     private void FixedUpdate()
@@ -85,6 +89,15 @@ public class EnemyController : MonoBehaviour
     public void DeleteButton()
     {
         Destroy(myButton);
+    }
+    IEnumerator PlayXSheet()
+    {   // Caller : EnemyButtonManager > InputProcess
+        xSheet.transform.position = myButton.transform.position;
+        xSheet.SetActive(true);
+        xSheet_anim.SetTrigger("play");
+        yield return new WaitForSeconds(0.2f);
+        // after x play
+        xSheet.SetActive(false);
     }
     private void DieProcess()
     {

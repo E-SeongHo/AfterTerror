@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 // EnemyButtonManage Object는 맵에 Enemy중 가장 가까운 적을 찾아 버튼 부여
 // EnemyButton은 총 9개
 // EnemyButton의 생성과 삭제는 EnemyButtonMange객체가 모두 담당
 // 하나랑만 상호작용하니까 가능
-
 
 /// <summary>
 /// 버튼마다 Animator GetComponent 해야해서 무겁다
@@ -42,7 +42,6 @@ public class EnemyButtonManage : MonoBehaviour
     {
         Instance = this;
     }
-
     private void Update()
     {
         // Find Nearest Enemy & Set variables with that Enemy
@@ -101,15 +100,63 @@ public class EnemyButtonManage : MonoBehaviour
 
         targetController.GenerateButton(nowButton);
         animator = targetController.myButton.GetComponent<Animator>();
-
+               
         buttonON = true;
     }
+    // 공격이 실패하면 attackCount 증가, 성공하면 DeleteButton
+    private void InputProcess(int buttonIndex)
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
+            if (buttonIndex == 0) StartCoroutine("ButtonClickAndDelete");
+            else
+            {
+                targetController.StartCoroutine("PlayXSheet");
+                targetController.ChangeAttackCount(1);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
+            if (buttonIndex == 1) StartCoroutine("ButtonClickAndDelete");
+            else
+            {
+                targetController.StartCoroutine("PlayXSheet");
+                targetController.ChangeAttackCount(1);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
+            if (buttonIndex == 2) StartCoroutine("ButtonClickAndDelete");
+            else
+            {
+                targetController.StartCoroutine("PlayXSheet");
+                targetController.ChangeAttackCount(1);
+            }
+        }
+    }
+    IEnumerator ButtonClickAndDelete()
+    {
+        animator.SetTrigger("click");
+        Debug.Log("click");
+        yield return new WaitForSeconds(0.2f);
+        // after click animation
+        targetController.ChangeHealth(-1 * ShieldmanController.Instance.GetAttackAbility());
+
+        buttonON = false;
+        nowButton = null;
+
+        targetController.DeleteButton();
+    }
+
     // 공격이 성공했을 때만 호출된다.
     private void DeleteButton()
     {
         // Enemy의 체력 감소
-        targetController.ChangeHealth(-1);
-       
+        targetController.ChangeHealth(-1 * ShieldmanController.Instance.GetAttackAbility());
+
         buttonON = false;
         nowButton = null;
 
@@ -121,45 +168,5 @@ public class EnemyButtonManage : MonoBehaviour
         {
             nowButton = null;
         }
-    }
-    // 공격이 실패하면 attackCount 증가, 성공하면 DeleteButton
-    private void InputProcess(int buttonIndex)
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
-            if (buttonIndex == 0) StartCoroutine("ButtonClickAndDelete");
-            else targetController.ChangeAttackCount(1);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
-            if (buttonIndex == 1) StartCoroutine("ButtonClickAndDelete");
-            else targetController.ChangeAttackCount(1);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            ShieldmanController.Instance.StartCoroutine("AttackAnimation");
-            if (buttonIndex == 2) StartCoroutine("ButtonClickAndDelete");
-            else targetController.ChangeAttackCount(1);
-        }
-    }
-    IEnumerator ButtonClickAndDelete()
-    {
-        animator.SetTrigger("click");
-        Debug.Log(animator);
-        while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.95f)
-        {
-            yield return new WaitForSeconds(0.2f);
-        }
-        // after click animation
-        targetController.ChangeHealth(-1);
-
-        buttonON = false;
-        nowButton = null;
-
-        targetController.DeleteButton();
-
-        yield return null;
     }
 }

@@ -47,7 +47,7 @@ public class EnemyKnifeman : MonoBehaviour
         run_spd = 600f; // front move speed X 2
 
         animator = gameObject.GetComponent<Animator>();
-        parachute_anim = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+        parachute_anim = gameObject.transform.GetChild(1).gameObject.GetComponent<Animator>();
 
         // initial fire time is random
         count = Random.Range(0.5f, 1.5f);
@@ -129,8 +129,8 @@ public class EnemyKnifeman : MonoBehaviour
             controller.SetCurrentHealth(1);
 
             // parachute move stop
-            Destroy(gameObject.transform.GetChild(0).gameObject, 1f);
-            gameObject.transform.GetChild(0).gameObject.transform.parent = null;
+            Destroy(gameObject.transform.GetChild(1).gameObject, 1f);
+            gameObject.transform.GetChild(1).gameObject.transform.parent = null;
             flying = false;
         }
     }
@@ -153,7 +153,7 @@ public class EnemyKnifeman : MonoBehaviour
             if (!anim_play)
             {
                 parachute_anim.SetBool("die", true);
-                Destroy(gameObject.transform.GetChild(0).gameObject, 1f);
+                Destroy(gameObject.transform.GetChild(1).gameObject, 1f);
                 animator.SetBool("skydie", true);
                 anim_play = true;
             }
