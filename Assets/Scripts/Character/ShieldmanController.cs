@@ -74,10 +74,10 @@ public class ShieldmanController : MonoBehaviour
         {
             StartCoroutine("AttackAnimation");
         }*/
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        /*if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             JumpWithHand();
-        }
+        }*/
 
         /*Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         Debug.Log(hand_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);*/
