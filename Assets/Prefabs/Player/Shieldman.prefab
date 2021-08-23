@@ -195,7 +195,7 @@ Animator:
   m_GameObject: {fileID: 2011369826}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: efca13ddfafefd64c8a069eadd8634f0, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc9d3bd12c064eb4db715506641c233b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -327,8 +327,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackAbility: 1
-  currentHealth: 10
-  maxHealth: 20
+  currentHealth: 3
+  canvas: {fileID: 0}
+  healthImg: {fileID: 3180635074997995322, guid: e13510b2b9378e5489697bde8408bd27, type: 3}
+  maxHealth: 6
 --- !u!114 &2769064814471075447
 MonoBehaviour:
   m_ObjectHideFlags: 0
