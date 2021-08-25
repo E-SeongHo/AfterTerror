@@ -144,3 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ebfc5773aec82448b38deb19d988c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShieldMan: {fileID: 0}
+  AttackEnemy: {fileID: 0}
+  bullet: {fileID: 0}

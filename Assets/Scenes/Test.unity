@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d782ee5fbef1c45905aad19d5281e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShieldMan: {fileID: 1341540834}
   Enemy1: {fileID: 1299022322}
   AttackEnemy: {fileID: 170172586608392814}
   mine: {fileID: 1444122102}
@@ -942,9 +943,21 @@ PrefabInstance:
       value: AttackEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 8250486559143395110, guid: 80dd4b4194fe23143a86f95f61b6d19e, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 5076509855228948539, guid: 4575ef4665fa31f48a179098422fe351, type: 3}
+    - target: {fileID: 8250486559143395110, guid: 80dd4b4194fe23143a86f95f61b6d19e, type: 3}
       propertyPath: ShieldMan
       value: 
       objectReference: {fileID: 1341540834}
+    - target: {fileID: 8250486559143395110, guid: 80dd4b4194fe23143a86f95f61b6d19e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250486559143395110, guid: 80dd4b4194fe23143a86f95f61b6d19e, type: 3}
+      propertyPath: AttackEnemy
+      value: 
+      objectReference: {fileID: 170172586608392814}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80dd4b4194fe23143a86f95f61b6d19e, type: 3}
 --- !u!1 &2899118878470265395 stripped
