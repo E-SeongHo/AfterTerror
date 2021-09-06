@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
     private GameObject xSheet;
     private Animator xSheet_anim;
     // Getters
+    public int GetMaxHealth() { return maxHealth; }
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackCount() { return attackCount; }
     public bool GetInteractionState() { return interaction; }

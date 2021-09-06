@@ -21,6 +21,8 @@ public class TitleManage : MonoBehaviour
     // player 생성 위치 (Car 로부터 거리)
     private float player_xdiff = 1202.6f;
     private float player_ydiff = -163f;
+
+    private bool perform = false;
     
 
     private void Start()
@@ -69,13 +71,14 @@ public class TitleManage : MonoBehaviour
 
         if (car_animator.GetCurrentAnimatorStateInfo(0).IsName("Car_Off")
             && car_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f
-            && car_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.95f) 
+            && car_animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.95f && !perform) 
         {
             Vector3 pos = new Vector3(car.transform.position.x + player_xdiff, car.transform.position.y + player_ydiff, 0);
             player1.transform.position = pos;
             player1.SetActive(true);
 
             StartCoroutine("MovePlayer1");
+            perform = true;
         }
         
     }
@@ -121,7 +124,7 @@ public class TitleManage : MonoBehaviour
 
     IEnumerator MovePlayer1()
     {
-        float speed = 10f;
+        float speed = 250f;
         while(player1.transform.position.x < 1050) // 700(camera) + 350(적정위치)
         {
             player1.transform.Translate(speed * Time.deltaTime, 0, 0);
