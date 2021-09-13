@@ -24,26 +24,34 @@ public class EnemyButtonInfo : MonoBehaviour
         // Enque (미리 생성해두기)
         // 하려면 Enemy Script maxHealth할당을 Awake()로 변경해야함
     }
-
     private void EnqueButtons()
     {
         for (int i = 0; i < core.GetMaxHealth(); i++)
         {
             int rand = Random.Range(0, 3);
-            BasicButton topush = new BasicButton(Instantiate(buttonPrefabs[rand], rb.position + add, Quaternion.identity), rand);
-            
-            topush.button.transform.parent = gameObject.transform;
-            topush.button.SetActive(false);
-            prequeue.Enqueue(topush);
+            // rb.position + add == 첫 버튼 위치
+            BasicButton to_push = new BasicButton(Instantiate(buttonPrefabs[rand], rb.position + add, Quaternion.identity), rand);
+            to_push.button.transform.parent = gameObject.transform;
+            to_push.button.SetActive(false);
+            prequeue.Enqueue(to_push);
         }
     }
-
     public void ShowButtons(int num)
     {
         for(int i = 0; i < num; i++)
         {
-            BasicButton togen = prequeue.Peek();
+            if(prequeue.Count != 0)
+            {
+                BasicButton to_gen = prequeue.Peek();
+                to_gen.button.transform.Translate(add * showing.Count);
+                to_gen.button.SetActive(true);
+                showing.Enqueue(to_gen);
+            }
         }
     }
+    public void DeleteButton()
+    {
 
+    }
+    
 }
