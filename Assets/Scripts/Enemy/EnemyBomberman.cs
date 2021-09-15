@@ -15,11 +15,15 @@ public class EnemyBomberman : MonoBehaviour
     private EnemyController controller;
     private Animator animator;
 
-    private void Start()
+    private void Awake()
     {
-        controller = GetComponent<EnemyController>();
+        // to make ButtonInfo script reference object's hp
+        controller = gameObject.GetComponent<EnemyController>();
         controller.SetCurrentHealth(maxHealth);
         controller.SetMaxHealth(maxHealth);
+    }
+    private void Start()
+    {
         animator = GetComponent<Animator>();
 
         // initial fire time is random

@@ -20,8 +20,9 @@ public class EnemyController : MonoBehaviour
     private float runSpeed = 30f;
 
     private float rundist = 450f;
-    private GameObject xSheet;
-    private Animator xSheet_anim;
+/*    private GameObject xSheet;
+    private Animator xSheet_anim;*/
+
     // Getters
     public int GetMaxHealth() { return maxHealth; }
     public int GetCurrentHealth() { return currentHealth; }
@@ -42,8 +43,8 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
         animator = GetComponent<Animator>();
-        xSheet = gameObject.transform.GetChild(0).gameObject;
-        xSheet_anim = xSheet.GetComponent<Animator>();
+        /*xSheet = gameObject.transform.GetChild(0).gameObject;
+        xSheet_anim = xSheet.GetComponent<Animator>();*/
     }
     // Enemy Run... 
     private void FixedUpdate()
@@ -57,13 +58,16 @@ public class EnemyController : MonoBehaviour
         if (!run && !die && !interaction && transform.position.x - playerTransform.position.x <= 1920
             && transform.position.x - playerTransform.position.x > rundist)
         {
-            interaction = true; 
+            interaction = true;
+            EnemyPool.Instance.PushEnemy(gameObject);
             Debug.Log(this + "inter");
         }
         else if (transform.position.x - playerTransform.position.x <= rundist)
         {
             interaction = false;
             run = true;
+            EnemyPool.Instance.DeleteEnemy(gameObject);
+            Debug.Log(this + "run");
         }
     }
     public void ChangeHealth(int amount)
@@ -91,7 +95,7 @@ public class EnemyController : MonoBehaviour
     {
         Destroy(myButton);
     }
-    IEnumerator PlayXSheet()
+/*    IEnumerator PlayXSheet()
     {   // Caller : EnemyButtonManager > InputProcess
         xSheet.transform.position = myButton.transform.position;
         xSheet.SetActive(true);
@@ -99,7 +103,7 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         // after x play
         xSheet.SetActive(false);
-    }
+    }*/
     private void DieProcess()
     {
         Destroy(myButton);

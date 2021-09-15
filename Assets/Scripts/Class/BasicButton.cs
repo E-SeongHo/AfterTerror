@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicButton : MonoBehaviour
+public class BasicButton
 {
     public GameObject button;
     public int index;

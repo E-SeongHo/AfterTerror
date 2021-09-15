@@ -35,12 +35,15 @@ public class EnemyKnifeman : MonoBehaviour
     private Animator animator;
     private Animator parachute_anim;
 
-    private void Start()
+    private void Awake()
     {
+        // to make ButtonInfo script reference object's hp
         controller = gameObject.GetComponent<EnemyController>();
         controller.SetCurrentHealth(maxHealth);
         controller.SetMaxHealth(maxHealth);
-
+    }
+    private void Start()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
         shield = player.transform.gameObject.GetComponent<ShieldController>();
         // run_spd = gameObject.transform.parent.GetComponent<FrontViewMove>().GetFrontViewSpeed() * 2f;

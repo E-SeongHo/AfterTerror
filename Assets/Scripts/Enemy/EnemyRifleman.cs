@@ -15,11 +15,15 @@ public class EnemyRifleman : MonoBehaviour
     private EnemyController controller;
     private Animator animator;
 
-    private void Start()
+    private void Awake()
     {
+        // to make ButtonInfo script reference object's hp 
         controller = GetComponent<EnemyController>();
         controller.SetCurrentHealth(maxHealth);
         controller.SetMaxHealth(maxHealth);
+    }
+    private void Start()
+    {
         animator = GetComponent<Animator>();
 
         // initial fire time is random

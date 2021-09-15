@@ -9,22 +9,29 @@ public class EnemyButtonInfo : MonoBehaviour
 
     private EnemyController core; // 본체
 
-    private Queue<BasicButton> prequeue;
-    private Queue<BasicButton> showing;
+    private Queue<BasicButton> prequeue = new Queue<BasicButton>();
+    private Queue<BasicButton> showing = new Queue<BasicButton>();
 
     private Rigidbody2D rb;
     
     private float interval = 30f; // 버튼사이 간격
-    private Vector2 add = new Vector2(70f, -65f);
+    private Vector2 add = new Vector2(-72f, 77f);
+
+    private GameObject xSheet;
+    private Animator xSheet_anim;
 
     private void Start()
     {
         core = gameObject.GetComponent<EnemyController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        // Enque (미리 생성해두기)
-        // 하려면 Enemy Script maxHealth할당을 Awake()로 변경해야함
+        EnqueueButtons(); // enqueue buttons to prequeue as much as max hp (from now equal start hp)
+        
+        xSheet = gameObject.transform.GetChild(0).gameObject;
+        xSheet_anim = xSheet.GetComponent<Animator>();
     }
-    private void EnqueButtons()
+
+    public int GetTopIndex() { return showing.Peek().index; }
+    private void EnqueueButtons()
     {
         for (int i = 0; i < core.GetMaxHealth(); i++)
         {
@@ -35,23 +42,51 @@ public class EnemyButtonInfo : MonoBehaviour
             to_push.button.SetActive(false);
             prequeue.Enqueue(to_push);
         }
+        Debug.Log("prequeue : " + prequeue.Count);
+    }
+    private void CreateFromPrequeue()
+    {
+        if (prequeue.Count > 0)
+        {
+            BasicButton to_gen = prequeue.Dequeue();
+            to_gen.button.transform.Translate(new Vector2(interval, 0) * showing.Count);
+            to_gen.button.SetActive(true);
+            showing.Enqueue(to_gen);
+        }
     }
     public void ShowButtons(int num)
     {
         for(int i = 0; i < num; i++)
         {
-            if(prequeue.Count != 0)
-            {
-                BasicButton to_gen = prequeue.Peek();
-                to_gen.button.transform.Translate(add * showing.Count);
-                to_gen.button.SetActive(true);
-                showing.Enqueue(to_gen);
-            }
+            CreateFromPrequeue();
         }
     }
     public void DeleteButton()
     {
-
+        BasicButton to_del = showing.Dequeue();
+        Destroy(to_del.button);
+        SortButtons();
+        CreateFromPrequeue();
     }
-    
+    private void SortButtons()
+    {
+        int reps = showing.Count;
+        for(int i = 0; i < reps; i++)
+        {
+            BasicButton item = showing.Dequeue();
+            item.button.transform.Translate(new Vector2(-interval, 0));
+            showing.Enqueue(item);
+        }
+    }
+    IEnumerator PlayXSheet()
+    {   // Caller : EnemyButtonManager > InputProcess
+        xSheet.transform.position = showing.Peek().button.transform.position;
+        xSheet.SetActive(true);
+        xSheet_anim.SetTrigger("play");
+        core.ChangeAttackCount(1);
+
+        yield return new WaitForSeconds(0.2f);
+        // after x play
+        xSheet.SetActive(false);
+    }
 }

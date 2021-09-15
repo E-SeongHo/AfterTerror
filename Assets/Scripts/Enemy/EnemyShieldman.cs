@@ -32,15 +32,18 @@ public class EnemyShieldman : MonoBehaviour
 
     private Animator animator;
 
-    private void Start()
+    private void Awake()
     {
+        // to make ButtonInfo script reference object's hp 
         controller = GetComponent<EnemyController>();
         controller.SetCurrentHealth(startHealth);
         controller.SetMaxHealth(maxHealth);
+    }
+    private void Start()
+    {
         viewSpeed = gameObject.transform.parent.GetComponent<FrontViewMove>().GetFrontViewSpeed();
         speed = viewSpeed * 2;
         animator = gameObject.GetComponent<Animator>();
-
         enemies = FindFunction.Instance.GetEnemiesInSameBlock(gameObject.transform.parent);
     }
     private void FixedUpdate()

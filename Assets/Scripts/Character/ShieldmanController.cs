@@ -29,6 +29,7 @@ public class ShieldmanController : MonoBehaviour
     private SpriteRenderer sprRenderer;
     public int maxHealth = 6;
     private bool invincibility = false;
+    private int sight = 2;
 
     private void Awake()
     {
@@ -41,8 +42,6 @@ public class ShieldmanController : MonoBehaviour
 
         for(int i = 0; i < currentHealth; i++)
         {
-            Debug.Log("hpst");
-            Debug.Log(healthes.Count % 3);
             CreateHealthStack();
         }
     }
@@ -82,6 +81,8 @@ public class ShieldmanController : MonoBehaviour
     public bool GetDieState() { return die; }
     public int GetCurrentHealth() { return currentHealth; }
     public int GetAttackAbility() { return attackAbility; }
+    public int GetSight() { return sight; }
+
 
     // Setters
     public void ChangeHealth(int amount)
@@ -119,6 +120,10 @@ public class ShieldmanController : MonoBehaviour
         // Attack능력 최대값 2
         attackAbility = Mathf.Clamp(attackAbility + amount, 0, 2);
         Debug.Log("Attack Stat : " + attackAbility);        
+    }
+    public void ChangeSight(int amount)
+    {
+        sight += amount;
     }
     IEnumerator InvincibleTime()
     {
