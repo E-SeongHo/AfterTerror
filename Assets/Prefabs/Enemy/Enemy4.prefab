@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 3461983340055134115}
   - component: {fileID: 3461983340055134117}
   - component: {fileID: 3461983340055134116}
+  - component: {fileID: -7882298747838218759}
   - component: {fileID: 3461983340055134119}
   - component: {fileID: 3461983340055134118}
   m_Layer: 0
@@ -249,6 +250,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwing_knife: {fileID: 5972121164590341786, guid: 1b4d5e47b691d4f439c24815b0390fad, type: 3}
+--- !u!114 &-7882298747838218759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461983340055134112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae579a438c8646d4a80a8a3d04fb272f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefabs:
+  - {fileID: 6708956697333983148, guid: a6378fcc46115634081749234fa7dc63, type: 3}
+  - {fileID: 8481201758473808328, guid: 1328aec50a9f1b941aae099747ecf761, type: 3}
+  - {fileID: 2330318871220892810, guid: 7a391a2f5121368429e49a0e214eb37d, type: 3}
+  core: {fileID: 0}
 --- !u!61 &3461983340055134119
 BoxCollider2D:
   m_ObjectHideFlags: 0

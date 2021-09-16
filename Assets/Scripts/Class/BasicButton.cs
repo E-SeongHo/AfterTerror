@@ -10,6 +10,6 @@ public class BasicButton
     public BasicButton(GameObject buttonPrefab, int idx)
     {
         button = buttonPrefab;
-        idx = index;
+        index = idx;
     }
 }

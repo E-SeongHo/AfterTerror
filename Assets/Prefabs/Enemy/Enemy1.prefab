@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5362091603630467890}
   - component: {fileID: 3374363869381781051}
   - component: {fileID: 5362091603630467889}
+  - component: {fileID: 1659827216}
   - component: {fileID: 5362091603630467888}
   - component: {fileID: 5362091603630467895}
   - component: {fileID: 996855256}
@@ -115,6 +116,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myButton: {fileID: 0}
+--- !u!114 &1659827216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362091603630467894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae579a438c8646d4a80a8a3d04fb272f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPrefabs:
+  - {fileID: 6708956697333983148, guid: a6378fcc46115634081749234fa7dc63, type: 3}
+  - {fileID: 8481201758473808328, guid: 1328aec50a9f1b941aae099747ecf761, type: 3}
+  - {fileID: 2330318871220892810, guid: 7a391a2f5121368429e49a0e214eb37d, type: 3}
+  core: {fileID: 0}
 --- !u!50 &5362091603630467888
 Rigidbody2D:
   serializedVersion: 4

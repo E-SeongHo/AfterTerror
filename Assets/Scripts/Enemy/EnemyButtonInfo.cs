@@ -7,7 +7,7 @@ public class EnemyButtonInfo : MonoBehaviour
     // 0 : A, 1 : S, 2 : D
     [SerializeField] private GameObject[] buttonPrefabs = new GameObject[3];
 
-    private EnemyController core; // 본체
+    public EnemyController core; // 본체
 
     private Queue<BasicButton> prequeue = new Queue<BasicButton>();
     private Queue<BasicButton> showing = new Queue<BasicButton>();
@@ -29,8 +29,10 @@ public class EnemyButtonInfo : MonoBehaviour
         xSheet = gameObject.transform.GetChild(0).gameObject;
         xSheet_anim = xSheet.GetComponent<Animator>();
     }
-
+    // Getters
     public int GetTopIndex() { return showing.Peek().index; }
+    public GameObject GetTopButton() { return showing.Peek().button; }
+    
     private void EnqueueButtons()
     {
         for (int i = 0; i < core.GetMaxHealth(); i++)
@@ -61,15 +63,16 @@ public class EnemyButtonInfo : MonoBehaviour
             CreateFromPrequeue();
         }
     }
-    public void DeleteButton()
+    public void HitProcess()
     {
-        BasicButton to_del = showing.Dequeue();
-        Destroy(to_del.button);
+        core.ChangeHealth(-1);
         SortButtons();
         CreateFromPrequeue();
     }
     private void SortButtons()
     {
+        BasicButton to_del = showing.Dequeue();
+        Destroy(to_del.button);
         int reps = showing.Count;
         for(int i = 0; i < reps; i++)
         {

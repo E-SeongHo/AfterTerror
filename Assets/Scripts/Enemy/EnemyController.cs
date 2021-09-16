@@ -67,6 +67,7 @@ public class EnemyController : MonoBehaviour
             interaction = false;
             run = true;
             EnemyPool.Instance.DeleteEnemy(gameObject);
+            EnemyButtonManageVer2.Instance.SetButtonState(false);
             Debug.Log(this + "run");
         }
     }
@@ -82,6 +83,8 @@ public class EnemyController : MonoBehaviour
         if (currentHealth <= 0)
         {
             DieProcess();
+            EnemyPool.Instance.DeleteEnemy(gameObject);
+            EnemyButtonManageVer2.Instance.SetButtonState(false);
         }
     }
     public void GenerateButton(GameObject button)
