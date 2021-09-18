@@ -62,12 +62,13 @@ public class EnemyController : MonoBehaviour
             EnemyPool.Instance.PushEnemy(gameObject);
             Debug.Log(this + "inter");
         }
-        else if (transform.position.x - playerTransform.position.x <= rundist)
+        else if (!die && transform.position.x - playerTransform.position.x <= rundist && !run)
         {
             interaction = false;
             run = true;
             EnemyPool.Instance.DeleteEnemy(gameObject);
             EnemyButtonManageVer2.Instance.SetButtonState(false);
+            DeleteButtons();
             Debug.Log(this + "run");
         }
     }
@@ -98,15 +99,26 @@ public class EnemyController : MonoBehaviour
     {
         Destroy(myButton);
     }
-/*    IEnumerator PlayXSheet()
-    {   // Caller : EnemyButtonManager > InputProcess
-        xSheet.transform.position = myButton.transform.position;
-        xSheet.SetActive(true);
-        xSheet_anim.SetTrigger("play");
-        yield return new WaitForSeconds(0.2f);
-        // after x play
-        xSheet.SetActive(false);
-    }*/
+
+    // remove buttons when runaway
+    private void DeleteButtons()
+    {
+        Transform[] childs = gameObject.GetComponentsInChildren<Transform>();
+        foreach(Transform child in childs)
+        {
+            if (child.gameObject != gameObject)
+                Destroy(child.gameObject);
+        }
+    }
+    /*    IEnumerator PlayXSheet()
+        {   // Caller : EnemyButtonManager > InputProcess
+            xSheet.transform.position = myButton.transform.position;
+            xSheet.SetActive(true);
+            xSheet_anim.SetTrigger("play");
+            yield return new WaitForSeconds(0.2f);
+            // after x play
+            xSheet.SetActive(false);
+        }*/
     private void DieProcess()
     {
         Destroy(myButton);

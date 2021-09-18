@@ -23,7 +23,6 @@ public class BulletController : MonoBehaviour
 
     private void OnEnable()
     {
-        
         Vector3 dir = playerTransform.position - transform.position;
         // bullet은 등속도 운동
         rb.velocity = dir.normalized * speed;

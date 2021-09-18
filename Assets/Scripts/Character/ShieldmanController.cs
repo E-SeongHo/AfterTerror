@@ -97,7 +97,7 @@ public class ShieldmanController : MonoBehaviour
             for(int i = 0; i < iter; i++)
             {
                 Image todel = healthes.Pop();
-                Debug.Log("delete" + todel);
+                // Debug.Log("delete" + todel);
                 Destroy(todel);
             }
             if (currentHealth <= 0)

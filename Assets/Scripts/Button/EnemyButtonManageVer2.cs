@@ -24,17 +24,20 @@ public class EnemyButtonManageVer2 : MonoBehaviour
     private void Update()
     {
         pretarget = target;
-        pretarget_controller = target_controller;
 
         if (EnemyPool.Instance.GetPoolSize() > 0)
             target = EnemyPool.Instance.GetNearestEnemy();
 
-        // run only when target changed
+        // when target changed
         if (target != null && target != pretarget)
         {
+            if(buttonON) // means enemyshiledman passed target 
+            {
+                target_controller.EmptyOutShowingQueue();
+            }
             target_controller = target.GetComponent<EnemyButtonInfo>();
             target_controller.ShowButtons(ShieldmanController.Instance.GetSight());
-            Debug.Log("show");
+            Debug.Log(target + "show");
             buttonON = true;
         }
 
@@ -46,7 +49,7 @@ public class EnemyButtonManageVer2 : MonoBehaviour
         }
         else
         {
-            Debug.Log("no button");
+            // Debug.Log("no button");
         }
 
     }

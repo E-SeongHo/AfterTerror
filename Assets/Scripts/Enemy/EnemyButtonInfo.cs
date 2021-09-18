@@ -44,7 +44,7 @@ public class EnemyButtonInfo : MonoBehaviour
             to_push.button.SetActive(false);
             prequeue.Enqueue(to_push);
         }
-        Debug.Log("prequeue : " + prequeue.Count);
+        Debug.Log(gameObject + "prequeue : " + prequeue.Count);
     }
     private void CreateFromPrequeue()
     {
@@ -61,6 +61,16 @@ public class EnemyButtonInfo : MonoBehaviour
         for(int i = 0; i < num; i++)
         {
             CreateFromPrequeue();
+        }
+    }
+    public void EmptyOutShowingQueue()
+    {
+        int reps = showing.Count;
+        for(int i = 0; i < reps; i++)
+        {
+            BasicButton item = showing.Dequeue();
+            item.button.SetActive(false);
+            prequeue.Enqueue(item);
         }
     }
     public void HitProcess()
