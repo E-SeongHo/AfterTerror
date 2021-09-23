@@ -31,7 +31,7 @@ public class EnemyButtonManageVer2 : MonoBehaviour
         // when target changed
         if (target != null && target != pretarget)
         {
-            if(buttonON) // means enemyshiledman passed target 
+            if(buttonON) // means enemyshieldman passed target 
             {
                 target_controller.EmptyOutShowingQueue();
             }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyButtonInfo : MonoBehaviour
 {
     // 0 : A, 1 : S, 2 : D
-    [SerializeField] private GameObject[] buttonPrefabs = new GameObject[3];
+    [SerializeField] private GameObject[] button_prefabs = new GameObject[3];
 
     public EnemyController core; // 본체
 
@@ -19,6 +19,15 @@ public class EnemyButtonInfo : MonoBehaviour
 
     private GameObject xSheet;
     private Animator xSheet_anim;
+
+    // for special buttons
+    public bool special_ON;
+    private int num_spcial_gen = 1;
+    public bool[] special_flag = new bool[2];
+
+    [SerializeField] private GameObject[] specialbutton_prefabs = new GameObject[3];
+
+    private Queue<SpecialButton> special_prequeue = new Queue<SpecialButton>();
 
     private void Start()
     {
@@ -35,16 +44,46 @@ public class EnemyButtonInfo : MonoBehaviour
     
     private void EnqueueButtons()
     {
-        for (int i = 0; i < core.GetMaxHealth(); i++)
+        if(special_ON)
         {
-            int rand = Random.Range(0, 3);
-            // rb.position + add == 첫 버튼 위치
-            BasicButton to_push = new BasicButton(Instantiate(buttonPrefabs[rand], rb.position + add, Quaternion.identity), rand);
-            to_push.button.transform.parent = gameObject.transform;
-            to_push.button.SetActive(false);
-            prequeue.Enqueue(to_push);
+            for(int i = 0; i < num_spcial_gen; i++)
+            {
+                int type;
+                while (true)
+                {
+                    type = Random.Range(0, 2);
+                    if (special_flag[type]) break;
+                }
+                int rand = Random.Range(0, 3);
+                SpecialButton to_push = new SpecialButton(Instantiate(specialbutton_prefabs[rand], rb.position + add, Quaternion.identity), rand, type);
+                to_push.button.transform.parent = gameObject.transform;
+                to_push.button.SetActive(true);
+                special_prequeue.Enqueue(to_push);
+            }
         }
-        Debug.Log(gameObject + "prequeue : " + prequeue.Count);
+        else
+        {
+            for (int i = 0; i < core.GetMaxHealth(); i++)
+            {
+                int rand = Random.Range(0, 3);
+                // rb.position + add == 첫 버튼 위치
+                BasicButton to_push = new BasicButton(Instantiate(button_prefabs[rand], rb.position + add, Quaternion.identity), rand);
+                to_push.button.transform.parent = gameObject.transform;
+                to_push.button.SetActive(false);
+                prequeue.Enqueue(to_push);
+            }
+        }
+    }
+    private void SpecialDetail(int type)
+    {
+        if(type == 0) // 연타버튼
+        {
+
+        }
+        else if(type == 1)
+        {
+
+        }
     }
     private void CreateFromPrequeue()
     {
@@ -62,6 +101,10 @@ public class EnemyButtonInfo : MonoBehaviour
         {
             CreateFromPrequeue();
         }
+    }
+    public void ShowSpecialButton()
+    {
+
     }
     public void EmptyOutShowingQueue()
     {
