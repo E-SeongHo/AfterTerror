@@ -36,7 +36,12 @@ public class EnemyButtonManageVer2 : MonoBehaviour
                 target_controller.EmptyOutShowingQueue();
             }
             target_controller = target.GetComponent<EnemyButtonInfo>();
-            target_controller.ShowButtons(ShieldmanController.Instance.GetSight());
+
+            // show button
+            if (target_controller.special_ON)
+                target_controller.ShowSpecialButton();
+            else
+                target_controller.ShowButtons(ShieldmanController.Instance.GetSight());
             Debug.Log(target + "show");
             buttonON = true;
         }

@@ -3,31 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyButtonInfo : MonoBehaviour
-{
-    // 0 : A, 1 : S, 2 : D
-    [SerializeField] private GameObject[] button_prefabs = new GameObject[3];
-
-    public EnemyController core; // 본체
-
-    private Queue<BasicButton> prequeue = new Queue<BasicButton>();
-    private Queue<BasicButton> showing = new Queue<BasicButton>();
-
-    private Rigidbody2D rb;
-    
-    private float interval = 30f; // 버튼사이 간격
-    private Vector2 add = new Vector2(-72f, 77f);
-
+{   
     private GameObject xSheet;
     private Animator xSheet_anim;
 
+    public EnemyController core; // 본체
+    private Rigidbody2D rb;
+
+    // for basic buttons
+    // 0 : A, 1 : S, 2 : D
+    [SerializeField] private GameObject[] button_prefabs = new GameObject[3];
+    private Queue<BasicButton> prequeue = new Queue<BasicButton>();
+    private Queue<BasicButton> showing = new Queue<BasicButton>();
+
+    private float interval = 30f; // interval for buttons
+    private Vector2 add = new Vector2(-72f, 77f);
+
     // for special buttons
     public bool special_ON;
-    private int num_spcial_gen = 1;
-    public bool[] special_flag = new bool[2];
+    private int num_special_gen = 1;
+    public bool[] special_flag = new bool[2]; // if flag on, then that type can be generate
 
     [SerializeField] private GameObject[] specialbutton_prefabs = new GameObject[3];
+    [SerializeField] private GameObject back_gauge_prefab;
+    [SerializeField] private GameObject[] front_gauge_prefabs = new GameObject[3];
 
     private Queue<SpecialButton> special_prequeue = new Queue<SpecialButton>();
+
+    // for button type 0 (연타)
+    private Stack<GameObject> back_gauge;
+    private Stack<GameObject> front_gauge;
+
+    // position
+    private const int bar_length = 129;
+    private const int bar_first_x = -25;
 
     private void Start()
     {
@@ -44,9 +53,10 @@ public class EnemyButtonInfo : MonoBehaviour
     
     private void EnqueueButtons()
     {
+        // special button and basic button can not co-exist
         if(special_ON)
         {
-            for(int i = 0; i < num_spcial_gen; i++)
+            for(int i = 0; i < num_special_gen; i++)
             {
                 int type;
                 while (true)
@@ -74,11 +84,34 @@ public class EnemyButtonInfo : MonoBehaviour
             }
         }
     }
+    // caller : ShowSpecialButton()
     private void SpecialDetail(int type)
     {
         if(type == 0) // 연타버튼
         {
+            // make back gauges
+            int reps = special_prequeue.Peek().times;
+            float size = bar_length / (reps + 1); // bar length is 153px
+            float last_x = bar_length - size + bar_first_x;
+            float dis = last_x - bar_first_x;
+            float dx = (reps - 1) / dis;
 
+            for(int i = 0; i < reps; i++)
+            {
+                // back-end gauge
+                GameObject to_push = Instantiate(back_gauge_prefab);
+                to_push.transform.parent = special_prequeue.Peek().button.transform;
+                to_push.transform.localScale = new Vector3(1 / (reps + 1), 0, 0);
+                to_push.transform.position = new Vector2(bar_first_x + dx * i, 0);
+                back_gauge.Push(to_push);
+
+                // front-end gauge
+                GameObject to_push_f = Instantiate(front_gauge_prefabs[special_prequeue.Peek().index]);
+                to_push_f.transform.parent = special_prequeue.Peek().button.transform;
+                to_push_f.transform.localScale = new Vector3(1 / (reps + 1), 0, 0);
+                to_push_f.transform.position = new Vector2(bar_first_x + dx * i, 0);
+                front_gauge.Push(to_push_f);
+            }
         }
         else if(type == 1)
         {
@@ -104,6 +137,8 @@ public class EnemyButtonInfo : MonoBehaviour
     }
     public void ShowSpecialButton()
     {
+        SpecialDetail(special_prequeue.Peek().type);
+
 
     }
     public void EmptyOutShowingQueue()

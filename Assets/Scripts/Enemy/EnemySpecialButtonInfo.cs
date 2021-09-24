@@ -9,8 +9,6 @@ public class EnemySpecialButtonInfo : MonoBehaviour
 
     public EnemyController core;
 
-    private Queue<SpecialButton>
-
     private Rigidbody2D rb;
 
     private GameObject xSheet;
