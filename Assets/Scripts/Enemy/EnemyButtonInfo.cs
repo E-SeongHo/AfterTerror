@@ -31,12 +31,12 @@ public class EnemyButtonInfo : MonoBehaviour
     private Queue<SpecialButton> special_prequeue = new Queue<SpecialButton>();
 
     // for button type 0 (¿¬Å¸)
-    private Stack<GameObject> back_gauge;
-    private Stack<GameObject> front_gauge;
+    private Stack<GameObject> back_gauge = new Stack<GameObject>();
+    private Stack<GameObject> front_gauge = new Stack<GameObject>();
 
     // position
     private const int bar_length = 129;
-    private const int bar_first_x = -25;
+    private const int bar_first_x = -30;
 
     private void Start()
     {
@@ -91,25 +91,25 @@ public class EnemyButtonInfo : MonoBehaviour
         {
             // make back gauges
             int reps = special_prequeue.Peek().times;
-            float size = bar_length / (reps + 1); // bar length is 153px
+            float size = bar_length / (reps + 1); // bar length is 129px
             float last_x = bar_length - size + bar_first_x;
             float dis = last_x - bar_first_x;
-            float dx = (reps - 1) / dis;
+            float dx = dis / (reps - 1);
 
             for(int i = 0; i < reps; i++)
             {
                 // back-end gauge
                 GameObject to_push = Instantiate(back_gauge_prefab);
                 to_push.transform.parent = special_prequeue.Peek().button.transform;
-                to_push.transform.localScale = new Vector3(1 / (reps + 1), 0, 0);
-                to_push.transform.position = new Vector2(bar_first_x + dx * i, 0);
+                to_push.transform.localScale = new Vector3(1 / (float)(reps + 1), 1, 1);
+                to_push.transform.localPosition = new Vector3(bar_first_x + dx * i, 0, 0);
                 back_gauge.Push(to_push);
 
                 // front-end gauge
                 GameObject to_push_f = Instantiate(front_gauge_prefabs[special_prequeue.Peek().index]);
                 to_push_f.transform.parent = special_prequeue.Peek().button.transform;
-                to_push_f.transform.localScale = new Vector3(1 / (reps + 1), 0, 0);
-                to_push_f.transform.position = new Vector2(bar_first_x + dx * i, 0);
+                to_push_f.transform.localScale = new Vector3(1 / (float)(reps + 1), 1, 1);
+                to_push_f.transform.localPosition = new Vector3(bar_first_x + dx * i, 0, 0);
                 front_gauge.Push(to_push_f);
             }
         }
