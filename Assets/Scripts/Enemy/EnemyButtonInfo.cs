@@ -20,8 +20,9 @@ public class EnemyButtonInfo : MonoBehaviour
     private Vector2 add = new Vector2(-72f, 77f);
 
     // for special buttons
-    public bool special_ON;
+    public bool special_ON = false;
     private int num_special_gen = 1;
+    private SpecialButton special_now = null;
     public bool[] special_flag = new bool[2]; // if flag on, then that type can be generate
 
     [SerializeField] private GameObject[] specialbutton_prefabs = new GameObject[3];
@@ -33,6 +34,11 @@ public class EnemyButtonInfo : MonoBehaviour
     // for button type 0 (연타)
     private Stack<GameObject> back_gauge = new Stack<GameObject>();
     private Stack<GameObject> front_gauge = new Stack<GameObject>();
+
+    // for button type 1 (지속)
+    private GameObject fill_gauge = null;
+    private int clear_time;
+    private float pushing_time;
 
     // position
     private const int bar_length = 129;
@@ -50,7 +56,7 @@ public class EnemyButtonInfo : MonoBehaviour
     // Getters
     public int GetTopIndex() { return showing.Peek().index; }
     public GameObject GetTopButton() { return showing.Peek().button; }
-    
+    public SpecialButton GetPresentSpecial() { return special_now; }
     private void EnqueueButtons()
     {
         // special button and basic button can not co-exist
@@ -84,7 +90,10 @@ public class EnemyButtonInfo : MonoBehaviour
             }
         }
     }
-    // caller : ShowSpecialButton()
+    /// <summary>
+    /// caller : ShowSpecialButton()
+    /// </summary>
+    /// <param name="type"></param> 
     private void SpecialDetail(int type)
     {
         if(type == 0) // 연타버튼
@@ -113,9 +122,20 @@ public class EnemyButtonInfo : MonoBehaviour
                 front_gauge.Push(to_push_f);
             }
         }
-        else if(type == 1)
+        else if(type == 1) // 꾹 누르기 버튼
         {
+            clear_time = special_prequeue.Peek().times;
+            // back을 참조할 필요는 없다.
+            GameObject back = Instantiate(back_gauge_prefab);
+            back.transform.parent = special_prequeue.Peek().button.transform;
+            back.transform.localPosition = new Vector3(bar_first_x, 0, 0);
 
+            // front
+            GameObject fill = Instantiate(front_gauge_prefabs[special_prequeue.Peek().index]);
+            fill.transform.parent = special_prequeue.Peek().button.transform;
+            fill.transform.localScale = new Vector3(0.1f, 1, 1);
+            fill.transform.localPosition = new Vector3(bar_first_x, 0, 0);
+            fill_gauge = fill; // 버튼 눌리짐에 따라서 scale값 조정시 참조
         }
     }
     private void CreateFromPrequeue()
@@ -138,8 +158,7 @@ public class EnemyButtonInfo : MonoBehaviour
     public void ShowSpecialButton()
     {
         SpecialDetail(special_prequeue.Peek().type);
-
-
+        special_now = special_prequeue.Dequeue();
     }
     public void EmptyOutShowingQueue()
     {
@@ -151,7 +170,7 @@ public class EnemyButtonInfo : MonoBehaviour
             prequeue.Enqueue(item);
         }
     }
-    public void HitProcess()
+    public void HitProcessBasic()
     {
         core.ChangeHealth(-1);
         SortButtons();
@@ -169,9 +188,44 @@ public class EnemyButtonInfo : MonoBehaviour
             showing.Enqueue(item);
         }
     }
+    public void HitProcessType0()
+    {
+        if(front_gauge.Count > 0)
+        {
+            GameObject to_del = front_gauge.Pop();
+            Destroy(to_del);
+            if(front_gauge.Count == 0)
+            {
+                Destroy(special_now.button);
+                core.ChangeHealth(-core.GetMaxHealth()); // 그냥 죽여버리기 여기서 buttonON <-false 진행
+            }
+        }
+    }
+    public void HitProcessType1()
+    {
+        // fill gauge
+        pushing_time += Time.deltaTime;
+        if(pushing_time > clear_time)
+        {
+            // success
+            Destroy(special_now.button);
+            core.ChangeHealth(-core.GetMaxHealth());
+        }
+        else
+        {
+            fill_gauge.transform.localScale = new Vector3(pushing_time / clear_time, 1, 1);
+        }
+    }
     IEnumerator PlayXSheet()
     {   // Caller : EnemyButtonManager > InputProcess
-        xSheet.transform.position = showing.Peek().button.transform.position;
+        if (special_ON)
+        {
+            xSheet.transform.position = front_gauge.Peek().transform.position;
+        }
+        else
+        {
+            xSheet.transform.position = showing.Peek().button.transform.position;
+        }
         xSheet.SetActive(true);
         xSheet_anim.SetTrigger("play");
         core.ChangeAttackCount(1);
