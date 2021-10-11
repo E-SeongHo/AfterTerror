@@ -31,6 +31,8 @@ public class ShieldmanController : MonoBehaviour
     private bool invincibility = false;
     private int sight = 2;
 
+    private CameraMove camera_controller;
+
     private void Awake()
     {
         Instance = this;
@@ -54,6 +56,8 @@ public class ShieldmanController : MonoBehaviour
 
         hand = gameObject.transform.GetChild(0).gameObject;
         fire_hand = gameObject.transform.GetChild(1).gameObject;
+
+        camera_controller = GameObject.FindWithTag("MainCamera").GetComponent<CameraMove>();
 
         Run();
         
@@ -89,6 +93,7 @@ public class ShieldmanController : MonoBehaviour
     {
         if(!invincibility && amount < 0) 
         {
+            camera_controller.StartCoroutine("ShakeCamera");
             int iter = currentHealth;
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             Debug.Log(currentHealth + " / " + maxHealth);
