@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 5362091603630467894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.4809, y: -0.93, z: 0}
-  m_LocalScale: {x: 1.1830581, y: 1.0710613, z: 1.2068295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6221596345347259388}
   m_Father: {fileID: 0}
@@ -130,11 +130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   core: {fileID: 0}
   button_prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6708956697333983148, guid: a6378fcc46115634081749234fa7dc63, type: 3}
+  - {fileID: 8481201758473808328, guid: 1328aec50a9f1b941aae099747ecf761, type: 3}
+  - {fileID: 2330318871220892810, guid: 7a391a2f5121368429e49a0e214eb37d, type: 3}
   special_ON: 0
-  special_flag: 0000
+  special_flag: 0100
   specialbutton_prefabs:
   - {fileID: 7162936744111634811, guid: 51ea3a64b6f0c6247a0ebfd5819783f1, type: 3}
   - {fileID: 7724631581164472501, guid: 71d9d07eeee189540b2f7223de89929a, type: 3}

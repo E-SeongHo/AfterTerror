@@ -250,11 +250,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae579a438c8646d4a80a8a3d04fb272f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPrefabs:
+  core: {fileID: 0}
+  button_prefabs:
   - {fileID: 6708956697333983148, guid: a6378fcc46115634081749234fa7dc63, type: 3}
   - {fileID: 8481201758473808328, guid: 1328aec50a9f1b941aae099747ecf761, type: 3}
   - {fileID: 2330318871220892810, guid: 7a391a2f5121368429e49a0e214eb37d, type: 3}
-  core: {fileID: 0}
+  special_ON: 0
+  special_flag: 0000
+  specialbutton_prefabs:
+  - {fileID: 7162936744111634811, guid: 51ea3a64b6f0c6247a0ebfd5819783f1, type: 3}
+  - {fileID: 7724631581164472501, guid: 71d9d07eeee189540b2f7223de89929a, type: 3}
+  - {fileID: 6560896269451379318, guid: c43661de278a0034da1e51263b991297, type: 3}
+  back_gauge_prefab: {fileID: 7652725188687339315, guid: c9b02210a1549d040be5aa1f6f1ac87d, type: 3}
+  front_gauge_prefabs:
+  - {fileID: 8633843586967421119, guid: bd907e61c221edb4a81084c144136577, type: 3}
+  - {fileID: 1958377503086392615, guid: 61ac9a9c50ea78546860d038a63fdb0e, type: 3}
+  - {fileID: 4239325859653740339, guid: 19190278f98d4d546804d5d98f6462e6, type: 3}
 --- !u!50 &7125043945472292160
 Rigidbody2D:
   serializedVersion: 4

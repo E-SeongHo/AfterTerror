@@ -73,7 +73,7 @@ public class EnemyButtonInfo : MonoBehaviour
                 int rand = Random.Range(0, 3);
                 SpecialButton to_push = new SpecialButton(Instantiate(specialbutton_prefabs[rand], rb.position + add, Quaternion.identity), rand, type);
                 to_push.button.transform.parent = gameObject.transform;
-                to_push.button.SetActive(true);
+                to_push.button.SetActive(false);
                 special_prequeue.Enqueue(to_push);
             }
         }
@@ -96,6 +96,7 @@ public class EnemyButtonInfo : MonoBehaviour
     /// <param name="type"></param> 
     private void SpecialDetail(int type)
     {
+        special_prequeue.Peek().button.SetActive(true);
         if(type == 0) // 연타버튼
         {
             // make back gauges
@@ -162,12 +163,21 @@ public class EnemyButtonInfo : MonoBehaviour
     }
     public void EmptyOutShowingQueue()
     {
-        int reps = showing.Count;
-        for(int i = 0; i < reps; i++)
+        if(special_ON)
         {
-            BasicButton item = showing.Dequeue();
-            item.button.SetActive(false);
-            prequeue.Enqueue(item);
+            special_prequeue.Enqueue(special_now);
+            special_now.button.SetActive(false);
+        }
+        else
+        {
+            int reps = showing.Count;
+            for (int i = 0; i < reps; i++)
+            {
+                BasicButton item = showing.Dequeue();
+                item.button.SetActive(false);
+                item.button.transform.position = rb.position + add; // 다시 CreateFromPrequeue 호출 시 좌표 맞추기 위함
+                prequeue.Enqueue(item);
+            }
         }
     }
     public void HitProcessBasic()
