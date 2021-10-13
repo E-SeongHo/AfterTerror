@@ -48,7 +48,7 @@ public class EnemyButtonManageVer2 : MonoBehaviour
 
         if (buttonON)
         {
-            Debug.Log("now target : " + target);
+            //Debug.Log("now target : " + target);
             if (target_controller.special_ON)
             {
                 SpecialButton now = target_controller.GetPresentSpecial();
@@ -67,7 +67,7 @@ public class EnemyButtonManageVer2 : MonoBehaviour
             }            
             else
             {
-                Debug.Log("now index : " + target_controller.GetTopIndex());
+                //Debug.Log("now index : " + target_controller.GetTopIndex());
                 InputProcess(target_controller.GetTopIndex());
             }
         }

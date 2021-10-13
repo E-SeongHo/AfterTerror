@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-
     private Vector3 origin_position;
-    private float time = 1f;
-    private float amount = 50f;
+    private float time = 0.5f;
+    private float amount = 30f;
 
     private void Start()
     {
@@ -16,14 +15,17 @@ public class CameraMove : MonoBehaviour
 
     IEnumerator ShakeCamera()
     {
+        time = 0.5f;
+        int count = 0;
         while(time > 0)
         {
-            gameObject.transform.position = Random.insideUnitSphere * amount + origin_position;
+            if(count % 5 == 0)
+                gameObject.transform.position = origin_position + new Vector3(Random.value * amount, 0, 0);
             time -= Time.deltaTime;
-            Debug.Log(gameObject.transform.position);
+            count++;
             yield return null;
         }
-        time = 0.0f;
+        Debug.Log(count);
         gameObject.transform.position = origin_position;
     }
 }
