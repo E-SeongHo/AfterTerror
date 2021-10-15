@@ -107,6 +107,7 @@ public class EnemyKnifeman : MonoBehaviour
             amount = 0;
             Debug.Log("Shield");
             shield.ReSetShield();
+            ShieldmanController.Instance.ChangeHealth(amount); // amount == 0
         }
         else
         {

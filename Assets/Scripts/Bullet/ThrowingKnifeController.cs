@@ -26,6 +26,7 @@ public class ThrowingKnifeController : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
     }
 
+    // 추상화 예정
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -36,6 +37,7 @@ public class ThrowingKnifeController : MonoBehaviour
                 amount = 0;
                 Debug.Log("Shield");
                 shield.ReSetShield();
+                ShieldmanController.Instance.ChangeHealth(amount);
             }
             else
             {

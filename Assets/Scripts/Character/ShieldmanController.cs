@@ -32,6 +32,7 @@ public class ShieldmanController : MonoBehaviour
     private int sight = 2;
 
     private CameraMove camera_controller;
+    private EffectManage effect_controller;
 
     private void Awake()
     {
@@ -58,6 +59,7 @@ public class ShieldmanController : MonoBehaviour
         fire_hand = gameObject.transform.GetChild(1).gameObject;
 
         camera_controller = GameObject.FindWithTag("MainCamera").GetComponent<CameraMove>();
+        effect_controller = GameObject.Find("Effects").GetComponent<EffectManage>();
 
         Run();
         
@@ -91,15 +93,15 @@ public class ShieldmanController : MonoBehaviour
     // Setters
     public void ChangeHealth(int amount)
     {
-        if(!invincibility && amount < 0) 
+        if (!invincibility && amount < 0)
         {
-            camera_controller.StartCoroutine("ShakeCamera");
+            camera_controller.HitProcess(0.5f, 80f); // camera shake
             int iter = currentHealth;
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             Debug.Log(currentHealth + " / " + maxHealth);
             iter -= currentHealth;
-            
-            for(int i = 0; i < iter; i++)
+
+            for (int i = 0; i < iter; i++)
             {
                 Image todel = healthes.Pop();
                 // Debug.Log("delete" + todel);
@@ -116,10 +118,14 @@ public class ShieldmanController : MonoBehaviour
             else
             {
                 invincibility = true;
-                StartCoroutine("InvincibleTime");
+                StartCoroutine(InvincibleTime());
             }
         }
-    }
+        else if (!invincibility && amount == 0) // shiled state 확인 이 더 낫나
+        {
+            effect_controller.SuccessShield();
+        }
+    }   
     public void ChangeAttackAbility(int amount)
     {
         // Attack능력 최대값 2
@@ -188,28 +194,4 @@ public class ShieldmanController : MonoBehaviour
         newHealth.transform.localPosition = healthPos[healthes.Count % 3];
         healthes.Push(newHealth);
     }
-
-
-/*    public void ActiveButton()
-    {
-        myButton.SetActive(true);
-        buttonON = true;
-    }
-    public void InActiveButton()
-    {
-        myButton.SetActive(false);
-        buttonON = false;
-    }
-    public void GenerateButton(GameObject button)
-    {
-        Vector2 position = GetComponent<Rigidbody2D>().position;
-        GameObject newButton = Instantiate(button, position + Vector2.up * 1.5f, Quaternion.identity);
-        myButton = newButton; 
-        myButton.transform.parent = gameObject.transform;
-    }
-    public void DeleteButton()
-    {
-        Destroy(myButton);
-        Debug.Log("Delete");
-    }*/
 }

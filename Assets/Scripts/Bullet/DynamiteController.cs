@@ -66,6 +66,7 @@ public class DynamiteController : MonoBehaviour
                 amount = 0;
                 Debug.Log("Shield");
                 shield.ReSetShield();
+                ShieldmanController.Instance.ChangeHealth(amount);
             }
             else
             {
