@@ -10,6 +10,8 @@ public class GameUI : MonoBehaviour
     public Text gameoverText;
     public Text retryText;
 
+    public GameObject bloodScreen;
+
     private GameObject mapManager;
     private GameObject buttonManager;
 
@@ -34,5 +36,13 @@ public class GameUI : MonoBehaviour
                 SceneManager.LoadScene("Stage1");
             }
         }
+    }
+    public void BloodScreenON()
+    {
+        bloodScreen.SetActive(true);
+    }
+    public void BloodScreenOFF()
+    {
+        bloodScreen.SetActive(false);
     }
 }

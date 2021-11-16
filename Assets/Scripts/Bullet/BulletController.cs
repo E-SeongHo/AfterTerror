@@ -9,7 +9,6 @@ public class BulletController : MonoBehaviour
     private int damage = 1;
     private Rigidbody2D rb; 
     private Transform playerTransform;
-    private Vector2 alter = new Vector2(0, -50f);
     private ShieldController shield;
 
     private void Awake()
@@ -23,7 +22,8 @@ public class BulletController : MonoBehaviour
 
     private void OnEnable()
     {
-        Vector3 dir = playerTransform.position - transform.position;
+        // player 중앙에 맞추기위해 y - 50
+        Vector3 dir = (playerTransform.position + new Vector3(0,-50,0)) - transform.position;
         // bullet은 등속도 운동
         rb.velocity = dir.normalized * speed;
 

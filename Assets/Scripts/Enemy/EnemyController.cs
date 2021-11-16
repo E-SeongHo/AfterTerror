@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     private float runSpeed = 30f;
 
     private float rundist = 450f;
+
+    private EffectManage effectController;
 /*    private GameObject xSheet;
     private Animator xSheet_anim;*/
 
@@ -43,6 +45,8 @@ public class EnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerTransform = ShieldmanController.Instance.transform;
         animator = GetComponent<Animator>();
+
+        effectController = GameObject.Find("Effects").GetComponent<EffectManage>();
         /*xSheet = gameObject.transform.GetChild(0).gameObject;
         xSheet_anim = xSheet.GetComponent<Animator>();*/
     }
@@ -77,6 +81,7 @@ public class EnemyController : MonoBehaviour
         if (amount < 0)
         {
             // 피격 animator 처리 부분 
+            effectController.SuccessAttack(gameObject);
         }
         // Clamp 메소드 이용, 최대값이 maxHealth넘지 못하게 구현 
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);

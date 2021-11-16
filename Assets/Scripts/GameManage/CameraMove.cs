@@ -4,51 +4,45 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    private Vector3 origin_position;
+    private Vector3 originPosition;
     private float time = 0.5f;
     private float amount = 30f;
 
+    private GameUI uiController;
+
     private void Start()
     {
-        origin_position = gameObject.transform.position;
+        originPosition = gameObject.transform.position;
+        uiController = GameObject.Find("GameManage").gameObject.GetComponent<GameUI>();
     }
 
     public void HitProcess(float shake_time, float shake_amount)
     {
+        uiController.BloodScreenON();
         StartCoroutine(ShakeCamera(shake_time, shake_amount));
     }
     public void ShieldProcess(float shake_time, float shake_amount)
     {
-
+        Time.timeScale = 0.3f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        StartCoroutine(ShakeCamera(shake_time, shake_amount));
     }
 
-    IEnumerator ShakeCamera(float shake_time, float shake_amount)
+    private IEnumerator ShakeCamera(float shake_time, float shake_amount)
     {
         time = shake_time;
         amount = shake_amount;
-        int count = 0;
         while(time > 0)
         {
-            if(count % 5 == 0)
-                gameObject.transform.position = origin_position + new Vector3(Random.value * amount, 0, 0);
+            gameObject.transform.position = originPosition + new Vector3(Random.value * amount, 0, 0);
             time -= Time.deltaTime;
-            count++;
             yield return null;
         }
-        Debug.Log(count);
-        gameObject.transform.position = origin_position;
-    }
-    IEnumerator SlowMotion(float time_scale)
-    {
-        // make slow
-        Time.timeScale = time_scale;
-        Time.fixedDeltaTime = 0.02f * time_scale;
-
-        // generate effect
-        yield return null;
-
-        // reset time
+        gameObject.transform.position = originPosition;
+        
+        // no think
         Time.timeScale = 1;
         Time.fixedDeltaTime = 0.02f;
+        uiController.BloodScreenOFF();
     }
 }

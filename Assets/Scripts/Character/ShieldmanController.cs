@@ -95,7 +95,9 @@ public class ShieldmanController : MonoBehaviour
     {
         if (!invincibility && amount < 0)
         {
-            camera_controller.HitProcess(0.5f, 80f); // camera shake
+            camera_controller.HitProcess(0.5f, 50f); // camera shake
+            effect_controller.PlayerHit();
+
             int iter = currentHealth;
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
             Debug.Log(currentHealth + " / " + maxHealth);
@@ -123,6 +125,7 @@ public class ShieldmanController : MonoBehaviour
         }
         else if (!invincibility && amount == 0) // shiled state 확인 이 더 낫나
         {
+            camera_controller.ShieldProcess(0.2f, 30f);
             effect_controller.SuccessShield();
         }
     }   

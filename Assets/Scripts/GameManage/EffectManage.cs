@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class EffectManage : MonoBehaviour
 {
-    private GameObject shield_effect;
+    private GameObject shieldEffect;
+    private GameObject attackEffect;
+    private GameObject damageEffect;
 
     private void Start()
     {
-        shield_effect = gameObject.transform.GetChild(0).gameObject;
+        shieldEffect = gameObject.transform.GetChild(0).gameObject;
+        attackEffect = gameObject.transform.GetChild(1).gameObject;
+        damageEffect = gameObject.transform.GetChild(2).gameObject;
     }
 
     public void SuccessShield()
     {
-        Vector3 gen_pos = new Vector3(47, -58);
-        shield_effect.transform.position = ShieldmanController.Instance.gameObject.transform.position + gen_pos;
-        shield_effect.SetActive(true);
-        // effect object(shield_effect) will be SetActive(false) by animation event
+        Vector3 genPos = new Vector3(47, -58);
+        shieldEffect.transform.position = ShieldmanController.Instance.gameObject.transform.position + genPos;
+        shieldEffect.SetActive(true);
+        // effect object(shieldEffect) will be SetActive(false) by animation event
+    }
+    public void SuccessAttack(GameObject target)
+    {
+        attackEffect.transform.SetParent(target.transform, false);
+        attackEffect.transform.localPosition = new Vector3(-80, -60);
+        attackEffect.SetActive(true);
+        // effect object will be SetActive(false) & SetParent to origin parent by animation event
+    }
+    public void PlayerHit()
+    {
+        damageEffect.transform.position = ShieldmanController.Instance.gameObject.transform.position + new Vector3(0, -50, 0);
+        damageEffect.SetActive(true);
+
     }
 }
