@@ -20,13 +20,17 @@ public class ShieldmanController : MonoBehaviour
     private Vector2[] healthPos = new Vector2[3];
 
     private Animator animator;
-    private Animator hand_animator;
-    private Animator fire_animator;
+    private Animator handAnimator;
+    private Animator fireAnimator;
 
     private GameObject hand;
     private GameObject fire_hand;
 
     private SpriteRenderer sprRenderer;
+    private SpriteRenderer handRenderer;
+    private SpriteRenderer fireRenderer;
+
+
     public int maxHealth = 6;
     private bool invincibility = false;
     private int sight = 2;
@@ -51,9 +55,12 @@ public class ShieldmanController : MonoBehaviour
     private void Start()
     {
         sprRenderer = gameObject.GetComponent<SpriteRenderer>();
+        handRenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        fireRenderer = gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>();
+
         animator = gameObject.GetComponent<Animator>();
-        hand_animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
-        fire_animator = gameObject.transform.GetChild(1).GetComponent<Animator>();
+        handAnimator = gameObject.transform.GetChild(0).GetComponent<Animator>();
+        fireAnimator = gameObject.transform.GetChild(1).GetComponent<Animator>();
 
         hand = gameObject.transform.GetChild(0).gameObject;
         fire_hand = gameObject.transform.GetChild(1).gameObject;
@@ -81,7 +88,7 @@ public class ShieldmanController : MonoBehaviour
         }*/
 
         /*Debug.Log(animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        Debug.Log(hand_animator.GetCurrentAnimatorStateInfo(0).normalizedTime);*/
+        Debug.Log(handAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);*/
     }
     // Getters
     public bool GetDieState() { return die; }
@@ -146,10 +153,17 @@ public class ShieldmanController : MonoBehaviour
         {
             // Alpha Effect
             if (count % 2 == 0)
+            {
                 sprRenderer.color = new Color32(255, 255, 255, 90);
+                handRenderer.color = new Color32(255, 255, 255, 90);
+                fireRenderer.color = new Color32(255, 255, 255, 90);
+            }
             else
+            {
                 sprRenderer.color = new Color32(255, 255, 255, 180);
-
+                handRenderer.color = new Color32(255, 255, 255, 180);
+                fireRenderer.color = new Color32(255, 255, 255, 180);
+            }
             // Wait Update Frame 
             yield return new WaitForSeconds(0.2f);
             count++;
@@ -157,6 +171,9 @@ public class ShieldmanController : MonoBehaviour
 
         // Alpha Effect End & Flag Off
         sprRenderer.color = new Color32(255, 255, 255, 255);
+        handRenderer.color = new Color32(255, 255, 255, 255);
+        fireRenderer.color = new Color32(255, 255, 255, 255);
+
         invincibility = false;
 
         yield return null;
@@ -164,17 +181,17 @@ public class ShieldmanController : MonoBehaviour
     public void Run()
     {
         animator.SetTrigger("run");
-        hand_animator.SetTrigger("run");
+        handAnimator.SetTrigger("run");
     }
     public void RunWithHand()
     {
         animator.Play("PlayerShieldman_Run");
-        hand_animator.Play("HandMove", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        handAnimator.Play("HandMove", 0, animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
     }
     public void JumpWithHand()
     {
         animator.SetTrigger("jump");
-        hand_animator.SetTrigger("jump");
+        handAnimator.SetTrigger("jump");
     }
 
     IEnumerator AttackAnimation()
@@ -182,7 +199,7 @@ public class ShieldmanController : MonoBehaviour
         hand.SetActive(false);
         fire_hand.SetActive(true);
         float norm = animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
-        fire_animator.Play("HandFire", 0, norm);
+        fireAnimator.Play("HandFire", 0, norm);
 
         yield return new WaitForSeconds(0.1f);
 
