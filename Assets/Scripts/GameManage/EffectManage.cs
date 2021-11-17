@@ -33,6 +33,6 @@ public class EffectManage : MonoBehaviour
     {
         damageEffect.transform.position = ShieldmanController.Instance.gameObject.transform.position + new Vector3(0, -50, 0);
         damageEffect.SetActive(true);
-
+        // effect object will be SetActive(false) by animation event
     }
 }

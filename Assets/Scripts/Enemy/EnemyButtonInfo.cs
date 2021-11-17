@@ -18,6 +18,7 @@ public class EnemyButtonInfo : MonoBehaviour
 
     private float interval = 30f; // interval for buttons
     private Vector2 add = new Vector2(-72f, 77f);
+    private const int layerFirst = 10;
 
     // for special buttons
     public bool special_ON = false;
@@ -79,14 +80,18 @@ public class EnemyButtonInfo : MonoBehaviour
         }
         else
         {
+            int layer = layerFirst;
             for (int i = 0; i < core.GetMaxHealth(); i++)
             {
                 int rand = Random.Range(0, 3);
                 // rb.position + add == 첫 버튼 위치
                 BasicButton to_push = new BasicButton(Instantiate(button_prefabs[rand], rb.position + add, Quaternion.identity), rand);
                 to_push.button.transform.parent = gameObject.transform;
+                to_push.button.GetComponent<SpriteRenderer>().sortingOrder = layer;
                 to_push.button.SetActive(false);
                 prequeue.Enqueue(to_push);
+
+                layer--;
             }
         }
     }
