@@ -24,10 +24,13 @@ public class EffectManage : MonoBehaviour
     }
     public void SuccessAttack(GameObject target)
     {
-        attackEffect.transform.SetParent(target.transform, false);
-        attackEffect.transform.localPosition = new Vector3(-80, -60);
-        attackEffect.SetActive(true);
-        // effect object will be SetActive(false) & SetParent to origin parent by animation event
+        if(target!=null)
+        {
+            attackEffect.transform.SetParent(target.transform, false);
+            attackEffect.transform.localPosition = new Vector3(-80, -60);
+            attackEffect.SetActive(true);
+            // effect object will be SetActive(false) & SetParent to origin parent by animation event
+        }
     }
     public void PlayerHit()
     {

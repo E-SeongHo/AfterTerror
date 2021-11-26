@@ -27,6 +27,10 @@ public class CameraMove : MonoBehaviour
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
         StartCoroutine(ShakeCamera(shake_time, shake_amount));
     }
+    public void EnemyAttackProcess(float shake_time, float shake_amount)
+    {
+        StartCoroutine(ShakeCamera(shake_time, shake_amount));
+    }
 
     private IEnumerator ShakeCamera(float shake_time, float shake_amount)
     {

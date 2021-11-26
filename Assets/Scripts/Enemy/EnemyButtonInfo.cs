@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyButtonInfo : MonoBehaviour
-{   
+{
+    private CameraMove cameraController;
+
     private GameObject xSheet;
     private Animator xSheet_anim;
 
@@ -47,6 +49,7 @@ public class EnemyButtonInfo : MonoBehaviour
 
     private void Start()
     {
+        cameraController = GameObject.FindWithTag("MainCamera").GetComponent<CameraMove>();
         core = gameObject.GetComponent<EnemyController>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         EnqueueButtons(); // enqueue buttons to prequeue as much as max hp (from now equal start hp)
@@ -130,7 +133,7 @@ public class EnemyButtonInfo : MonoBehaviour
         }
         else if(type == 1) // 꾹 누르기 버튼
         {
-            clear_time = special_prequeue.Peek().times;
+            clear_time = special_prequeue.Peek().during;
             // back을 참조할 필요는 없다.
             GameObject back = Instantiate(back_gauge_prefab);
             back.transform.parent = special_prequeue.Peek().button.transform;
@@ -187,6 +190,7 @@ public class EnemyButtonInfo : MonoBehaviour
     }
     public void HitProcessBasic()
     {
+        cameraController.EnemyAttackProcess(0.2f, 30f);
         core.ChangeHealth(-1);
         SortButtons();
         CreateFromPrequeue();
@@ -207,10 +211,12 @@ public class EnemyButtonInfo : MonoBehaviour
     {
         if(front_gauge.Count > 0)
         {
+            cameraController.EnemyAttackProcess(0.1f, 15f);
             GameObject to_del = front_gauge.Pop();
             Destroy(to_del);
             if(front_gauge.Count == 0)
             {
+                cameraController.EnemyAttackProcess(0.2f, 30f);
                 Destroy(special_now.button);
                 core.ChangeHealth(-core.GetMaxHealth()); // 그냥 죽여버리기 여기서 buttonON <-false 진행
             }
@@ -223,11 +229,13 @@ public class EnemyButtonInfo : MonoBehaviour
         if(pushing_time > clear_time)
         {
             // success
+            cameraController.EnemyAttackProcess(0.2f, 30f);
             Destroy(special_now.button);
             core.ChangeHealth(-core.GetMaxHealth());
         }
         else
         {
+            cameraController.EnemyAttackProcess(0.05f, 15f);
             fill_gauge.transform.localScale = new Vector3(pushing_time / clear_time, 1, 1);
         }
     }
