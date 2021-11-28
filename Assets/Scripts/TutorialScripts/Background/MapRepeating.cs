@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapRepeating : MonoBehaviour
 {
-    private float speed = 200f;
+    public float speed = 200f;
     private float startXpos; // -189
     private float endXpos; // -1629
 

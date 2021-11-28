@@ -11,7 +11,8 @@ public class TutorialScripts : MonoBehaviour
     public GameObject mine;
     public Image Black;
     public Sprite[] buttonsPrefabs;
-    Animator animator;
+    public Animator animator;
+    public Animator EnemyAnimator;
     public Text talkText;
     public Image speechBubble;
     public GameObject x_prefab;
@@ -29,6 +30,8 @@ public class TutorialScripts : MonoBehaviour
     GameObject buttonSpawner;
     IEnumerator enumerator;
     bullet_projectileManager bp;
+    DistantBackgroundRepeating dbr;
+    MapRepeating mr;
 
 
     void Start()
@@ -49,9 +52,10 @@ public class TutorialScripts : MonoBehaviour
         // buttonSpawner = Enemy1.transform.GetChild(0).gameObject;
         // buttonSpawner.SetActive(false);
         Debug.Log(Enemy1.transform.position.x);
-
-        bullet = GameObject.Find("AttackEnemy").GetComponentInChildren<GameObject>();
-
+        dbr = GameObject.Find("DistantMap").GetComponent<DistantBackgroundRepeating>();
+        mr = GameObject.Find("FrontMap_Tutorials").GetComponent<MapRepeating>();
+        // bullet = AttackEnemy.transform.GetChild(0).GetComponent<GameObject>();
+        Debug.Log("start");
     }
 
     void Update()
@@ -67,6 +71,7 @@ public class TutorialScripts : MonoBehaviour
             talkText.text = "아무 키나 눌러서\n대화 넘어가기";
             Debug.Log("text enabled");
         }
+        // Debug.Break();
 
         // 아무 키나 눌러서 넘어가기
         if (Input.anyKeyDown)
@@ -81,35 +86,57 @@ public class TutorialScripts : MonoBehaviour
             Debug.Log("speechBubble is not active now");
         }
 
-        // enemyScripts starts
-        if (Enemy1.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            Vector3 pos = Enemy1.transform.position;
-            Enemy1.transform.Translate(-1 * enemySpeed * Time.deltaTime, 0, 0);
-
-            timePause1(Enemy1, pos);
-            // StartCoroutine("makeButtonCoroutine");
-            // StopCoroutine("makeButtonCoroutine");
+            Enemy1.SetActive(false);
         }
+
+        // enemyScripts starts
+        // if (Enemy1.activeSelf)
+        // {
+        //     Vector3 pos = Enemy1.transform.position;
+        //     Enemy1.gameObject.transform.Translate(-1 * enemySpeed * Time.deltaTime, 0, 0);
+        //     Debug.Log(-1 * enemySpeed * Time.deltaTime);
+
+        //     timePause1(Enemy1, pos);
+
+        //     GenerateButton();
+
+        //     // StartCoroutine("makeButtonCoroutine");
+        //     // StopCoroutine("makeButtonCoroutine");
+        // }
 
 
         // bullet guarding
         if (Enemy1.activeSelf == false)
         {
             AttackEnemy.SetActive(true);
-            bullet.SetActive(true);
-            if (bullet.activeSelf)
-            {
-                float moveX = -1 * bulletSpeed * Time.deltaTime;
-                transform.Translate(moveX, 0, 0);
-            }
             Vector3 attackEnemypos = AttackEnemy.transform.position;
             AttackEnemy.transform.Translate(-1 * enemySpeed * Time.deltaTime, 0, 0);
-            Defend();
-            if (bullet.transform.position.x <= ShieldMan.transform.position.x)
+
+            if (AttackEnemy.transform.position.x <= 878)
             {
-                Destroy(bullet);
+                dbr.speed = 0;
+                mr.speed = 0;
+                enemySpeed = 0;
+                animator.speed = 0;
+
+                // bullet.gameObject.SetActive(true);
+
+                // if (bullet.gameObject.activeSelf)
+                // {
+                //     float moveX = -1 * bulletSpeed * Time.deltaTime;
+                //     transform.Translate(moveX, 0, 0);
+                // }
+                BulletFlies();
+
+                Defend();
+                if (bullet.transform.position.x <= ShieldMan.transform.position.x)
+                {
+                    Destroy(bullet);
+                }
             }
+            // bullet = AttackEnemy.transform.GetChild(0).GetComponent<GameObject>();
         }
 
         if (AttackEnemy.activeSelf == false)
@@ -118,32 +145,48 @@ public class TutorialScripts : MonoBehaviour
         }
     }
 
+    void BulletFlies()
+    {
+        // GameObject EnemyBullet = AttackEnemy.transform.GetChild("bullet_0").GetComponent<GameObject>();
+        // GameObject EnemyBullet = GameObject.Find("bullet_0").GetComponent<GameObject>();
+        GameObject EnemyBullet = AttackEnemy.gameObject.transform.FindChild("bullet_0").GetComponent<GameObject>();
+        EnemyBullet.transform.Translate(-1 * bulletSpeed * Time.deltaTime, 0, 0);
+    }
+
     void timePause1(GameObject Enemy1, Vector3 position)
     {
         timeToStop -= Time.deltaTime;
         // Debug.Log(timeToStop);
 
-        if (position.x < 878)
+        if (Enemy1.transform.position.x < 878)
         {
             // do { isExecuted = true; } while (timeToStop >= 0.0f && isPause != true);
             isPause = true;
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
 
             Color color = Black.color;
             color.a = 0.355f;
             Black.color = color;
 
+
             speechBubble.gameObject.SetActive(true);
             talkText.text = "적 머리 위에 떠 있는 버튼에 맞춰 누르면 공격을 할 수 있다.";
-            // isExecuted = true;
-        }
-        enumerator = makeButtonCoroutine();
-        StartCoroutine(enumerator);
+            mr.speed = 0;
+            dbr.speed = 0;
+            enemySpeed = 0;
+            animator.speed = 0;
 
-        if (isPause)
-        {
-            StopCoroutine(enumerator);
+            // isExecuted = true;
+            // enumerator = makeButtonCoroutine();
+            // StartCoroutine(enumerator);
+            // StartCoroutine(makeButtonCoroutine());
+
+            timeToStop = 2f;
+            timeToStop -= Time.deltaTime;
+
         }
+
+
     }
 
     IEnumerator makeButtonCoroutine()
@@ -152,15 +195,15 @@ public class TutorialScripts : MonoBehaviour
         Enemy1.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = buttonsPrefabs[randNum];
         Debug.Log("randnum is " + randNum);
 
-        string nowKey = Input.inputString;
+        // string nowKey = Input.inputString;
         bool isRight = false;
-        Debug.Log("nowkey is " + nowKey);
+        // Debug.Log("nowkey is " + nowKey);
 
 
         if (randNum == 0)
         {
             Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "A")
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 isRight = true;
                 Debug.Log("you pressed right button");
@@ -172,7 +215,7 @@ public class TutorialScripts : MonoBehaviour
         else if (randNum == 1)
         {
             Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "D")
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 isRight = true;
                 Debug.Log("you pressed right button");
@@ -184,7 +227,7 @@ public class TutorialScripts : MonoBehaviour
         else if (randNum == 2)
         {
             Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "S")
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 isRight = true;
                 Debug.Log("you pressed right button");
@@ -192,13 +235,21 @@ public class TutorialScripts : MonoBehaviour
                 DeleteButton();
             }
             else { x_prefab.gameObject.SetActive(true); isRight = false; }
-            yield return null;
         }
 
-        if (isRight == false)
+        // if (isRight == false)
+        // {
+        //     Enemy1.transform.Translate(1184, -195, 0);
+        // }
+
+        if (isRight)
         {
-            Enemy1.transform.Translate(1184, -195, 0);
+            mr.speed = 200f;
+            dbr.speed = 50f;
+            enemySpeed = 200f;
+            animator.speed = 1;
         }
+        yield return null;
     }
     void GenerateButton()
     {
@@ -257,7 +308,7 @@ public class TutorialScripts : MonoBehaviour
     void Defend()
     {
         // if (bp..transform.position.x <= -692)
-        if (bp.bullet.transform.position.x <= -692)
+        if (bullet.transform.position.x <= -692)
         {
             Time.timeScale = 0;
 
@@ -284,11 +335,11 @@ public class TutorialScripts : MonoBehaviour
                 }
             }
 
-            if (rightkey != "Space")
-            {
-                talkText.text = "정말 실망스럽군, 다시 한 번 시도해봐라. 만약 실전이었다면 다음은 없었을 것이다.";
-                AttackEnemy.transform.Translate(1184, -195, 0);
-            }
+            // if (rightkey != "Space")
+            // {
+            //     talkText.text = "정말 실망스럽군, 다시 한 번 시도해봐라. 만약 실전이었다면 다음은 없었을 것이다.";
+            //     AttackEnemy.transform.Translate(1184, -195, 0);
+            // }
         }
 
 
