@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DistantBackgroundRepeating : MonoBehaviour
 {
-    private float speed = 50f;
+    public float speed = 50f;
     private float startXpos;
     private float endXpos;
 

@@ -7,22 +7,38 @@ public class EnemyButtonCreator : MonoBehaviour
     public Sprite[] buttonsprefabs;
     public GameObject x_prefab;
     public GameObject o_prefab;
-    public EnemyControl enemyControl;
+    // public EnemyControl enemyControl;
     private int randNum;
     public bool right;
     public bool pressedKey;
-    [SerializeField] Manager manager;
+    // [SerializeField] Manager manager;
+    GameObject enemyControl;
+
+    private void Awake()
+    {
+        Debug.Log(buttonsprefabs.Length);
+    }
     void Start()
     {
         // 여기서 manager 가져온다음에 접근하면 될듯 ㅇㅋ 임시 코드
-        manager = GameObject.Find("Canvas").GetComponent<Manager>();
-        enemyControl = GameObject.Find("Enemy1").GetComponent<EnemyControl>();
+        // manager = GameObject.Find("Canvas").GetComponent<Manager>();
+        GameObject enemyControl = GameObject.Find("Enemy1").GetComponent<GameObject>();
         // x_prefab = GameObject.Find("O-Sheet_0").GetComponent<GameObject>();
         // o_prefab = GameObject.Find("X-Sheet_0").GetComponent<GameObject>();
         randNum = Random.Range(0, buttonsprefabs.Length);
-        GetComponent<SpriteRenderer>().sprite = buttonsprefabs[randNum];
+        Debug.Log(randNum);
+
         x_prefab.gameObject.SetActive(false);
         o_prefab.gameObject.SetActive(false);
+
+        try
+        {
+            GetComponent<SpriteRenderer>().sprite = buttonsprefabs[randNum];
+        }
+        catch (System.IndexOutOfRangeException exception)
+        {
+            Debug.Log(exception.Message);
+        }
     }
 
     // Update is called once per frame
@@ -33,7 +49,7 @@ public class EnemyButtonCreator : MonoBehaviour
             Debug.Log("buttonsprefabs[0]");
             if (Input.GetKeyDown(KeyCode.A))
             {
-                ChangeButtons();
+                DeleteButton();
                 right = true;
                 Debug.Log("buttonsprefabs[0] " + right);
                 o_prefab.gameObject.SetActive(true);
@@ -49,7 +65,7 @@ public class EnemyButtonCreator : MonoBehaviour
             Debug.Log("buttonsprefabs[1]");
             if (Input.GetKeyDown(KeyCode.D))
             {
-                ChangeButtons();
+                DeleteButton();
                 right = true;
                 Debug.Log("buttonsprefabs[1] " + right);
                 o_prefab.gameObject.SetActive(true);
@@ -65,7 +81,7 @@ public class EnemyButtonCreator : MonoBehaviour
             Debug.Log("buttonsprefabs[2]");
             if (Input.GetKeyDown(KeyCode.S))
             {
-                ChangeButtons();
+                DeleteButton();
                 right = true;
                 Debug.Log("buttonsprefabs[2] " + right);
                 o_prefab.gameObject.SetActive(true);
@@ -87,11 +103,16 @@ public class EnemyButtonCreator : MonoBehaviour
 
     public void ChangeButtons()
     {
-        Vector3 position = enemyControl.transform.position;
-        Vector3 FixedPosition = position;
-        FixedPosition.y = position.y + 170f;
+        Vector3 EnemyPosition = GameObject.Find("Enemy1").GetComponent<Transform>().position;
+        Vector3 FixedPosition = EnemyPosition;
+        FixedPosition.y = EnemyPosition.y + 170f;
 
         randNum = Random.Range(0, buttonsprefabs.Length);
         GetComponent<SpriteRenderer>().sprite = buttonsprefabs[randNum];
+    }
+
+    void DeleteButton()
+    {
+        Destroy(gameObject);
     }
 }

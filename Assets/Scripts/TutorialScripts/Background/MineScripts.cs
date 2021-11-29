@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class MineScripts : MonoBehaviour
 {
-    [SerializeField] GameObject mine;
-    void Start()
+    public Vector3 startPos;
+
+    private float moveX;
+
+    MapRepeating map;
+
+
+
+    private void Awake()
     {
-        mine.SetActive(false);
+        map = FindObjectOfType<MapRepeating>();
+    }
+    private void Start()
+    {
+        transform.localPosition = startPos;
     }
 
-    void Update()
+    private void Update()
     {
-        if (mine.gameObject.activeSelf)
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                GameObject arrow = mine.GetComponentInChildren<GameObject>();
-                arrow.SetActive(false);
-                Debug.Log("arrowKey pressed");
-            }
-        }
+        moveX = -1 * map.speed * Time.deltaTime;
+        transform.Translate(moveX, 0, 0);
     }
 }

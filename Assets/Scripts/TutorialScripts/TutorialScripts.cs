@@ -1,308 +1,301 @@
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TutorialScripts : MonoBehaviour
 {
-    public GameObject ShieldMan;
-    public GameObject Enemy1;
-    public GameObject AttackEnemy;
-    public GameObject mine;
-    public Image Black;
-    public Sprite[] buttonsPrefabs;
-    Animator animator;
+    [Header("--- Tutorial UI ---")]
+    public GameObject blackPanel;
+    public GameObject speechBubble;
     public Text talkText;
-    public Image speechBubble;
-    public GameObject x_prefab;
-    public GameObject o_prefab;
-    private Rigidbody2D rigidbody2D;
-    public GameObject bullet;
+    public Sprite[] buttonSpriteArr;
+
+    [Header("Shield Man")]
+    public GameObject ShieldMan;
+    public GameObject spaceButton;
+    public GameObject normalHand;
+    public GameObject fireHand;
+    public GameObject jumpHand;
+    public GameObject shieldEffect;
+
+    [Header("--- Enemy_1 ---")]
+    public GameObject Enemy1;
+    public GameObject enemy1_Button;
+    public GameObject enemy1_O;
+    public GameObject enemy1_X;
+
+    [Header("--- Enemy_2 ---")]
+    public GameObject enemy2;
+    public GameObject bulletObj;
+
+    [Header("Mine")]
+    public GameObject mineObj;
+    public GameObject mineButton;
+
+    private KeyCode keyCode;
+
+    private int tutorialIndex = -1;
     private int randNum;
-    int waitingTime;
-    float timer;
-    float timeToStop = 2f;
-    private float enemySpeed = 200f;
-    private float bulletSpeed = 600f;
-    public bool isPause = false;
-    public bool isExecuted = false;
-    GameObject buttonSpawner;
-    IEnumerator enumerator;
-    bullet_projectileManager bp;
 
 
-    void Start()
+
+    private void Start()
     {
-        Black = GameObject.Find("Black").GetComponent<Image>();
-        talkText.text = "여기는 통신병, 임무 수행을 원활하게 진행하기 위해서 방침을 알려주겠다";
-        timer = 0.0f;
-        waitingTime = 2;
-        Enemy1.SetActive(false);
-        AttackEnemy.SetActive(false);
-        x_prefab.gameObject.SetActive(false);
-        o_prefab.gameObject.SetActive(false);
-
-        mine.SetActive(false);
-        // randNum = Random.Range(0, buttonsPrefabs.Length);
-        // GetComponent<SpriteRenderer>().sprite = buttonsPrefabs[randNum];
-
-        // buttonSpawner = Enemy1.transform.GetChild(0).gameObject;
-        // buttonSpawner.SetActive(false);
-        Debug.Log(Enemy1.transform.position.x);
-
-        bullet = GameObject.Find("AttackEnemy").GetComponentInChildren<GameObject>();
-
+        StartCoroutine(TutorialCor_0());
     }
-
-    void Update()
+    private void Update()
     {
-        // speechBubble Scripts
-        timer += Time.deltaTime;
-        // Debug.Log("waitingTime is " + waitingTime + " current time is " + timer);
-
-        if (timer > waitingTime)
+        if (tutorialIndex == -1)
         {
-            talkText.alignment = TextAnchor.MiddleCenter;
-            talkText.fontSize = 10;
-            talkText.text = "아무 키나 눌러서\n대화 넘어가기";
-            Debug.Log("text enabled");
+            return;
         }
 
-        // 아무 키나 눌러서 넘어가기
-        if (Input.anyKeyDown)
+        if (tutorialIndex == 1)
         {
-            Debug.Log("you pressed any key");
-
-            // enemy
-            Enemy1.SetActive(true);
-            Debug.Log("enemy is active now");
-
-            speechBubble.gameObject.SetActive(false);
-            Debug.Log("speechBubble is not active now");
-        }
-
-        // enemyScripts starts
-        if (Enemy1.activeSelf)
-        {
-            Vector3 pos = Enemy1.transform.position;
-            Enemy1.transform.Translate(-1 * enemySpeed * Time.deltaTime, 0, 0);
-
-            timePause1(Enemy1, pos);
-            // StartCoroutine("makeButtonCoroutine");
-            // StopCoroutine("makeButtonCoroutine");
-        }
-
-
-        // bullet guarding
-        if (Enemy1.activeSelf == false)
-        {
-            AttackEnemy.SetActive(true);
-            bullet.SetActive(true);
-            if (bullet.activeSelf)
+            if (Input.GetKeyDown(keyCode))
             {
-                float moveX = -1 * bulletSpeed * Time.deltaTime;
-                transform.Translate(moveX, 0, 0);
+                speechBubble.SetActive(false);
+                StartCoroutine(TutorialCor_2());
             }
-            Vector3 attackEnemypos = AttackEnemy.transform.position;
-            AttackEnemy.transform.Translate(-1 * enemySpeed * Time.deltaTime, 0, 0);
-            Defend();
-            if (bullet.transform.position.x <= ShieldMan.transform.position.x)
+            else if (Input.anyKeyDown)
             {
-                Destroy(bullet);
+                StartCoroutine(TutorialCor_1(true));
             }
         }
-
-        if (AttackEnemy.activeSelf == false)
+        else if (tutorialIndex == 2)
         {
-            Escape();
-        }
-    }
-
-    void timePause1(GameObject Enemy1, Vector3 position)
-    {
-        timeToStop -= Time.deltaTime;
-        // Debug.Log(timeToStop);
-
-        if (position.x < 878)
-        {
-            // do { isExecuted = true; } while (timeToStop >= 0.0f && isPause != true);
-            isPause = true;
-            Time.timeScale = 0;
-
-            Color color = Black.color;
-            color.a = 0.355f;
-            Black.color = color;
-
-            speechBubble.gameObject.SetActive(true);
-            talkText.text = "적 머리 위에 떠 있는 버튼에 맞춰 누르면 공격을 할 수 있다.";
-            // isExecuted = true;
-        }
-        enumerator = makeButtonCoroutine();
-        StartCoroutine(enumerator);
-
-        if (isPause)
-        {
-            StopCoroutine(enumerator);
-        }
-    }
-
-    IEnumerator makeButtonCoroutine()
-    {
-        randNum = Random.Range(0, buttonsPrefabs.Length);
-        Enemy1.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = buttonsPrefabs[randNum];
-        Debug.Log("randnum is " + randNum);
-
-        string nowKey = Input.inputString;
-        bool isRight = false;
-        Debug.Log("nowkey is " + nowKey);
-
-
-        if (randNum == 0)
-        {
-            Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "A")
+            if (Input.GetKeyDown(keyCode))
             {
-                isRight = true;
-                Debug.Log("you pressed right button");
-                o_prefab.gameObject.SetActive(true);
-                DeleteButton();
-            }
-            else { x_prefab.gameObject.SetActive(true); isRight = false; }
-        }
-        else if (randNum == 1)
-        {
-            Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "D")
-            {
-                isRight = true;
-                Debug.Log("you pressed right button");
-                o_prefab.gameObject.SetActive(true);
-                DeleteButton();
-            }
-            else { x_prefab.gameObject.SetActive(true); isRight = false; }
-        }
-        else if (randNum == 2)
-        {
-            Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "S")
-            {
-                isRight = true;
-                Debug.Log("you pressed right button");
-                o_prefab.gameObject.SetActive(true);
-                DeleteButton();
-            }
-            else { x_prefab.gameObject.SetActive(true); isRight = false; }
-            yield return null;
-        }
-
-        if (isRight == false)
-        {
-            Enemy1.transform.Translate(1184, -195, 0);
-        }
-    }
-    void GenerateButton()
-    {
-        // buttonSpawner.SetActive(true);
-        randNum = Random.Range(0, buttonsPrefabs.Length);
-        Enemy1.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = buttonsPrefabs[randNum];
-        Debug.Log("randnum is " + randNum);
-
-        string nowKey = Input.inputString;
-        bool isRight = false;
-        Debug.Log("nowkey is " + nowKey);
-
-
-        if (randNum == 0)
-        {
-            Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "A")
-            {
-                isRight = true;
-                Debug.Log("you pressed right button");
-                o_prefab.gameObject.SetActive(true);
-                DeleteButton();
-            }
-            else { x_prefab.gameObject.SetActive(true); isRight = false; }
-        }
-        else if (randNum == 1)
-        {
-            Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "D")
-            {
-                isRight = true;
-                Debug.Log("you pressed right button");
-                o_prefab.gameObject.SetActive(true);
-                DeleteButton();
-            }
-            else { x_prefab.gameObject.SetActive(true); isRight = false; }
-        }
-        else if (randNum == 2)
-        {
-            Debug.Log("buttonprefab " + randNum);
-            if (nowKey == "S")
-            {
-                isRight = true;
-                Debug.Log("you pressed right button");
-                o_prefab.gameObject.SetActive(true);
-                DeleteButton();
-            }
-            else { x_prefab.gameObject.SetActive(true); isRight = false; }
-        }
-    }
-    void DeleteButton()
-    {
-        Destroy(Enemy1.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite);
-    }
-
-    void Defend()
-    {
-        // if (bp..transform.position.x <= -692)
-        if (bp.bullet.transform.position.x <= -692)
-        {
-            Time.timeScale = 0;
-
-            Color color = Black.color;
-            color.a = 0.355f;
-            Black.color = color;
-
-            speechBubble.gameObject.SetActive(true);
-            talkText.text = "총알이 충분히 가까워지면 space 버튼을 눌러 방어를 할 수 있다.";
-
-            string rightkey = Input.inputString;
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                animator = ShieldMan.GetComponent<Animator>();
-                animator.SetTrigger("guard_on");
                 Time.timeScale = 1;
 
-                timeToStop = 2f;
-                timeToStop -= Time.deltaTime;
+                tutorialIndex = -1;
 
-                if (timeToStop <= 0.0f)
-                {
-                    AttackEnemy.SetActive(false);
-                }
+                bulletObj.SetActive(false);
+                spaceButton.SetActive(false);
+                speechBubble.SetActive(false);
+
+                ShieldMan.GetComponent<Animator>().SetTrigger("guard_on");
+                enemy2.GetComponent<Animator>().Play("Runaway");
+
+                StartCoroutine(TutorialCor_4(false));
             }
-
-            if (rightkey != "Space")
+            else if (Input.anyKeyDown)
             {
-                talkText.text = "정말 실망스럽군, 다시 한 번 시도해봐라. 만약 실전이었다면 다음은 없었을 것이다.";
-                AttackEnemy.transform.Translate(1184, -195, 0);
+                tutorialIndex = -1;
+
+                bulletObj.transform.localPosition = bulletObj.GetComponent<bullet_projectileManager>().startPos;
+                bulletObj.SetActive(false);
+
+                StartCoroutine(TutorialCor_3(true));
             }
         }
-
-
-    }
-    void Escape()
-    {
-        mine.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (tutorialIndex == 3)
         {
-            animator.SetTrigger("jump");
+            if (Input.GetKeyDown(keyCode))
+            {
+                Time.timeScale = 1;
+
+                tutorialIndex = -1;
+
+                bulletObj.SetActive(false);
+                mineButton.SetActive(false);
+                speechBubble.SetActive(false);
+
+                normalHand.SetActive(false);
+                jumpHand.SetActive(false);
+                ShieldMan.GetComponent<Animator>().Play("Jump");
+
+                //나중에 특능 관련 튜토리얼 코루틴 추가할 자리
+
+                tutorialIndex = -1;
+
+                StartCoroutine(TutorialCor_5());
+            }
+            else if (Input.anyKeyDown)
+            {
+                tutorialIndex = -1;
+
+                mineButton.SetActive(false);
+                mineObj.transform.localPosition = mineObj.GetComponent<MineScripts>().startPos;
+                mineObj.SetActive(false);
+
+                StartCoroutine(TutorialCor_4(true));
+            }
+        }
+    }
+
+
+    private IEnumerator TutorialCor_0()
+    {
+        yield return new WaitForSeconds(2f);
+
+        speechBubble.SetActive(true);
+
+        yield return new WaitUntil(() => Input.anyKeyDown);
+
+        speechBubble.SetActive(false);
+        Enemy1.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        StartCoroutine(TutorialCor_1(false));
+    }
+
+    private IEnumerator TutorialCor_1(bool isWrong)
+    {
+        tutorialIndex = 0;
+
+        blackPanel.SetActive(true);
+        speechBubble.SetActive(true);
+
+        if (isWrong == true)
+        {
+            enemy1_X.SetActive(true);
+
+            yield return null;
+
+            talkText.text = "정말 실망스럽군, 다시 한번 시도해봐라. 만약 실전 이였다면 다음은 없었을 것이다.\n(아무 키나 눌러서 넘어가기)";
+
+            yield return new WaitUntil(() => Input.anyKeyDown);
+        }
+        talkText.text = "적 머리 위에 떠 있는 버튼에 맞춰 누르면 공격을 할 수 있다";
+
+        enemy1_X.SetActive(false);
+        ButtonGenerate();
+
+        Time.timeScale = 0;
+    }
+
+    private IEnumerator TutorialCor_2()
+    {
+        Time.timeScale = 1;
+
+        tutorialIndex = -1;
+
+        enemy1_O.SetActive(true);
+
+        //총 쏘는 애니메이션 추가
+
+        Enemy1.transform.parent.GetComponent<EnemyDieTrigger>().isDie = true;
+        Enemy1.GetComponent<Animator>().Play("Die");
+
+        yield return new WaitForSeconds(0.7f);
+
+        Enemy1.transform.parent.gameObject.SetActive(false);
+        Enemy1.SetActive(false);
+
+        StartCoroutine(TutorialCor_3(false));
+    }
+
+    private IEnumerator TutorialCor_3(bool isWrong)
+    {
+        if (isWrong == true)
+        {
+            Time.timeScale = 1;
+
+            yield return null;
+
+            spaceButton.SetActive(false);
+            talkText.text = "정말 실망스럽군, 다시 한번 시도해봐라. 만약 실전 이였다면 다음은 없었을 것이다.\n(아무 키나 눌러서 넘어가기)";
+
+            enemy2.GetComponent<Animator>().Play("Tutorial_Enemy_Move");
+
+            yield return new WaitUntil(() => Input.anyKeyDown);
+
+            speechBubble.SetActive(false);
+        }
+        else
+        {
+            enemy2.SetActive(true);
+
+            yield return new WaitForSeconds(2f);
         }
 
-        talkText.text = "이것으로 기본적인 훈련은 끝이 났다. 건투를 빌겠다.";
+        enemy2.GetComponent<Animator>().Play("Fire");
+        bulletObj.SetActive(true);
+
+        yield return new WaitForSeconds(1.6f);
+
+        blackPanel.SetActive(true);
+        speechBubble.SetActive(true);
+        talkText.text = "총알이 충분히 가까워지면 Space 버튼을 눌러 방어를 할 수 있다.";
+        spaceButton.SetActive(true);
+
+        keyCode = KeyCode.Space;
+        tutorialIndex = 2;
+
+        Time.timeScale = 0;
+    }
+
+    private IEnumerator TutorialCor_4(bool isWrong)
+    {
+        if (isWrong == true)
+        {
+            Time.timeScale = 1;
+
+            yield return null;
+
+            spaceButton.SetActive(false);
+            talkText.text = "정말 실망스럽군, 다시 한번 시도해봐라. 만약 실전 이였다면 다음은 없었을 것이다.\n(아무 키나 눌러서 넘어가기)";
+
+            yield return new WaitUntil(() => Input.anyKeyDown);
+
+            speechBubble.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+            enemy2.SetActive(false);
+        }
+
+        mineObj.SetActive(true);
+        FindObjectOfType<MapRepeating>().speed = 500f;
+
+        yield return new WaitForSeconds(3.7f);
+
+        speechBubble.SetActive(true);
+        talkText.text = "장애물이 충분히 가까워지면 버튼을 눌러 회피 할 수 있다";
+
+        mineButton.SetActive(true);
+
+        keyCode = KeyCode.UpArrow;
+        tutorialIndex = 3;
+
+        Time.timeScale = 0;
     }
 
 
+    private void ButtonGenerate()
+    {
+        tutorialIndex = 1;
+
+        randNum = Random.Range(0, buttonSpriteArr.Length);
+        enemy1_Button.SetActive(true);
+        enemy1_Button.GetComponent<SpriteRenderer>().sprite = buttonSpriteArr[randNum];
+
+        if (randNum == 0)
+        {
+            keyCode = KeyCode.A;
+        }
+        else if (randNum == 1)
+        {
+            keyCode = KeyCode.D;
+        }
+        else if (randNum == 2)
+        {
+            keyCode = KeyCode.S;
+        }
+    }
+
+    private IEnumerator TutorialCor_5()
+    {
+        yield return new WaitForSeconds(2f);
+
+        speechBubble.SetActive(true);
+        talkText.text = "이것으로 기본적인 훈련은 끝났다. 건투를 빌겠다.";
+
+        yield return null;
+    }
 }
