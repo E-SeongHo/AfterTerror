@@ -22,6 +22,6 @@ public class StartController : MonoBehaviour
     private void OnMouseDown()
     {
         // game start !!!
-        SceneManager.LoadScene("Stage1");
+         SceneManager.LoadScene("Stage1");
     }
 }
