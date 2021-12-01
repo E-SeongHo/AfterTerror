@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TutorialScripts : MonoBehaviour
 {
@@ -296,6 +297,8 @@ public class TutorialScripts : MonoBehaviour
         speechBubble.SetActive(true);
         talkText.text = "이것으로 기본적인 훈련은 끝났다. 건투를 빌겠다.";
 
-        yield return null;
+        yield return new WaitForSeconds(5f);
+
+        SceneLoader.Instance.LoadScene("Stage1");
     }
 }

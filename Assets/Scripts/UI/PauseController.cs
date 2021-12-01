@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseController : MonoBehaviour
 {
@@ -27,15 +26,18 @@ public class PauseController : MonoBehaviour
 			}
 			else
 			{
-				isPause = true;
-				PauseWindow.SetActive(true);
-
-				Time.timeScale = 0f;
+				GenerateWindow();
 			}
 		}
 	}
 
-	
+	public void GenerateWindow()
+    {
+		isPause = true;
+		PauseWindow.SetActive(true);
+
+		Time.timeScale = 0f;
+    }
 	public void OnClickResume()
 	{
 		isPause = false;
@@ -45,11 +47,13 @@ public class PauseController : MonoBehaviour
 	}
 	public void OnClickNewGame()
 	{
-		SceneManager.LoadScene("Stage1");
+		SceneLoader.Instance.LoadScene("Stage1");
+		Time.timeScale = 1f;
 	}
 	public void OnClickMainMenu()
 	{
-		SceneManager.LoadScene("Title");
+		SceneLoader.Instance.LoadScene("Title");
+		Time.timeScale = 1f;
 	}
 	public void OnClickSetting()
 	{
@@ -57,6 +61,6 @@ public class PauseController : MonoBehaviour
 	}
 	public void OnClickExitGame()
 	{
-		Application.Quit();	//이거 맞음?
+		Application.Quit();
 	}
 }

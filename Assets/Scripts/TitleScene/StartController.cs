@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class StartController : MonoBehaviour
 {
+    bool isTutored = false;
     private Animator animator;
 
     private void Start()
@@ -22,6 +22,12 @@ public class StartController : MonoBehaviour
     private void OnMouseDown()
     {
         // game start !!!
-         SceneManager.LoadScene("Stage1");
+        if (!isTutored)
+        {
+            SceneLoader.Instance.LoadScene("Test");
+            isTutored = true;
+        }
+        else
+            SceneLoader.Instance.LoadScene("Stage1");
     }
 }

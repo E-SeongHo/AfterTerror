@@ -130,7 +130,8 @@ public class EnemyKnifeman : MonoBehaviour
             // landing action
             animator.SetBool("land", true);
             parachute_anim.SetBool("land", true);
-            controller.SetCurrentHealth(1);
+            gameObject.GetComponent<EnemyButtonInfo>().HitProcessBasic(); // 한 대 맞은것과 같은 효과
+            // controller.SetCurrentHealth(1);
 
             // parachute move stop
             Destroy(gameObject.transform.GetChild(1).gameObject, 1f);

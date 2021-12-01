@@ -33,7 +33,7 @@ public class GameUI : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                SceneManager.LoadScene("Stage1");
+                SceneLoader.Instance.LoadScene("Stage1");
             }
         }
     }

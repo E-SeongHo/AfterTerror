@@ -102,10 +102,10 @@ public class MapManager : MonoBehaviour
     // ´ÙÀ½ À§Ä¡ Àâ±â
     private void SetBlockPosition(GameObject now, GameObject next)
     {
-        // ¹Ù´Ú 1°³ xÃà 722ÇÈ¼¿
-        // ÇÑ ºí·Ï´ç ¹Ù´Ú 3°³ -> 2166
+        // ¹Ù´Ú 1°³ xÃà 720ÇÈ¼¿
+        // ÇÑ ºí·Ï´ç ¹Ù´Ú 3°³ -> 2160
         Vector3 pos = now.transform.position;
-        pos += new Vector3(2166f, 0, 0);
+        pos += new Vector3(2160f, 0, 0);
         next.transform.Translate(pos);
     }
 
